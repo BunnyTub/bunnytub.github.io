@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fix Example</title>
-  <script src="/dist/osu-cursor.js"></script>
+  <title>BunnyTub's Home Dome</title>
+  <style>
+    body
+    {
+      color-scheme: dark;
+      background-color: #2B2A33;
+      color: #FFFFFF;
+    }
+  </style>
+  <script src="/js/osu-cursor.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof osuCursor === 'function') {
-        var cursor = new osuCursor();
-      } else {
-        console.error('osuCursor is not defined. Ensure it is properly included in /dist/main.js.');
-      }
+      var cursor = new osuCursor();
     });
   </script>
 </head>
