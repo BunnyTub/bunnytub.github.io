@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HopCast Streaming</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<script>
+		window.transitionToPage = function(href) {
+			document.querySelector('body').style.opacity = 0;
+			setTimeout(function() { 
+				window.location.href = href;
+			}, 300);
+		}
+	</script>
+</head>
+<body>
+	<!-- <img id="logo" src="/hopcast.png" alt="HopCast Logo" />
+	<h1 id="header">HopCast</h1> -->
+	<!--index header menu -->
+	<div id="menu">
+		<ul>
+			<li><a href="/" onclick="transitionToPage('/'); return false;">Home</a></li>
+		</ul>
+	</div>
+	<!--end index header menu -->
+
+	<div class="roundbox">
+		<h2>HopCast Information</h2>
+		<table class="yellowkeys">
+			<tbody>
+				<tr>
+					<td>Location</td>
+					<td><xsl:value-of select="location" /></td>
+				</tr>
+				<tr>
+					<td>Owner's Email</td>
+					<td><xsl:value-of select="admin" /></td>
+				</tr>
+				<tr>
+					<td>Domain Name</td>
+					<td><xsl:value-of select="host" /></td>
+				</tr>
+				<tr>
+					<td>Icecast Version</td>
+					<td><xsl:value-of select="server_id" /></td>
+				</tr>
+				</xsl:for-each>
+				<tr>
+					<td>Icecast Download</td>
+					<td><a href="https://icecast.org/download/">icecast.org/download</a></td>	
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="footer">
+		HopCast is powered by <a href="https://www.icecast.org/">Icecast</a>. Moderators can login <a href="/admin">here</a>.
+	</div>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
