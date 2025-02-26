@@ -137,6 +137,7 @@ img#logo {
 	max-width: 128px;
 	max-height: 128px;
 	padding: 5px 0;
+	border-radius: 10px;
 }
 
 img#sourcelogo {
