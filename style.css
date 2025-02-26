@@ -204,13 +204,34 @@ form.alignedform input {
 	font-size: 28px;
 }
 
+.picturebox {
+    background-color: #404065;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: fit-content;
+	box-shadow: 0 0 4px 4px rgba(32, 32, 50, 0.8);
+}
+
+.picturebox > p {
+	color: #00ffbb;
+}
+
+.picturebox > img {
+	border-radius: 10px;
+}
+
 .roundbox {
 	width: 90%;
 	margin: auto;
 	background-color: #404065;
 	border-radius: 10px;
 	padding: 10px 10px;
-	/* margin-bottom: 35px; */
+	box-shadow: 0 0 4px 4px rgba(32, 32, 50, 0.8);
 }
 
 .boxmargin {
