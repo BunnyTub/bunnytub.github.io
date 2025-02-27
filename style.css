@@ -2,7 +2,7 @@ html {
     margin: 0;
     padding: 0;
     background-size: 64px 64px;
-    background-color: #20202f; /* Fallback color */
+    background-color: #000000;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
 	overflow-wrap: break-word;
@@ -20,7 +20,7 @@ html {
 
 body {
 	padding: 0 25px 0 25px;
-	background-color: #243341;
+	background-color: #14192c;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
@@ -58,24 +58,6 @@ h1 {
 	margin-top: 3px;
 }
 
-marquee#alert {
-	display: none;
-	height: 50px;
-	overflow: hidden;
-	position: relative;
-	background-color: #f00;
-	border: 0px solid #4a4a4a;
-	border-radius: 10px;
-	margin-top: 0px;
-}
-
-#alert-spacer {
-	display: none;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 4px;
-	opacity: 0;
-}
-
 p {
 	text-decoration: none;
 	font-size: 36px;
@@ -91,7 +73,6 @@ h2 {
 	margin: 0px;
 	padding: 0px;
 	font-weight: normal;
-	font-size: 12pt;
 	color: #f8ef64;
 }
 
@@ -109,27 +90,6 @@ h1#header {
 	background-size: cover; */
 }
 
-#mounticon {
-	width: 64px;
-	height: 64px;
-	float: right;
-	margin-right: 5px;
-	padding: 2px;
-	background-color: #222222;
-	border: 2px solid #626262;
-	border-radius: 10px;
-}
-
-iframe#roundboxer {
-	transition-property: opacity;
-	transition-duration: 750ms;
-	background-color: #20202f;
-	opacity: 0%;
-	/* background: url(/hopcast_small.png) no-repeat center;
-	background-position: top;
-	background-size: cover; Adjusts the image to cover the entire header area */
-}
-
 img#logo {
 	display: block;
 	margin-left: auto;
@@ -137,7 +97,6 @@ img#logo {
 	max-width: 128px;
 	max-height: 128px;
 	padding: 5px 0;
-	border-radius: 20px;
 }
 
 img#sourcelogo {
@@ -149,29 +108,12 @@ img#sourcelogo {
 	padding: 5px 0;
 }
 
-form.alignedform label {
-	text-align: right;
-	display: inline-block;
-	vertical-align: middle;
-	width: 10em;
-	margin: 0 1em 0 0;
-}
-
-form.alignedform input {
-	display: inline-block;
-	vertical-align: middle;
-	border: 1px solid #f8ef64;
-	background-color: #333;
-	color: #f8ef64;
-	padding: 5px;
-}
-
 #menu {
 	border-top: 3px dotted #7B96C6;
 	border-bottom: 3px dotted #7B96C6;
 	text-align: center;
 	margin-top: -10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 #menu ul {
@@ -204,13 +146,21 @@ form.alignedform input {
 	font-size: 28px;
 }
 
-.picturebox {
-    background-color: #404065;
-    align-items: center;
+.container {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between elements */
     justify-content: center;
+}
+
+.picturebox {
+    background-color: #2a2a50;
+	align-items: center;
+	justify-content: center;
     display: inline-flex;
     flex-direction: column;
     margin: 0 auto;
+	margin-bottom: 10px;
     border-radius: 10px;
     padding: 10px;
     max-width: fit-content;
@@ -218,7 +168,7 @@ form.alignedform input {
 }
 
 .picturebox > p {
-	color: #00ffbb;
+	color: #ffffff;
 }
 
 .picturebox > img {
@@ -232,10 +182,6 @@ form.alignedform input {
 	border-radius: 10px;
 	padding: 10px 10px;
 	box-shadow: 0 0 4px 4px rgba(32, 32, 50, 0.8);
-}
-
-.boxmargin {
-	margin-bottom: 20px;
 }
 
 .roundbox h2 {
