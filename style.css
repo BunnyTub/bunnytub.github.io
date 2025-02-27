@@ -24,10 +24,10 @@ body {
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
-	animation-name: fade-in-body;
+	/* animation-name: fade-in-body;
 	animation-duration: 300ms;
 	transition-property: opacity;
-	transition-duration: 300ms;
+	transition-duration: 300ms; */
 }
 
 body#subframe {
