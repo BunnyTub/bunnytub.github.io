@@ -100,15 +100,6 @@ img#logo {
 	padding: 5px 0;
 }
 
-img#sourcelogo {
-	display: flex;
-	margin-left: 0;
-	margin-right: 0;
-	width: 64px;
-	height: 164px;
-	padding: 5px 0;
-}
-
 .button {
 	background-color: #fff;
 	color: #000;
