@@ -73,7 +73,8 @@ h2 {
 	margin: 0px;
 	padding: 0px;
 	font-weight: normal;
-	color: #f8ef64;
+	color: #fff;
+	/* color: #f8ef64; */
 }
 
 h3 {
@@ -106,6 +107,53 @@ img#sourcelogo {
 	width: 64px;
 	height: 164px;
 	padding: 5px 0;
+}
+
+.button {
+	background-color: #fff;
+	color: #000;
+	border-color: #000;
+	border-radius: 2px;
+	padding: 5px;
+	margin: 5px;
+	text-decoration: none;
+	border-style: none;
+	transition-property: font;
+	transition-duration: 150ms;
+	font-size: 26px;
+}
+
+.button:hover {
+	color: #000;
+	text-decoration: none;
+	border-style: none;
+	transition-property: font;
+	transition-duration: 150ms;
+	font-size: 30px;
+}
+
+.button-small {
+	background-color: #ffffff00;
+	color: #fff;
+	border-color: #000;
+	border-radius: 2px;
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-decoration: none;
+	border-style: none;
+	transition-property: font;
+	transition-duration: 150ms;
+	font-size: 20px;
+}
+
+.button-small:hover {
+	color: #fff;
+	text-decoration: none;
+	border-style: none;
+	transition-property: font;
+	transition-duration: 150ms;
+	font-size: 22px;
 }
 
 #menu {
@@ -148,7 +196,7 @@ img#sourcelogo {
 
 .container {
     display: grid;
-    grid-template-columns: 0.2fr 1fr; /* Two equal columns */
+    grid-template-columns: 0.4fr 1fr; /* Two equal columns */
     gap: 20px; /* Space between elements */
     justify-content: center;
 }
@@ -171,8 +219,16 @@ img#sourcelogo {
 	color: #ffffff;
 }
 
+.picturebox > .button {
+	margin-bottom: 20px;
+}
+
 .picturebox > img {
-	border-radius: 10px;
+	margin: 5px;
+	transform: rotate(2deg);
+	image-rendering: optimizeQuality;
+	max-width: 512px;
+	box-shadow: 0 0 2px 2px rgb(255, 0, 0, 0.8);
 }
 
 .roundbox {
@@ -228,12 +284,6 @@ table.colortable thead tr td {
 
 .right {
 	float: right;
-}
-
-h2 small {
-	color: #fff;
-	font-size: 70%;
-	padding-left: 15px;
 }
 
 .mounthead h2 {
@@ -306,7 +356,7 @@ ul.nav li a:hover {
 /* Footer */
 
 #footer {
-	border-top: 1px groove #ACACAC;
+	/* border-top: 1px groove #ACACAC; */
 	margin-top: 20px;
 	padding: 10px;
 	font-size: 80%;
