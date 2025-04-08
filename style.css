@@ -192,6 +192,12 @@ img#logo {
     justify-content: center;
 }
 
+.uncontained {
+    display: grid;
+    gap: 20px; /* Space between elements */
+    justify-content: center;
+}
+
 .picturebox {
     background-color: #2a2a50;
 	align-items: center;
