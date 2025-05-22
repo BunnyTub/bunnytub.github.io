@@ -98,14 +98,139 @@
 					</tr>
 				</tbody>
 			</table>
+=======
+	<head>
+		<title>SharpAlert</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="SharpAlert is a desktop application that functions similarly to how Wireless Emergency Alerts function on your phone, or how the Emergency Alert System displays and sounds the alert on a TV/radio.">
+		<meta name="keywords" content="SharpAlert, Alert, Alerting, Software, Safety, BunnyTub, CSharp, C#">
+		<meta name="author" content="BunnyTub">
+		<meta property="og:image" content="/media/SharpAlert.png">
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "WebPage",
+			  "name": "SharpAlert",
+			  "description": "SharpAlert works day and night, to alert and protect. It can be used in the home, on public displays, TV stations, and much more.",
+			  "url": "https://bunnytub.com/SharpAlert.html"
+			}
+		</script>			
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	</head>
+	<body>
+		<img id="logo" src="media/SharpAlert.png" alt="The SharpAlert logo, consisting of a red exclamation point on a strawberry milk pink background." />
+		<h1 id="header">SharpAlert<br><p>Safety is never a non-priority.</p></h1>
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="https://hopcast.bunnytub.com">HopCast</a></li>
+				<li><a href="/SharpAlert.html">SharpAlert</a></li>
+				<li><a href="/Maki.html">Maki TTS</a></li>
+			</ul>
 		</div>
-		-->
-	</div>
 
-	<div id="footer">
-		Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!
-	</div>
-</body>
+		<div class="container">
+			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
+				<a class="button" href="/SharpAlert/Releases/v7.27/install.exe">Download v7.27 Installer</a>
+				<a class="button" href="/SharpAlert/Releases/v7.27/SharpAlert.exe">Download v7.27 Standalone</a>
+				<h3 style="margin-top: auto;">SharpAlert needs .NET Framework 4.8 installed to work correctly. Download and install the framework before running SharpAlert! (Especially for users on Windows 8.1 and below)</h3>
+				<a class="button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer">Download .NET Framework 4.8</a>
+				<img src="media/Emergency_Alert.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
+				<img src="media/Alert_Update.png" alt="An example of an updated Emergency Alert in SharpAlert." style="height: auto;" />
+				<img src="media/Alert_Cancelled.png" alt="An example of an cancelled Emergency Alert in SharpAlert." style="height: auto;" />
+				<iframe style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+			</div>
+			<div>
+				<h2>
+					<b>SharpAlert</b> works day and night, to alert and protect. It can be used in the home, on public displays, TV stations, and much more.
+				</h2>
+				<h3>
+					Simplifying a bit, <b>SharpAlert</b> works similarly to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work or your phone.
+					In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. If the alert is allowed to relay,
+					a visual and auditory message plays. It tells you the event type, and information about the alert.
+					You can play TTS (Text-To-Speech) or embedded audio (included within some alerts) by clicking the play button.
+					TTS or embedded audio will be played automatically if you have SharpAlert in full screen mode.<br><br>SharpAlert (by default) receives alert information from IPAWS CAP.
+				</h3>
+
+				<div>
+					<h2>Emergency Alert</h2>
+					<audio src="https://bunnytub.com/media/ui_warning.wav" controls></audio>
+				</div>
+				<div>
+					<h2>Alert Cancellation</h2>
+					<audio src="https://bunnytub.com/media/ui_cancellation.wav" controls></audio>
+				</div>
+				<div>
+					<h2>Alert Closing</h2>
+					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
+				</div>
+
+				<div style="margin-top: 20px;">Have questions or need help? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div><br>
+				
+				<h2>
+					<br><b>Question:</b> How do I get alerts?
+				</h2>
+				<h3>
+					<b>Answer:</b> SharpAlert automatically polls for alerts every 30 seconds (by default).
+				</h3>
+
+				<h2>
+					<br><b>Question:</b> I just opened SharpAlert, why can't I find it?
+				</h2>
+				<h3>
+					<b>Answer:</b> If you don't see anything, check the icon group towards the right of the taskbar.<br>If the exclamation icon does not appear after retrying, try updating your computer.
+				</h3>
+				<img src="media/SharpAlert_TrayIcon.png" />
+
+				<h2>
+					<br><b>Question:</b> I just opened SharpAlert, why can't I find it?
+				</h2>
+				<h3>
+					<b>Answer:</b> If you don't see anything, check the icon group towards the right of the taskbar.<br>If the exclamation icon does not appear after retrying, try updating your computer.
+				</h3>	
+
+				
+
+				<h2 style="margin-top: 20px;">Older Versions (out of support)</h2>
+			<a class="button-small" href="/SharpAlert/Releases/v7.0/SharpAlert.exe">Download v7.0</a><br>
+			<a class="button-small" href="/SharpAlert/Releases/v6.0/SharpAlert.exe">Download v6.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v5.0/SharpAlert.exe">Download v5.0</a><br>
+			<a class="button-small" href="/SharpAlert/Releases/v4.1/SharpAlert.exe">Download v4.1</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v4.0/SharpAlert.exe">Download v4.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v3.0/SharpAlert.exe">Download v3.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v2.0/SharpAlert.exe">Download v2.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v1.0/SharpAlert.exe">Download v1.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v0.2/SharpAlert.exe">Download v0.2</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v0.1/SharpAlert.exe">Download v0.1</a><br>
+			<!--
+			<div class="roundbox">
+				<h2>BunnyTub's Stuff</h2>
+				<table class="yellowkeys">
+					<tbody>
+						<tr>
+							<td>Yes, I reuse assets. ¯\_(ツ)_/¯</td>
+						</tr>
+						<tr>
+							<td>SharpAlert</td>
+							<td><a href="https://sharpalert.bunnytub.com">Desktop application for emergency alerts</a></td>
+						</tr>
+						<tr>
+							<td>HopCast</td>
+							<td><a href="https://hopcast.bunnytub.com">Website for IP radio stations</a></td>
+						</tr>
+						<tr>
+							<td>Location</td>
+							<td>Florida, USA</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			-->
+		</div>
+
+		<div id="footer">
+			Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!
+		</div>
+	</body>
 </html>
-</xsl:template>
-</xsl:stylesheet>
