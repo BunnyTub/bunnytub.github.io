@@ -6,7 +6,12 @@ html {
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
 	overflow-wrap: break-word;
+	/* cursor: url("media/cursor.png"), none; */
 }
+
+/* a:hover {
+	cursor: url("media/cursor-hover.png"), none;
+} */
 
 @keyframes fade-in-body {
 	from
@@ -222,7 +227,7 @@ img#logo {
 
 .picturebox > img {
 	margin: 5px;
-	transform: rotate(2deg);
+	/* transform: rotate(2deg); */
 	image-rendering: optimizeQuality;
 	max-width: 512px;
 	box-shadow: 0 0 2px 2px rgb(255, 0, 0, 0.8);
