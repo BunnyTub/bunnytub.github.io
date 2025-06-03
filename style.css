@@ -68,7 +68,7 @@ p {
 	font-size: 36px;
 	color: #fff;
 	/* position: absolute; */
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	margin: 0;
 	line-height: 50px;
 	text-align: center;
@@ -103,6 +103,14 @@ img#logo {
 	max-width: 128px;
 	max-height: 128px;
 	padding: 5px 0;
+}
+
+code {
+	font-family: Consolas, "courier new";
+	color: crimson;
+	background-color: #262626;
+	padding: 2px;
+	/* font-size: 100%; */
 }
 
 .button {
