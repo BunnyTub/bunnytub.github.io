@@ -4,7 +4,7 @@
 	<title>SharpAlert</title>
 	<meta charset="UTF-8">
 	<meta property="og:site_name" content="SharpAlert" />
-	<meta name="description" content="SharpAlert is a desktop application that functions similarly to how Wireless Emergency Alerts function on your phone, or how the Emergency Alert System displays and sounds the alert on a TV/radio." />
+	<meta name="description" content="SharpAlert is a desktop application that can alert you of events nearby, or anywhere. (Only some regions are supported)" />
 	<meta name="keywords" content="SharpAlert,Sharp Alert,Free,Free Alerting,Alert,Alerting,US Alert Software,Canada Alert Software,Alerting Software,Safety Software,BunnyTub,CSharp Alert,C#" />
 	<meta name="og:keywords" content="SharpAlert,Sharp Alert,Free,Free Alerting,Alert,Alerting,US Alert Software,Canada Alert Software,Alerting Software,Safety Software,BunnyTub,CSharp Alert,C#" />
 	<meta name="author" content="BunnyTub" />
@@ -31,8 +31,14 @@
             <a class="disabled-button" href="#">No Installer Available</a> -->
 			<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 6/4/2025 (Hotfix)</div>
 			<div style="font-size: 12pt; margin-bottom: 8px;">⚠ Please upgrade from v9.0 to v9.1 (hotfix) ASAP.</div>
-			<a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
+			<!-- <a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
 	    	<a class="button" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1 Standalone</a>
+			<a id="installerButton" class="button" href="#">Download vX Installer</a>
+			<a id="standaloneButton" class="button" href="#">Download vX Standalone</a> -->
+
+			<a class="button installer-button" href="#">Download v? Installer</a>
+			<a class="button standalone-button" href="#">Download v? Standalone</a>
+
 			<h3 style="margin-top: auto;">SharpAlert needs .NET Framework 4.8 installed to work correctly. Download and install the framework before running SharpAlert! (Especially for users on Windows 8.1 and below)</h3>
 			<a class="button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer">Download .NET Framework 4.8</a>
 			<img src="media/Emergency_Alert_1.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
@@ -86,6 +92,55 @@
 			<a class="button-small" href="/SharpAlert/Releases/v0.2/SharpAlert.exe">Download v0.2</a><br>
 			<a class="button-small" href="/SharpAlert/Releases/v0.1/SharpAlert.exe">Download v0.1</a><br>
 		</div>
+
+		<div id="updateOverlay" style="display: none;">
+			<div class="overlay-backdrop"></div>
+			<div class="overlay-dialog">
+				<h1>Ready to update?</h1>
+				<a class="button installer-button" href="#" style="display: block;">Download v? Installer</a>
+				<a class="button standalone-button" href="#" style="display: block;">Download v? Standalone</a>
+				<a class="button" href="#" onclick="hideOverlay()" style="display: block;">Close</a>
+			</div>
+		</div>
+	
+		<script>
+			fetch('https://bunnytub.com/SharpAlert/SharpAlert.txt')
+			.then(response => response.text())
+			.then(version => {
+				version = version.trim();
+
+				const installerButtons = document.querySelectorAll('.installer-button');
+    			const standaloneButtons = document.querySelectorAll('.standalone-button');
+
+				installerButtons.forEach(button => {
+					button.href = `/SharpAlert/Releases/v${version}/install.exe`;
+					button.textContent = `Download v${version} Installer`;
+				});
+
+				standaloneButtons.forEach(button => {
+					button.href = `/SharpAlert/Releases/v${version}/SharpAlert.exe`;
+					button.textContent = `Download v${version} Standalone`;
+				});
+			})
+			.catch(error => {
+				console.error("Couldn't get the latest version of SharpAlert.", error);
+			});
+
+			function getQueryParam(param) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(param);
+			}
+			
+			function hideOverlay() {
+				document.getElementById("updateOverlay").style.display = "none";
+			}
+			
+			window.addEventListener("DOMContentLoaded", () => {
+				if (getQueryParam("update") === "1") {
+					document.getElementById("updateOverlay").style.display = "block";
+				}
+			});
+		</script>
 
 		<div id="footer">
 			Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!

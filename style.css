@@ -424,7 +424,6 @@ ul.nav li a:hover {
 }
 
 @media (max-width: 320px) {
-
 	ul.nav, #menu ul {
 		display: block;
 	}
@@ -444,4 +443,35 @@ ul.nav li a:hover {
 	a.play {
 		margin-left: 15px;
 	}
+}
+
+#updateOverlay {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+  
+.overlay-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+  
+.overlay-dialog {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #404065;
+	padding: 2em;
+	border-radius: 16px;
+	box-shadow: 0 0 30px #40406580;
+	max-width: 90%;
+	text-align: center;
 }
