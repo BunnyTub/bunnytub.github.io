@@ -105,6 +105,7 @@ img#logo {
 	max-width: 128px;
 	max-height: 128px;
 	padding: 5px 0;
+	filter: drop-shadow(0 0 6px rgb(100, 100, 100));
 }
 
 img#big-logo {
@@ -273,7 +274,7 @@ code {
 	/* transform: rotate(2deg); */
 	image-rendering: optimizeQuality;
 	max-width: 512px;
-	box-shadow: 0 0 2px 2px rgb(255, 0, 0, 0.8);
+	box-shadow: 0 0 2px 2px rgba(170, 0, 255, 0.8);
 }
 
 .roundbox {
