@@ -1,4 +1,1 @@
 User-agent: *
-
-Disallow: /embeds
-Disallow: /media
