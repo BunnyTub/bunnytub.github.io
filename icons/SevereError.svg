@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="severe warning.svg"
+   sodipodi:docname="SevereError.svg"
    inkscape:export-filename="icons\SevereMessage.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -27,7 +27,7 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      inkscape:zoom="0.72604517"
-     inkscape:cx="120.51592"
+     inkscape:cx="254.80508"
      inkscape:cy="243.09782"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -64,16 +64,21 @@
        inkscape:randomized="0"
        d="m -48.467485,174.92165 c -28.644026,0 -27.022077,0.93643 -41.344092,-23.87002 -14.322013,-24.80646 -14.322013,-22.93359 -2e-6,-47.74005 14.322012,-24.806452 12.700063,-23.87002 41.344089,-23.870021 28.644026,-2e-6 27.022078,-0.936434 41.3440921,23.870021 14.3220143,24.80645 14.3220142,22.93359 2.3e-6,47.74004 -14.3220114,24.80646 -12.7000634,23.87002 -41.3440894,23.87003 z"
        transform="matrix(1.1275455,0,0,1.1278613,122.38263,-75.709878)" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:105.833px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffc800;fill-opacity:1;stroke:none;stroke-width:2.11667;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       x="52.387501"
-       y="104.35152"
-       id="text3"><tspan
-         sodipodi:role="line"
-         id="tspan3"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:105.833px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';stroke-width:2.11667;fill:#ffc800;fill-opacity:1;stroke:none"
-         x="52.387501"
-         y="104.35152">!</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:#ffc800;fill-opacity:1;stroke:#ffc800;stroke-width:11.74373251;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path3"
+       inkscape:flatsided="false"
+       sodipodi:sides="4"
+       sodipodi:cx="36.077301"
+       sodipodi:cy="-20.77178"
+       sodipodi:r1="46.941311"
+       sodipodi:r2="0.4694131"
+       sodipodi:arg1="0.78539816"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 69.26982,12.420739 36.077301,-20.302367 2.8847819,12.420739 35.607888,-20.77178 2.8847817,-53.964299 36.077301,-21.241193 69.26982,-53.964299 36.546714,-20.77178 Z"
+       transform="matrix(0.90118994,0,0,0.90118994,35.220834,86.452654)" />
   </g>
 </svg>
