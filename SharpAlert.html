@@ -32,8 +32,7 @@
 		<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
 			<!-- /install.exe
             <a class="disabled-button" href="#">No Installer Available</a> -->
-			<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 6/4/2025 (Hotfix)</div>
-			<div style="font-size: 12pt; margin-bottom: 8px;">⚠ Please upgrade from v9.0 to v9.1 (hotfix) ASAP.</div>
+			<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 8/3/2025</div>
 			<!-- <a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
 	    	<a class="button" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1 Standalone</a>
 			<a id="installerButton" class="button" href="#">Download vX Installer</a>
@@ -42,14 +41,13 @@
 			<a class="button installer-button" href="#">Download v? Installer</a>
 			<a class="button standalone-button" href="#">Download v? Standalone</a>
 
-			<h3 style="margin-top: auto;">SharpAlert needs .NET Framework 4.8 installed to work correctly. Download and install the framework before running SharpAlert! (Especially for users on Windows 8.1 and below)</h3>
+			<h3 style="margin-top: auto; color: yellow;">Please install .NET Framework 4.8+ before opening SharpAlert!</h3>
 			<a class="button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer">Download .NET Framework 4.8</a>
-			<div style="display: inline; overflow-inline:auto; max-height: 75%;"><img class="alertimg" src="media/SharpAlert_Example_1.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
+			<div style="display: inline; overflow-inline: auto; max-height: 75%;"><img class="alertimg" src="media/SharpAlert_Example_1.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
             <img class="alertimg" src="media/SharpAlert_Example_2.png" alt="An example of an updated Emergency Alert in SharpAlert." style="height: auto;" />
             <!-- <img class="alertimg" src="media/SharpAlert_Example_3.png" alt="An example of a cancelled Emergency Alert in SharpAlert." style="height: auto;" /> --></div>
         </div>
 		<div>
-			<h2><a href="#" onclick="alert('We\'ve recently added United States \(NWS\) support into SharpAlert v9.0, so you can now receive National Weather Service alerts! Expect some minor bugs. Report them to us on GitHub if you find any!');"><b>Now with National Weather Service integration!</b></a></h2>
 			<h2><b>SharpAlert</b> can possibly save your life when an event occurs.</h2>
             <h3>Simplifying a bit, <b>SharpAlert</b> works closely to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work on a device like your phone, or more closely to the <a href="https://wikipedia.org/wiki/Emergency_Alert_System"><b>Emergency Alert System</b></a> on a TV or radio station broadcast.
                 In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. If the alert is allowed to relay,
@@ -79,7 +77,8 @@
 
 			<div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div>
 			<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
-			<h2 style="margin-top: 20px;">Older Versions (out of support)</h2>
+			<h2 title="Please do not ask for support on older versions." style="margin-top: 20px;">Older Versions (out of support)</h2>
+			<a class="button-small" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1</a><br>
 			<a class="button-small" href="/SharpAlert/Releases/v9.0/SharpAlert.exe">Download v9.0</a><br>
 			<a class="button-small" href="/SharpAlert/Releases/v8.0/SharpAlert.exe">Download v8.0</a><br>
 			<a class="button-small" href="/SharpAlert/Releases/v7.27/SharpAlert.exe">Download v7.27</a><br>
@@ -131,7 +130,7 @@
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
 				// query string so user can click retry
-				window.location.replace(`GeneralError.html?${window.location.href}`);
+				window.location.replace(`GeneralError.html?url=${window.location.href}`);
 			});
 
 			function getQueryParam(param) {
