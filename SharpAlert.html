@@ -130,6 +130,8 @@
 			})
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
+				// query string so user can click retry
+				window.location.replace(`GeneralError.html?${window.location.href}`);
 			});
 
 			function getQueryParam(param) {
