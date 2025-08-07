@@ -12,6 +12,7 @@
 	<meta property="og:type" content="website">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<script src="WarnOfHTML.js"></script> 
 </head>
 <body>
 	<a href="media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
@@ -23,8 +24,8 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a onclick="alert('HopCast is no longer available as of 12:00 AM UTC - July 27, 2025.')" href="#">HopCast</a></li>
-			<li><a href="/SharpAlert.html">SharpAlert</a></li>
-			<li><a href="/Maki.html">Maki TTS</a></li>
+			<li><a href="/SharpAlert">SharpAlert</a></li>
+			<li><a href="/Maki">Maki TTS</a></li>
 		</ul>
 	</div>
 
@@ -130,7 +131,7 @@
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
 				// query string so user can click retry
-				window.location.replace(`GeneralError.html?url=${window.location.href}`);
+				window.location.replace(`GeneralError?url=${window.location.href}`);
 			});
 
 			function getQueryParam(param) {
