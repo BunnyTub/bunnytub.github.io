@@ -5,8 +5,8 @@ html {
     background-color: #11111a;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
-	overflow-wrap: break-word;
-	/* cursor: url("media/cursor.png"), none; */
+	/* overflow-wrap: break-word;
+	cursor: url("media/cursor.png"), none; */
 }
 
 /* a:hover {
@@ -50,6 +50,7 @@ a {
 	color: #f8ef64;
 	text-decoration: none;
 	border-bottom: 1px dotted #f8ef64;
+	max-width: 100%;
 }
 
 a:hover {
