@@ -20,88 +20,96 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
 	<link rel="canonical" href="https://bunnytub.com/SharpAlert" />
 	<script src="WarnOfHTML.js"></script> 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-XRBM5V7X9T');
+	</script>
 </head>
-<body>
-	<a href="media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
-		<img id="logo" src="media/SharpAlert_Small.png" alt="The SharpAlert logo, a red exclamation point on a very light pink speech bubble.">
-		</img>
-	</a>
-	<h1 id="header">SharpAlert<br><p>Alert feed monitoring for PCs.</p></h1>
-	<div id="menu">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a onclick="alert('HopCast is no longer available as of 12:00 AM UTC - July 27, 2025.')" href="#">HopCast</a></li>
-			<li><a href="/SharpAlert">SharpAlert</a></li>
-			<li><a href="/Maki">Maki TTS</a></li>
-		</ul>
-	</div>
+	<body>
+		<a href="media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
+			<img id="logo" src="media/SharpAlert_Small.png" alt="The SharpAlert logo, a red exclamation point on a very light pink speech bubble.">
+			</img>
+		</a>
+		<h1 id="header">SharpAlert<br><p>Alert feed monitoring for PCs.</p></h1>
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a onclick="alert('HopCast is no longer available as of 12:00 AM UTC - July 27, 2025.')" href="#">HopCast</a></li>
+				<li><a href="/SharpAlert">SharpAlert</a></li>
+				<li><a href="/Maki">Maki TTS</a></li>
+			</ul>
+		</div>
 
-	<div class="container">
-		<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-			<!-- /install.exe
-            <a class="disabled-button" href="#">No Installer Available</a> -->
-			<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 8/3/2025</div>
-			<!-- <a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
-	    	<a class="button" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1 Standalone</a>
-			<a id="installerButton" class="button" href="#">Download vX Installer</a>
-			<a id="standaloneButton" class="button" href="#">Download vX Standalone</a> -->
+		<div class="container">
+			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
+				<!-- /install.exe
+				<a class="disabled-button" href="#">No Installer Available</a> -->
+				<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 8/3/2025</div>
+				<!-- <a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
+				<a class="button" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1 Standalone</a>
+				<a id="installerButton" class="button" href="#">Download vX Installer</a>
+				<a id="standaloneButton" class="button" href="#">Download vX Standalone</a> -->
 
-			<a class="button installer-button" href="#">Download v? Installer</a>
-			<a class="button standalone-button" href="#">Download v? Standalone</a>
+				<a class="button installer-button" href="#">Download v? Installer</a>
+				<a class="button standalone-button" href="#">Download v? Standalone</a>
 
-			<h3 style="margin-top: auto; color: yellow;">Please install .NET Framework 4.8+ before opening SharpAlert!</h3>
-			<a class="button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer">Download .NET Framework 4.8</a>
-			<div style="display: inline; overflow-inline: auto; max-height: 75%;"><img class="alertimg" src="media/SharpAlert_Example_1.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
-            <img class="alertimg" src="media/SharpAlert_Example_2.png" alt="An example of an updated Emergency Alert in SharpAlert." style="height: auto;" />
-            <!-- <img class="alertimg" src="media/SharpAlert_Example_3.png" alt="An example of a cancelled Emergency Alert in SharpAlert." style="height: auto;" /> --></div>
-        </div>
-		<div>
-			<h2><b>SharpAlert</b> can possibly save your life when an event occurs.</h2>
-            <h3>Simplifying a bit, <b>SharpAlert</b> works closely to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work on a device like your phone, or more closely to the <a href="https://wikipedia.org/wiki/Emergency_Alert_System"><b>Emergency Alert System</b></a> on a TV or radio station broadcast.
-                In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. If the alert is allowed to relay,
-                a visual and auditory message plays. It tells you the event type, and information about the alert.
-                You can play TTS (Text-To-Speech) or embedded audio (included within some alerts) by clicking the play button.
-                TTS or embedded audio will be played automatically if you have SharpAlert in full screen mode.<br><br>SharpAlert can receive alert information from IPAWS (Integrated Public Alert & Warning System), NWS (National Weather Service), NAADS (National Public Alerting System), SASMEX (Sistema de Alerta Sísmica Mexicano), and IDAP (Divulgação de Alertas Públicos).
-				Each option is pick and choose, as they can be enabled and disabled separately at any time within Region Settings. You'll need to restart the program if you change them!
-            </h3>
-			
-			<!-- <h3>
-				<b>Alert sounds can be customized within SharpAlert.</b>
-			</h3>
-			<div>
-				<h2>Emergency Alert</h2>
-				<audio src="https://bunnytub.com/media/ui_warning.wav" controls></audio>
+				<h3 style="margin-top: auto; color: yellow;">Please install .NET Framework 4.8+ before opening SharpAlert!</h3>
+				<a class="button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer">Download .NET Framework 4.8</a>
+				<div style="display: inline; overflow-inline: auto; max-height: 75%;"><img class="alertimg" src="media/SharpAlert_Example_1.png" alt="An example of an Emergency Alert in SharpAlert." style="height: auto;" />
+				<img class="alertimg" src="media/SharpAlert_Example_2.png" alt="An example of an updated Emergency Alert in SharpAlert." style="height: auto;" />
+				<!-- <img class="alertimg" src="media/SharpAlert_Example_3.png" alt="An example of a cancelled Emergency Alert in SharpAlert." style="height: auto;" /> --></div>
 			</div>
 			<div>
-				<h2>Earthquake Alert (cannot be customized)</h2>
-				<audio src="https://bunnytub.com/media/ui_shakewarning.wav" controls></audio>
-			</div>
-			<div>
-				<h2>Alert Closing</h2>
-				<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
-			</div> -->
+				<h2><b>SharpAlert</b> can possibly save your life when an event occurs.</h2>
+				<h3>Simplifying a bit, <b>SharpAlert</b> works closely to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work on a device like your phone, or more closely to the <a href="https://wikipedia.org/wiki/Emergency_Alert_System"><b>Emergency Alert System</b></a> on a TV or radio station broadcast.
+					In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. If the alert is allowed to relay,
+					a visual and auditory message plays. It tells you the event type, and information about the alert.
+					You can play TTS (Text-To-Speech) or embedded audio (included within some alerts) by clicking the play button.
+					TTS or embedded audio will be played automatically if you have SharpAlert in full screen mode.<br><br>SharpAlert can receive alert information from IPAWS (Integrated Public Alert & Warning System), NWS (National Weather Service), NAADS (National Public Alerting System), SASMEX (Sistema de Alerta Sísmica Mexicano), and IDAP (Divulgação de Alertas Públicos).
+					Each option is pick and choose, as they can be enabled and disabled separately at any time within Region Settings. You'll need to restart the program if you change them!
+				</h3>
+				
+				<!-- <h3>
+					<b>Alert sounds can be customized within SharpAlert.</b>
+				</h3>
+				<div>
+					<h2>Emergency Alert</h2>
+					<audio src="https://bunnytub.com/media/ui_warning.wav" controls></audio>
+				</div>
+				<div>
+					<h2>Earthquake Alert (cannot be customized)</h2>
+					<audio src="https://bunnytub.com/media/ui_shakewarning.wav" controls></audio>
+				</div>
+				<div>
+					<h2>Alert Closing</h2>
+					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
+				</div> -->
 
-			<!-- <div style="margin-top: 20px;">Looking for <a href="/SharpAlert-Docs.html"><b>command line documentation</b></a>?</div> -->
+				<!-- <div style="margin-top: 20px;">Looking for <a href="/SharpAlert-Docs.html"><b>command line documentation</b></a>?</div> -->
 
-			<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/EjawYIRxl0c?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
-			
-			<div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div>
-			<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
-			<h2 title="Please do not ask for support on older versions." style="margin-top: 20px;">Older Versions (out of support)</h2>
-			<a class="button-small" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v9.0/SharpAlert.exe">Download v9.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v8.0/SharpAlert.exe">Download v8.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v7.27/SharpAlert.exe">Download v7.27</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v7.0/SharpAlert.exe">Download v7.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v6.0/SharpAlert.exe">Download v6.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v5.0/SharpAlert.exe">Download v5.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v4.1/SharpAlert.exe">Download v4.1</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v4.0/SharpAlert.exe">Download v4.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v3.0/SharpAlert.exe">Download v3.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v2.0/SharpAlert.exe">Download v2.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v1.0/SharpAlert.exe">Download v1.0</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v0.2/SharpAlert.exe">Download v0.2</a><br>
-			<a class="button-small" href="/SharpAlert/Releases/v0.1/SharpAlert.exe">Download v0.1</a><br>
+				<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/EjawYIRxl0c?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
+				
+				<div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div>
+				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
+				<h2 title="Please do not ask for support on older versions." style="margin-top: 20px;">Older Versions (out of support)</h2>
+				<a class="button-small" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v9.0/SharpAlert.exe">Download v9.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v8.0/SharpAlert.exe">Download v8.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v7.27/SharpAlert.exe">Download v7.27</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v7.0/SharpAlert.exe">Download v7.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v6.0/SharpAlert.exe">Download v6.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v5.0/SharpAlert.exe">Download v5.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v4.1/SharpAlert.exe">Download v4.1</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v4.0/SharpAlert.exe">Download v4.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v3.0/SharpAlert.exe">Download v3.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v2.0/SharpAlert.exe">Download v2.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v1.0/SharpAlert.exe">Download v1.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v0.2/SharpAlert.exe">Download v0.2</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v0.1/SharpAlert.exe">Download v0.1</a><br>
 		</div>
 
 		<iframe style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
