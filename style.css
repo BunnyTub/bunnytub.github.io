@@ -269,6 +269,11 @@ code {
 	box-shadow: 0 0 2px 2px rgba(170, 0, 255, 0.8);
 }
 
+.alertimg {
+	height: auto;
+	border-radius: 5px;
+}
+
 /* Footer */
 
 #footer {
