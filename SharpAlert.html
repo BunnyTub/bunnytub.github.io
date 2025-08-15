@@ -174,7 +174,9 @@
 			})
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
-				alert("Couldn't get the latest version of SharpAlert.\nPlease refresh the page to try again.");
+				if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
+					window.location.reload();
+				}
 				// query string so user can click retry
 				//window.location.replace(`GeneralError?url=${window.location.href}`);
 			});
