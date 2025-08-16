@@ -139,7 +139,7 @@ code {
 	text-decoration: none;
 	border-style: none;
 	transition-property: font;
-	transition-duration: 150ms;
+	transition-duration: 100ms;
 	font-size: 20pt;
 }
 
@@ -148,7 +148,7 @@ code {
 	text-decoration: none;
 	border-style: none;
 	transition-property: font;
-	transition-duration: 150ms;
+	transition-duration: 100ms;
 	font-size: 22pt;
 }
 

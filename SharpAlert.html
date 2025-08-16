@@ -27,7 +27,34 @@
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'G-XRBM5V7X9T');
+
+		function hideCoolSoundsButton() {
+			//document.getElementsByClassName('coolsounds-button')[0].style.visibility = 'collapse';
+			//var cool = document.getElementsByClassName('coolsounds')[0];
+			//cool.style.visibility = 'collapse';
+			//cool.remove();
+		}
 	</script>
+
+	<style>
+		.fade-shrink {
+			opacity: 1;
+			font-size: 2rem;
+			animation: fadeShrink 5s ease-in forwards;
+			justify-content: center
+		}
+
+		@keyframes fadeShrink {
+			to {
+				opacity: 0;
+				font-size: 0rem;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			.fade-shrink { animation: none; }
+		}
+  	</style>
 </head>
 	<body>
 		<a href="media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
@@ -43,6 +70,17 @@
 				<li><a href="/Maki">Maki TTS</a></li>
 			</ul>
 		</div>
+
+		<div class="container coolsounds">
+			<!-- <a class="button coolsounds-button"
+			href="#"
+			onclick="hideCoolSoundsButton();">
+				Enable Cool Sounds
+			</a> -->
+			<p class="fade-shrink">Click or type anywhere to enable cool sounds...</p>
+		</div>
+
+		
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
@@ -153,6 +191,10 @@
 			</div>
 		</div>
 	
+		<div id="footer">
+			Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!
+		</div>
+
 		<script>
 			fetch('https://bunnytub.com/SharpAlert/SharpAlert.txt')
 			.then(response => response.text())
@@ -181,6 +223,8 @@
 				//window.location.replace(`GeneralError?url=${window.location.href}`);
 			});
 
+			// https://github.com/ppy/osu-resources/tree/a1fb917e1589fbdfac1aa7a3acc9ebb5a5933c89/osu.Game.Resources/Samples/Menu
+
 			function getQueryParam(param) {
 				const urlParams = new URLSearchParams(window.location.search);
 				return urlParams.get(param);
@@ -195,10 +239,46 @@
 					document.getElementById("updateOverlay").style.display = "block";
 				}
 			});
-		</script>
 
-		<div id="footer">
-			Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!
-		</div>
+			const hoverSoundUrl = "media/button-hover.wav";
+			const clickSoundUrl = "media/button-generic-select.wav";
+
+			const preloadAudioHover = new Audio(hoverSoundUrl);
+			preloadAudioHover.preload = "auto";
+
+			const preloadAudioClick = new Audio(clickSoundUrl);
+			preloadAudioClick.preload = "auto";
+
+			document.querySelectorAll("a").forEach(link => {
+				link.addEventListener("mouseenter", () => {
+					const sound = preloadAudioHover.cloneNode(true);
+					sound.play();
+					hideCoolSoundsButton();
+				});
+
+				link.addEventListener("click", e => {
+					e.preventDefault();
+					const sound = preloadAudioClick.cloneNode(true);
+					sound.play();
+					hideCoolSoundsButton();
+
+					if (link.href === window.location.href) {
+					}
+					else {
+						const width  = screen.availWidth;
+						const height = screen.availHeight;
+
+						const left = (screen.width  - width) / 2;
+						const top = (screen.height - height) / 2;
+
+						window.open(
+						link.href,
+						"External Window",
+						`width=${width},height=${height},left=${left},top=${top}`
+						);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
