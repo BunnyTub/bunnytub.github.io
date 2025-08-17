@@ -80,13 +80,11 @@
 			<p class="fade-shrink">Click or type anywhere to enable cool sounds...</p>
 		</div>
 
-		
-
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
 				<!-- /install.exe
 				<a class="disabled-button" href="#">No Installer Available</a> -->
-				<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 8/14/2025</div>
+				<div style="font-size: 12pt; margin-bottom: 8px;">Last update: 8/17/2025</div>
 				<!-- <a class="button" href="/SharpAlert/Releases/v9.1/install.exe">Download v9.1 Installer</a>
 				<a class="button" href="/SharpAlert/Releases/v9.1/SharpAlert.exe">Download v9.1 Standalone</a>
 				<a id="installerButton" class="button" href="#">Download vX Installer</a>
@@ -119,18 +117,18 @@
 					Each option is pick and choose, as they can be enabled and disabled separately at any time within Region Settings. You'll need to restart the program if you change them!
 				</h3>
 				
-				<!-- <h3>
+				<h3>
 					<b>Alert sounds can be customized within SharpAlert.</b>
 				</h3>
 				<div>
-					<h2>Emergency Alert</h2>
-					<audio src="https://bunnytub.com/media/ui_warning.wav" controls></audio>
+					<h2>Severe Emergency Alert (Played when the alert severity is <b>Severe or higher</b>)</h2>
+					<audio src="https://bunnytub.com/media/major_alert.wav" controls></audio>
 				</div>
 				<div>
-					<h2>Earthquake Alert (cannot be customized)</h2>
-					<audio src="https://bunnytub.com/media/ui_shakewarning.wav" controls></audio>
+					<h2>Moderate Emergency Alert (Played when the alert severity is <b>Moderate or lower</b>)</h2>
+					<audio src="https://bunnytub.com/media/minor_alert.wav" controls></audio>
 				</div>
-				<div>
+				<!-- <div>
 					<h2>Alert Closing</h2>
 					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
 				</div> -->
@@ -255,12 +253,11 @@
 					sound.play();
 					hideCoolSoundsButton();
 				});
-
+			
 				link.addEventListener("click", e => {
 					e.preventDefault();
 					const sound = preloadAudioClick.cloneNode(true);
 					sound.play();
-					hideCoolSoundsButton();
 
 					if (link.href === window.location.href) {
 					}
