@@ -77,7 +77,7 @@
 			onclick="hideCoolSoundsButton();">
 				Enable Cool Sounds
 			</a> -->
-			<p class="fade-shrink">Click or type anywhere to enable cool sounds...</p>
+			<!-- <p class="fade-shrink">Click or type anywhere to enable cool sounds...</p> -->
 		</div>
 
 		<div class="container">
@@ -239,44 +239,44 @@
 				}
 			});
 
-			const hoverSoundUrl = "media/button-hover.wav";
-			const clickSoundUrl = "media/button-generic-select.wav";
+			//const hoverSoundUrl = "media/button-hover.wav";
+			//const clickSoundUrl = "media/button-generic-select.wav";
 
-			const preloadAudioHover = new Audio(hoverSoundUrl);
-			preloadAudioHover.preload = "auto";
+			//const preloadAudioHover = new Audio(hoverSoundUrl);
+			//preloadAudioHover.preload = "auto";
 
-			const preloadAudioClick = new Audio(clickSoundUrl);
-			preloadAudioClick.preload = "auto";
+			//const preloadAudioClick = new Audio(clickSoundUrl);
+			//preloadAudioClick.preload = "auto";
 
-			document.querySelectorAll("a").forEach(link => {
-				link.addEventListener("mouseenter", () => {
-					const sound = preloadAudioHover.cloneNode(true);
-					sound.play();
-					hideCoolSoundsButton();
-				});
-			
-				link.addEventListener("click", e => {
-					e.preventDefault();
-					const sound = preloadAudioClick.cloneNode(true);
-					sound.play();
+			//document.querySelectorAll("a").forEach(link => {
+			//	link.addEventListener("mouseenter", () => {
+			//		const sound = preloadAudioHover.cloneNode(true);
+			//		sound.play();
+			//		hideCoolSoundsButton();
+			//	});
+			//
+			//	link.addEventListener("click", e => {
+			//		e.preventDefault();
+			//		const sound = preloadAudioClick.cloneNode(true);
+			//		sound.play();
 
-					if (link.href === window.location.href) {
-					}
-					else {
-						const width  = screen.availWidth;
-						const height = screen.availHeight;
+			//		if (link.href === window.location.href) {
+			//		}
+			//		else {
+			//			const width  = screen.availWidth;
+			//			const height = screen.availHeight;
 
-						const left = (screen.width  - width) / 2;
-						const top = (screen.height - height) / 2;
+			//			const left = (screen.width  - width) / 2;
+			//			const top = (screen.height - height) / 2;
 
-						window.open(
-						link.href,
-						"External Window",
-						`width=${width},height=${height},left=${left},top=${top}`
-						);
-					}
-				});
-			});
+			//			window.open(
+			//			link.href,
+			//			"External Window",
+			//			`width=${width},height=${height},left=${left},top=${top}`
+			//			);
+			//		}
+			//	});
+			//});
 		</script>
 	</body>
 </html>
