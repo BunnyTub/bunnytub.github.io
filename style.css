@@ -46,6 +46,13 @@ body#subframe {
 	border-radius: 10px;
 }
 
+.audioarea {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	margin: 16px;
+}
+
 a {
 	color: #f8ef64;
 	text-decoration: none;
@@ -86,10 +93,12 @@ h2 {
 	font-weight: normal;
 	color: #fff;
 	/* color: #f8ef64; */
+	text-align: center;
 }
 
 h3 {
 	font-weight: normal;
+	text-align: center;
 }
 
 h1#header {
@@ -100,6 +109,7 @@ h1#header {
 	/* background: url(/hopcast_small.png) no-repeat center;
 	background-position: top;
 	background-size: cover; */
+	text-align: center;
 }
 
 img#logo {
@@ -180,6 +190,7 @@ code {
 	transition-property: font;
 	transition-duration: 150ms;
 	font-size: 18pt;
+	text-align: center;
 }
 
 .button-small:hover {
