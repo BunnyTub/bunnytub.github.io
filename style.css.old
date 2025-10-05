@@ -2,7 +2,7 @@ html {
     margin: 0;
     padding: 0;
     background-size: 64px 64px;
-    background-color: rgb(58, 4, 4);
+    background-color: #11111a;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
 	/* overflow-wrap: break-word;
@@ -26,7 +26,7 @@ html {
 body {
 	padding: 25px;
 	/* background-color: #14192c; */
-	background-color: rgb(68, 24, 24);
+	background-color: #171d38;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
@@ -251,7 +251,7 @@ code {
 }
 
 .picturebox {
-    background-color: rgb(88, 44, 44);
+    background-color: #2a2a50;
 	align-items: center;
 	justify-content: center;
     display: inline-flex;
@@ -261,7 +261,7 @@ code {
     border-radius: 10px;
     padding: 10px;
     max-width: fit-content;
-	box-shadow: 0 0 4px 4px rgba(78, 34, 34, 0.8);
+	box-shadow: 0 0 4px 4px rgba(32, 32, 50, 0.8);
 }
 
 .picturebox > p {
@@ -277,7 +277,7 @@ code {
 	/* transform: rotate(2deg); */
 	image-rendering: optimizeQuality;
 	max-width: 512px;
-	box-shadow: 0 0 2px 2px rgba(78, 34, 34, 0.8);
+	box-shadow: 0 0 2px 2px rgba(170, 0, 255, 0.8);
 }
 
 .alertimg {
