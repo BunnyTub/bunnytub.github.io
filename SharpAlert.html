@@ -305,7 +305,6 @@ function randomizeText() {
 		}
 
 		// random colors
-		document.body.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 85%)`;
 		document.body.style.color = `hsl(${Math.random() * 360}, 80%, 25%)`;
 
 		// toggle fonts
@@ -314,12 +313,12 @@ function randomizeText() {
 	} catch {}
 
 	// random delay: 5–12 seconds
-	const nextDelay = Math.random() * (12000 - 5000) + 5000;
+	const nextDelay = Math.random() * (8000 - 2000) + 5000;
 	setTimeout(randomizeText, nextDelay);
 }
 
 // initial trigger
-setTimeout(randomizeText, Math.random() * (12000 - 5000) + 5000);
+setTimeout(randomizeText, Math.random() * (12000 - 1000) + 5000);
 </script>
 	</body>
 </html>
