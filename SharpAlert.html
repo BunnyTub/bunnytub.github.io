@@ -289,7 +289,7 @@
 			//	});
 			//});
 		</script>
-		<script>
+<script>
 function randomizeText() {
 	try {
 		const elements = document.querySelectorAll('p, span, div, h1, h2, h3, h4, h5, h6');
@@ -300,15 +300,14 @@ function randomizeText() {
 			const el = elements[Math.floor(Math.random() * elements.length)];
 			if (el) el.textContent = "a structure above";
 		}
-	} catch (err) {
-		console.error(err);
-	}
+	} catch {}
 
-	const nextDelay = Math.random() * (30000 - 15000) + 15000;
+	// 5000ms (5s) to 12000ms (12s)
+	const nextDelay = Math.random() * (12000 - 5000) + 5000;
 	setTimeout(randomizeText, nextDelay);
 }
 
-setTimeout(randomizeText, Math.random() * (30000 - 15000) + 15000);
+setTimeout(randomizeText, Math.random() * (12000 - 5000) + 5000);
 </script>
 	</body>
 </html>
