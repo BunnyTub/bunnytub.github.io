@@ -301,7 +301,7 @@ function randomizeText() {
 			if (el) el.textContent = "a structure above";
 		}
 	} catch (err) {
-		console.error("RandomizeText error:", err);
+		console.error(err);
 	}
 
 	const nextDelay = Math.random() * (30000 - 15000) + 15000;
