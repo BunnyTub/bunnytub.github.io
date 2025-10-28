@@ -143,8 +143,11 @@ code {
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
-	border-radius: 2px;
-	padding: 5px;
+	border-radius: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	margin: 5px;
 	text-decoration: none;
 	border-style: none;
@@ -160,6 +163,16 @@ code {
 	transition-property: font;
 	transition-duration: 100ms;
 	font-size: 22pt;
+}
+
+.button:active {
+	color: #000;
+	background-color: #c0ffc0;
+	text-decoration: none;
+	border-style: none;
+	transition-property: font;
+	transition-duration: 50ms;
+	font-size: 24pt;
 }
 
 .disabled-button {
