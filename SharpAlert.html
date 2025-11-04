@@ -27,34 +27,7 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-XRBM5V7X9T');
-
-			function hideCoolSoundsButton() {
-				//document.getElementsByClassName('coolsounds-button')[0].style.visibility = 'collapse';
-				//var cool = document.getElementsByClassName('coolsounds')[0];
-				//cool.style.visibility = 'collapse';
-				//cool.remove();
-			}
 		</script>
-
-		<style>
-			.fade-shrink {
-				opacity: 1;
-				font-size: 2rem;
-				animation: fadeShrink 5s ease-in forwards;
-				justify-content: center
-			}
-
-			@keyframes fadeShrink {
-				to {
-					opacity: 0;
-					font-size: 0rem;
-				}
-			}
-
-			@media (prefers-reduced-motion: reduce) {
-				.fade-shrink { animation: none; }
-			}
-		</style>
 	</head>
 	<body>
 		<a href="media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
@@ -69,15 +42,6 @@
 				<li><a href="/Maki">Maki TTS</a></li>
 				<li><a href="https://hopcast.bunnytub.com">HopCast</a></li>
 			</ul>
-		</div>
-
-		<div class="container coolsounds">
-			<!-- <a class="button coolsounds-button"
-			href="#"
-			onclick="hideCoolSoundsButton();">
-				Enable Cool Sounds
-			</a> -->
-			<!-- <p class="fade-shrink">Click or type anywhere to enable cool sounds...</p> -->
 		</div>
 
 		<div class="container">
@@ -124,8 +88,8 @@
 					<p>Windows 11 (Build 22621.1+)</p>
 					<p><a class="button-small" onclick="alert('Windows 8.1 and under aren\'t supported by .NET 8, a newer .NET environment used by SharpAlert.')" href="#supported-systems">Support for Windows 8.1 and below dropped in v13.0</a></p>
 				</div>
-				<h3>
-					Please note that this app uses a lot of bandwidth to function, and using it on metered connections is <b style="color: #ffabab;">not recommended</b>.
+				<h3 style="color: yellow;">
+					Please note that this app uses a moderate portion of bandwidth to function, and using it on metered connections is <b style="color: #ffabab;">not recommended</b>.
 				</h3>
 				<!-- <div>
 					<h2>Alert Closing</h2>
@@ -162,7 +126,7 @@
 				<a class="button-small" href="/SharpAlert/Releases/v14.2/SharpAlert.exe">Download v14.2</a><br>
 				<a class="button-small" href="/SharpAlert/Releases/v14.1/SharpAlert.exe">Download v14.1</a><br>
 				<a class="button-small" href="/SharpAlert/Releases/v14.0/SharpAlert.exe">Download v14.0</a><br>
-				<a class="button-small" href="/SharpAlert/Releases/v13.0/SharpAlert.exe">Download v13.0</a> <a class="button-small" onclick="alert('This version fully migrates from .NET Framework 4.8 to .NET 8 entirely.')" href="#old-versions">(Notes)</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v13.0/SharpAlert.exe">Download v13.0</a> <a class="button-small" onclick="alert('This version fully migrates from .NET Framework 4.8 to .NET 8 entirely. You should only use this version if you\'re running an outdated version of Windows.')" href="#old-versions">(Notes)</a><br>
 				<a style="margin-top: 20px; text-align: left;" href="#old-versions">Any older versions than the above are privately archived, and are no longer available for download.</a>
 		</div>
 
