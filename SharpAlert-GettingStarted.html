@@ -12,14 +12,14 @@
 		<meta property="og:type" content="website">
 		<meta name="twitter:site" content="BunnyTub's Home Dome">
 		<meta name="twitter:title" content="SharpAlert - Alerting Software">
-		<meta name="description" content="SharpAlert is an emergency alerting software that notifies you of events around you, entirely from your computer! Download SharpAlert to get alerts for your area.">
-		<meta name="twitter:description" content="SharpAlert is an emergency alerting software that notifies you of events around you, entirely from your computer! Download SharpAlert to get alerts for your area.">
+		<meta name="description" content="Get started with SharpAlert to get alerts quickly.">
+		<meta name="twitter:description" content="Get started with SharpAlert to get alerts quickly.">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:image:src" content="https://bunnytub.com/media/SharpAlert_Promotional.png">
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
 		<link rel="canonical" href="https://bunnytub.com/SharpAlert" />
-		<script src="WarnOfHTML.js"></script>
+		<script src="WarnOfHTML.js"></script> 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
 		<script>
@@ -44,27 +44,13 @@
 			</ul>
 		</div>
 
-		<h2><b>SharpAlert</b> is an emergency alerting software that notifies you of events around you, entirely from your computer!</h2>
-
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<a class="button standalone-button" href="#" download>Download v? Standalone</a>
-				<a class="button installer-button" href="#" download>Download v? Installer</a>
-				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
-				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
-				<h3 style="color: yellow; font-size: 12pt; margin-top: 2px; margin-bottom: 18px;">
-					Please install the .NET 8 Desktop Runtime before opening SharpAlert! This is a requirement, and the program can't run without it.
-				</h3>
-				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer">Download .NET 8 Desktop Runtime</a>
-				<div class="images" style="margin-bottom: 12px;">
-					<img src="media/SharpAlert_Example_1.png" title="An example of a severe alert in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
-					<img src="media/SharpAlert_Example_2.png" title="An example of a moderate alert that has been updated in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
-					<img src="media/SharpAlert_Example_3.png" title="An example of a minor alert that has been updated in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
-					<img src="media/SharpAlert_Example_4.png" title="An example of a cancelled alert that in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
-				</div>
 				<!-- <a class="disabled-button" href="#">No Installer Available</a> -->
+				<a class="button" href="/SharpAlert" download>Go To Downloads</a>
 			</div>
 			<div>
+				<h2><b>SharpAlert</b> can possibly save your life when an event occurs.</h2>
 				<h3>Simplifying a bit, <b>SharpAlert</b> works closely to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work on a device like your phone, or more closely to the <a href="https://wikipedia.org/wiki/Emergency_Alert_System"><b>Emergency Alert System</b></a> on a TV or radio station broadcast.
 					In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. If the alert is allowed to relay,
 					a visual and auditory message plays. It tells you the event type, and information about the alert.
@@ -85,7 +71,7 @@
 					<div class="audioarea"><audio src="https://bunnytub.com/media/minor_alert.wav" controls></audio></div>
 				</div>
 				<div id="supported-systems">
-					<h2 onclick="localStorage.lastVisit = 0;">Supported Windows versions</h2>
+					<h2>Supported Windows versions</h2>
 					<p>Windows 10 (Build 10240+)</p>
 					<p>Windows 11 (Build 22621.1+)</p>
 					<p><a class="button-small" onclick="alert('Windows 8.1 and under aren\'t supported by .NET 8, a newer .NET environment used by SharpAlert.')" href="#supported-systems">Support for Windows 8.1 and below dropped in v13.0</a></p>
@@ -122,9 +108,15 @@
 				
 				<div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
-				<h2 id="old-versions" title="Please do not ask for support on previous versions." style="margin-top: 20px; text-align: left;">Previous Versions (out of support)</h2>
-				<a class="button-small" href="/SharpAlert/Releases/v14.5/SharpAlert.exe">Download v14.5</a><br>
-				<a class="button-small" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1</a> <a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">(Notes)</a><br>
+				<h2 id="old-versions" title="Please do not ask for support on older versions." style="margin-top: 20px; text-align: left;">Older Versions (out of support)</h2>
+				<a class="button-small" href="/SharpAlert/Releases/v14.3/SharpAlert.exe">Download v14.5</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v14.3/SharpAlert.exe">Download v14.4</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v14.3/SharpAlert.exe">Download v14.3</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v14.2/SharpAlert.exe">Download v14.2</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v14.1/SharpAlert.exe">Download v14.1</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v14.0/SharpAlert.exe">Download v14.0</a><br>
+				<a class="button-small" href="/SharpAlert/Releases/v13.0/SharpAlert.exe">Download v13.0</a> <a class="button-small" onclick="alert('This version fully migrates from .NET Framework 4.8 to .NET 8 entirely. You should only use this version if you\'re running an outdated version of Windows.')" href="#old-versions">(Notes)</a><br>
+				<a style="margin-top: 20px; text-align: left;" href="#old-versions">Any older versions than the above are privately archived, and are no longer available for download.</a>
 		</div>
 
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
@@ -184,34 +176,11 @@
 				document.getElementById("updateOverlay").style.display = "none";
 			}
 			
-			//window.addEventListener("DOMContentLoaded", () => {
-			//	if (getQueryParam("update") === "1") {
-			//		document.getElementById("updateOverlay").style.display = "block";
-			//	}
-			//});
-
-			const now = Date.now(), last = +localStorage.lastVisit||0;
-			if (now - last > 5*24*60*60*1000) {
-				document.querySelectorAll('.runtime-button').forEach(b=>{
-					b.style.setProperty('--orig-color', getComputedStyle(b).backgroundColor);
-					b.classList.add('pulse');
-				});
-
-				document.querySelectorAll('.standalone-button').forEach(b=>{
-					b.addEventListener('click', () => {
-						e.preventDefault();
-						document.getElementById("updateOverlay").style.display = "block";
-					}, { once: true });
-				});
-
-				document.querySelectorAll('.installer-button').forEach(b=>{
-					b.addEventListener('click', () => {
-						e.preventDefault();
-						document.getElementById("updateOverlay").style.display = "block";
-					}, { once: true });
-				});
-			}
-			localStorage.lastVisit = now;
+			window.addEventListener("DOMContentLoaded", () => {
+				if (getQueryParam("update") === "1") {
+					document.getElementById("updateOverlay").style.display = "block";
+				}
+			});
 
 			//const hoverSoundUrl = "media/button-hover.wav";
 			//const clickSoundUrl = "media/button-generic-select.wav";

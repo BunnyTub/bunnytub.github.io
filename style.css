@@ -148,12 +148,12 @@ code {
 	padding-bottom: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	margin: 5px;
+	margin: 2px;
 	text-decoration: none;
 	border-style: none;
 	transition-property: font;
 	transition-duration: 100ms;
-	font-size: 20pt;
+	font-size: 18pt;
 }
 
 .button:hover {
@@ -162,7 +162,7 @@ code {
 	border-style: none;
 	transition-property: font;
 	transition-duration: 100ms;
-	font-size: 22pt;
+	font-size: 20pt;
 }
 
 .button:active {
@@ -172,7 +172,7 @@ code {
 	border-style: none;
 	transition-property: font;
 	transition-duration: 50ms;
-	font-size: 24pt;
+	font-size: 22pt;
 }
 
 .disabled-button {
@@ -180,13 +180,13 @@ code {
 	color: #000000a2;
 	border-color: #000;
 	border-radius: 2px;
-	padding: 5px;
-	margin: 5px;
+	padding: 3px;
+	margin: 2px;
 	text-decoration: none;
 	border-style: none;
 	transition-property: font;
 	transition-duration: 150ms;
-	font-size: 20pt;
+	font-size: 18pt;
 	cursor: not-allowed;
 }
 
@@ -196,20 +196,20 @@ code {
 	border-style: none;
 	transition-property: font;
 	transition-duration: 150ms;
-	font-size: 22pt;
+	font-size: 20pt;
 }
 
 .button-small {
 	transition-property: font;
 	transition-duration: 150ms;
-	font-size: 18pt;
+	font-size: 16pt;
 	text-align: center;
 }
 
 .button-small:hover {
 	transition-property: font;
 	transition-duration: 150ms;
-	font-size: 20pt;
+	font-size: 18pt;
 }
 
 #menu {
@@ -421,4 +421,29 @@ code {
 	box-shadow: 0px 0px 25px 15px #14192C;
 	max-width: 90%;
 	text-align: center;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.images img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+@keyframes pulse {
+  0%, 100% { background-color: var(--orig-color, blueviolet); }
+  50% { background-color: rgb(167, 72, 255); }
+}
+.runtime-button.pulse {
+  animation: pulse 1.6s infinite ease-in-out;
 }
