@@ -52,7 +52,7 @@
 				<a class="button installer-button" href="#" download>Download v? Installer</a>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
-				<h3 style="color: yellow; font-size: 12pt; margin-top: 2px; margin-bottom: 18px;">
+				<h3 class="runtime-text" style="color: yellow; font-size: 12pt; margin-top: 2px; margin-bottom: 18px;">
 					Please install the .NET 8 Desktop Runtime before opening SharpAlert! This is a requirement, and the program can't run without it.
 				</h3>
 				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer">Download .NET 8 Desktop Runtime</a>
@@ -173,6 +173,23 @@
 				//window.location.replace(`GeneralError?url=${window.location.href}`);
 			});
 
+			const now = Date.now(), last = +localStorage.lastVisit || 0;
+
+			if (now - last > 1*24*60*60*1000) {
+				document.querySelectorAll('.runtime-button').forEach(b => {
+					b.style.setProperty('--orig-color', getComputedStyle(b).backgroundColor);
+					b.classList.add('pulse');
+				});
+
+				document.querySelectorAll('.runtime-text').forEach(b => {
+					b.classList.add('pulse-text');
+				});
+
+				console.log("User did not see page recently.");
+			} else console.log("User has seen the page recently.");
+
+			localStorage.lastVisit = now;
+
 			// https://github.com/ppy/osu-resources/tree/a1fb917e1589fbdfac1aa7a3acc9ebb5a5933c89/osu.Game.Resources/Samples/Menu
 
 			function getQueryParam(param) {
@@ -189,29 +206,6 @@
 			//		document.getElementById("updateOverlay").style.display = "block";
 			//	}
 			//});
-
-			const now = Date.now(), last = +localStorage.lastVisit||0;
-			if (now - last > 5*24*60*60*1000) {
-				document.querySelectorAll('.runtime-button').forEach(b=>{
-					b.style.setProperty('--orig-color', getComputedStyle(b).backgroundColor);
-					b.classList.add('pulse');
-				});
-
-				document.querySelectorAll('.standalone-button').forEach(b=>{
-					b.addEventListener('click', () => {
-						e.preventDefault();
-						document.getElementById("updateOverlay").style.display = "block";
-					}, { once: true });
-				});
-
-				document.querySelectorAll('.installer-button').forEach(b=>{
-					b.addEventListener('click', () => {
-						e.preventDefault();
-						document.getElementById("updateOverlay").style.display = "block";
-					}, { once: true });
-				});
-			}
-			localStorage.lastVisit = now;
 
 			//const hoverSoundUrl = "media/button-hover.wav";
 			//const clickSoundUrl = "media/button-generic-select.wav";

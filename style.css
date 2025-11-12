@@ -437,13 +437,23 @@ code {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 @keyframes pulse {
   0%, 100% { background-color: var(--orig-color, blueviolet); }
   50% { background-color: rgb(167, 72, 255); }
 }
+
+@keyframes pulse-text {
+  0%, 100% { color: yellow; }
+  50% { color: rgb(255, 166, 0); }
+}
+
 .runtime-button.pulse {
-  animation: pulse 1.6s infinite ease-in-out;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.runtime-text.pulse-text {
+  animation: pulse-text 1.5s infinite ease-in-out;
 }
