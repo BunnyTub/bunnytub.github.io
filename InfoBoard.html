@@ -49,13 +49,13 @@
 
 				#openBox {
 					position: fixed;
-					bottom: 16px;
-					right: 16px;
+					top: 16px;
+					left: 16px;
 					background-color: rgba(0, 255, 0, 0.25);
 					color: rgba(0, 255, 0);
 					padding: 5px 15px;
 					border-radius: 12px;
-					font-size: 52pt;
+					font-size: 48pt;
 					z-index: 8000;
 					animation: openBoxPulse 1s infinite alternate;
 				}
@@ -221,13 +221,14 @@
 							const startTime = parseInt(startH) + parseInt(startM) / 60;
 							const endTime = parseInt(endH) + parseInt(endM) / 60;
 
-							const closingWarningHours = 0.50;
+							const closingWarningHours = 1;
 
 							if (currentTime >= startTime && currentTime <= endTime - closingWarningHours) {
 								console.log("Status: OPEN");
 								openBox.classList.remove('invisible');
 							} else if (currentTime > endTime - closingWarningHours && currentTime <= endTime) {
 								console.log("Status: CLOSING SOON");
+								openBox.classList.remove('invisible');
 								closingSoonBox.classList.remove('invisible');
 							} else {
 								console.log("Status: CLOSED");
