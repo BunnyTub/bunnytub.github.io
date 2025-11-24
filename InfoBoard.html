@@ -58,11 +58,11 @@
 				};
 			}
 
-			setInterval(updateSlide, 5000);
-			setTimeout(updateSlide, 5000);
+			setInterval(updateSlide, 20000);
+			setTimeout(updateSlide, 2500);
 			
 			setInterval(() => {
-				window.location.reload(true);
+				window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
 				setTimeout(() => {
 					window.location.reload();
 				}, 1000);
