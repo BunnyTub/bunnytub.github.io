@@ -1,72 +1,82 @@
-<!DOCTYPE HTML>
-<html lang="en">
-	<head>
-		<title>Info Board</title>
-		<meta charset="UTF-8">
-		<meta property="og:url" content="https://bunnytub.com/">
-		<!-- <link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
-		<link rel="canonical" href="https://bunnytub.com/" /> -->
-		<link rel="icon" href="/favicon.ico">
-		<script src="WarnOfHTML.js"></script>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-XRBM5V7X9T');
-		</script>
-		<style>
-			html, body {
-				margin: 0;
-				padding: 0;
-				height: 100%;
-				background-color: #14192C;
-			}
+	<!DOCTYPE HTML>
+	<html lang="en">
+		<head>
+			<title>Info Board</title>
+			<meta charset="UTF-8">
+			<meta property="og:url" content="https://bunnytub.com/">
+			<!-- <link rel="stylesheet" type="text/css" href="style.css" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+			<link rel="canonical" href="https://bunnytub.com/" /> -->
+			<link rel="icon" href="/favicon.ico">
+			<script src="WarnOfHTML.js"></script>
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-XRBM5V7X9T');
+			</script>
+			<style>
+				html, body {
+					margin: 0;
+					padding: 0;
+					height: 100%;
+					background-color: #14192C;
+				}
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
-		</style>
-	</head>
-	<body>
-		<img id="slideshow" src="media/wait.png"></img>
-		<script>
-			var slideshow = document.getElementById("slideshow");
-			var slidenumber = 1;
-			var defaultImage = "media/wait.png";
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					display: block;
+					transition: filter 1s;
+					filter: blur(0px);
+				}
 
-			function updateSlide() {
-				var img = new Image();
-				img.src = `slideshow/slide${slidenumber}.png?querydate=${Date.now()}`;
+				img.blurred {
+					filter: blur(50px);
+				}
+			</style>
+		</head>
+		<body>
+			<img id="slideshow" src="media/wait.png"></img>
+			<script>
+				var slideshow = document.getElementById("slideshow");
+				var slidenumber = 1;
+				var defaultImage = "media/wait.png";
 
-				img.onload = () => {
-					slideshow.src = img.src;
-					slidenumber++;
-				};
+				function updateSlide() {
+					var img = new Image();
+					img.src = `slideshow/slide${slidenumber}.png?querydate=${Date.now()}`;
 
-				img.onerror = () => {
-					//img.src = `slideshow/slide${slidenumber}.png?querydate=${Date.now()}`;
-					slidenumber++;
-					if (slidenumber > 10) slidenumber = 1;
-					
-					setTimeout(updateSlide, 10);
-				};
-			}
+					img.onload = () => {
+						slideshow.classList.add("blurred");
+						setTimeout(() => {
+							slideshow.src = img.src;
+							slideshow.classList.remove("blurred");
+						}, 1000);
+						slidenumber++;
+					};
 
-			setInterval(updateSlide, 20000);
-			setTimeout(updateSlide, 2500);
-			
-			setInterval(() => {
-				window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
-				setTimeout(() => {
-					window.location.reload();
-				}, 1000);
-			}, 1800000);
-		</script>
-	</body>
-</html>
+					img.onerror = () => {
+						//img.src = `slideshow/slide${slidenumber}.png?querydate=${Date.now()}`;
+						slidenumber++;
+						if (slidenumber > 10) slidenumber = 1;
+						
+						setTimeout(updateSlide, 10);
+					};
+				}
+
+				setInterval(updateSlide, 20000);
+				setTimeout(updateSlide, 2500);
+				
+				setInterval(() => {
+					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+					setTimeout(() => {
+						window.location.reload();
+					}, 1000);
+				}, 1800000);
+			</script>
+		</body>
+	</html>
