@@ -23,6 +23,7 @@
 					padding: 0;
 					height: 100%;
 					background-color: #14192C;
+					overflow: hidden;
 				}
 
 				img {
@@ -30,12 +31,15 @@
 					height: 100%;
 					object-fit: cover;
 					display: block;
-					transition: filter 1s;
+					transition: all 0.8s ease-out;
 					filter: blur(0px);
+					transform: scale(1) rotate(0deg);
+    				transform-origin: center center;
 				}
 
 				img.blurred {
 					filter: blur(50px);
+					transform: scale(0.75) rotate(-12deg);
 				}
 			</style>
 		</head>
@@ -68,7 +72,7 @@
 					};
 				}
 
-				setInterval(updateSlide, 20000);
+				setInterval(updateSlide, 5000);
 				setTimeout(updateSlide, 2500);
 				
 				setInterval(() => {
