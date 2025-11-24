@@ -32,20 +32,52 @@
 					object-fit: cover;
 					display: block;
 					transition: all 0.8s ease-out;
-					filter: blur(0px);
+					filter: blur(0px) opacity(1);
 					transform: scale(1) rotate(0deg);
     				transform-origin: center center;
+					will-change: filter, transform, opacity;
 				}
 
 				img.blurred {
-					filter: blur(25px);
+					filter: blur(8px) opacity(0.50);
 					transform: scale(0.75) rotate(-8deg);
+					will-change: filter, transform, opacity;
 				}
 			</style>
 		</head>
 		<body>
 			<img id="slideshow" src="media/wait.png"></img>
 			<script>
+				const slideshow = document.getElementById("slideshow");
+				const defaultImage = "media/err.png";
+				const totalSlides = 2;
+				const slideDuration = 10000;
+
+				function updateSlide() {
+					const now = Date.now();
+
+					const slideIndex = Math.floor((now / slideDuration) % totalSlides) + 1;
+
+					const img = new Image();
+					img.src = `slideshow/slide${slideIndex}.png?querydate=${now}`;
+
+					img.onload = () => {
+						slideshow.classList.add("blurred");
+						setTimeout(() => {
+							slideshow.src = img.src;
+							slideshow.classList.remove("blurred");
+						}, 800);
+					};
+
+					img.onerror = () => {
+						slideshow.src = defaultImage;
+					};
+				}
+
+				setInterval(updateSlideBasedOnTime, 1000);
+				updateSlide();
+			</script>
+			<!-- <script>
 				var slideshow = document.getElementById("slideshow");
 				var slidenumber = 1;
 				var defaultImage = "media/wait.png";
@@ -81,6 +113,6 @@
 						window.location.reload();
 					}, 1000);
 				}, 1800000);
-			</script>
+			</script> -->
 		</body>
 	</html>
