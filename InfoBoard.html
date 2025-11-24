@@ -191,31 +191,35 @@
 						const minutes = now.getMinutes();
 						const currentTime = hours + minutes / 60;
 
+						let foundToday = false;
+
 						for (const line of lines) {
-							// format: Monday10:00-21:00
 							const match = line.match(/^(\w+)(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
 							if (!match) continue;
 
 							const [_, dayName, startH, startM, endH, endM] = match;
 							if (dayMap[dayName] !== today) continue;
 
+							foundToday = true;
 							const startTime = parseInt(startH) + parseInt(startM) / 60;
 							const endTime = parseInt(endH) + parseInt(endM) / 60;
 
-							const closingWarningHours = 1.5; // math
+							const closingWarningHours = 1.5;
 
 							if (currentTime >= startTime && currentTime <= endTime - closingWarningHours) {
-								// open
 								openBox.classList.remove('invisible');
 							} else if (currentTime > endTime - closingWarningHours && currentTime <= endTime) {
-								// closing soon
 								closingSoonBox.classList.remove('invisible');
 							} else {
-								// closed
 								coverBox.classList.remove('invisible');
 							}
+
+							break;
 						}
 
+						if (!foundToday) {
+							coverBox.classList.remove('invisible');
+						}
 					} catch (err) {
 						console.error('Schedule error: ', err);
 					}
