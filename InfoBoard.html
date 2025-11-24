@@ -49,8 +49,6 @@
 
 				#openBox {
 					position: fixed;
-					top: 16px;
-					left: 16px;
 					background-color: rgba(0, 255, 0, 0.25);
 					color: rgba(0, 255, 0);
 					padding: 5px 15px;
@@ -67,8 +65,6 @@
 
 				#closingSoonBox {
 					position: fixed;
-					bottom: 16px;
-					right: 16px;
 					background-color: rgba(255, 255, 0, 0.50);
 					color: rgba(255, 255, 0);
 					padding: 5px 15px;
@@ -89,15 +85,17 @@
 
 				#coverBox {
 					position: fixed;
-					top: 0;
-					left: 0;
+					top: 16;
+					left: 16;
+					bottom: 16;
+					right: 16;
 					width: 100vw;
 					height: 100vh;
 					background-color: rgba(20, 0, 0, 0.9);
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					border-radius: 0;
+					border-radius: 12px;
 					z-index: 9000;
 				}
 
@@ -170,23 +168,38 @@
 					document.getElementById("closingSoonBox")
 				];
 
-				setInterval(() => {
-					boxes.forEach(box => {
-						const isTopLeft = box.style.top !== '' || box.style.left !== '';
-						
-						if (isTopLeft) {
-							box.style.top = '';
-							box.style.left = '';
-							box.style.bottom = '16px';
-							box.style.right = '16px';
-						} else {
-							box.style.bottom = '';
-							box.style.right = '';
-							box.style.top = '16px';
-							box.style.left = '16px';
-						}
-					});
-				}, 15000);
+				let toggle = true;
+
+				function swapPositions() {
+					if (toggle) {
+						boxes[0].style.top = '16px';
+						boxes[0].style.left = '16px';
+						boxes[0].style.bottom = '';
+						boxes[0].style.right = '';
+
+						boxes[1].style.bottom = '16px';
+						boxes[1].style.right = '16px';
+						boxes[1].style.top = '';
+						boxes[1].style.left = '';
+					} else {
+						boxes[0].style.bottom = '16px';
+						boxes[0].style.right = '16px';
+						boxes[0].style.top = '';
+						boxes[0].style.left = '';
+
+						boxes[1].style.top = '16px';
+						boxes[1].style.left = '16px';
+						boxes[1].style.bottom = '';
+						boxes[1].style.right = '';
+					}
+
+					toggle = !toggle;
+				}
+
+				swapPositions();
+
+				setInterval(swapPositions, 15000);
+
 				
 				const dayMap = {
 					Sunday: 0,
