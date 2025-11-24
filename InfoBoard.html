@@ -161,6 +161,11 @@
 			</script>
 
 			<script>
+				const openBox = document.getElementById("openBox");
+				const closingSoonBox = document.getElementById("closingSoonBox");
+				const closedBox = document.getElementById("closedBox");
+				
+
 				async function checkStatus() {
 					try {
 						const response = await fetch('schedule.txt'); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
