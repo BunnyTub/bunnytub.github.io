@@ -47,7 +47,7 @@
 					will-change: filter, transform, opacity;
 				}
 
-				.openBox {
+				#openBox {
 					position: fixed;
 					bottom: 16px;
 					right: 16px;
@@ -65,7 +65,7 @@
 					to { color: rgba(0, 128, 0, 1); }
 				}
 
-				.closingSoonBox {
+				#closingSoonBox {
 					position: fixed;
 					bottom: 16px;
 					right: 16px;
@@ -101,7 +101,7 @@
 					z-index: 9000;
 				}
 
-				.closedBox {
+				#closedBox {
 					position: fixed;
 					top: 50%;
 					left: 50%;
@@ -123,9 +123,9 @@
 		</head>
 		<body>
 			<img id="slideshow" src="media/wait.png"></img>
-			<div class="openBox invisible">OPEN</div>
-			<div class="closingSoonBox invisible">CLOSING SOON</div>
-			<div class="coverBox invisible"><div class="closedBox">CLOSED</div></div>
+			<div id="openBox" class="openBox invisible">OPEN</div>
+			<div id="closingSoonBox" class="closingSoonBox invisible">CLOSING SOON</div>
+			<div class="coverBox invisible"><div id="closedBox">CLOSED</div></div>
 			
 			<script>
 				const slideshow = document.getElementById("slideshow");
@@ -165,7 +165,6 @@
 				const closingSoonBox = document.getElementById("closingSoonBox");
 				const closedBox = document.getElementById("closedBox");
 				
-
 				async function checkStatus() {
 					try {
 						const response = await fetch('schedule.txt'); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
