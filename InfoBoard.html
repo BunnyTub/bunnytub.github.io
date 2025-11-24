@@ -164,6 +164,29 @@
 				const openBox = document.getElementById("openBox");
 				const closingSoonBox = document.getElementById("closingSoonBox");
 				const coverBox = document.getElementById("coverBox");
+
+				const boxes = [
+					document.getElementById("openBox"),
+					document.getElementById("closingSoonBox")
+				];
+
+				setInterval(() => {
+					boxes.forEach(box => {
+						const isTopLeft = box.style.top !== '' || box.style.left !== '';
+						
+						if (isTopLeft) {
+							box.style.top = '';
+							box.style.left = '';
+							box.style.bottom = '16px';
+							box.style.right = '16px';
+						} else {
+							box.style.bottom = '';
+							box.style.right = '';
+							box.style.top = '16px';
+							box.style.left = '16px';
+						}
+					});
+				}, 15000);
 				
 				const dayMap = {
 					Sunday: 0,
