@@ -60,6 +60,13 @@
 
 			setInterval(updateSlide, 5000);
 			setTimeout(updateSlide, 5000);
+			
+			setInterval(() => {
+				window.location.reload(true);
+				setTimeout(() => {
+					window.location.reload();
+				}, 1000);
+			}, 1800000);
 		</script>
 	</body>
 </html>
