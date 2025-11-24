@@ -62,14 +62,14 @@
 
 				@keyframes openBoxPulse {
 					from { color: rgba(0, 255, 0, 1); }
-					to { color: rgba(0, 128, 0, 1); }
+					to { color: rgba(255, 255, 255, 1); }
 				}
 
 				#closingSoonBox {
 					position: fixed;
 					bottom: 16px;
 					right: 16px;
-					background-color: rgba(255, 255, 0, 0.25);
+					background-color: rgba(255, 255, 0, 0.50);
 					color: rgba(255, 255, 0);
 					padding: 5px 15px;
 					border-radius: 12px;
@@ -80,7 +80,7 @@
 
 				@keyframes closingSoonBoxPulse {
 					from { color: rgba(255, 255, 0, 1); }
-					to { color: rgba(128, 128, 0, 1); }
+					to { color: rgba(0, 0, 0, 1); }
 				}
 
 				.invisible {
@@ -179,6 +179,15 @@
 					try {
 						const response = await fetch('schedule.txt'); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
 						const text = await response.text();
+						// const text = `
+						// Monday10:00-19:30
+						// Tuesday10:00-21:00
+						// Wednesday10:00-21:00
+						// Thursday10:00-21:00
+						// Friday10:00-21:00
+						// Saturday10:00-21:00
+						// Sunday10:00-17:00
+						// `;
 						const lines = text.split('\n');
 
 						openBox.classList.add('invisible');
@@ -187,35 +196,47 @@
 
 						const now = new Date();
 						const today = now.getDay();
-						const hours = now.getHours();
-						const minutes = now.getMinutes();
-						const currentTime = hours + minutes / 60;
+						const currentTime = now.getHours() + now.getMinutes() / 60;
 
 						let foundToday = false;
 
 						for (const line of lines) {
-							const match = line.match(/^(\w+)(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
-							if (!match) continue;
+							console.log("Processing line:", line);
+
+							const match = line.match(/^([A-Za-z]+)(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
+							if (!match) {
+								console.log("Line did not match format, skipping.");
+								continue;
+							}
 
 							const [_, dayName, startH, startM, endH, endM] = match;
-							if (dayMap[dayName] !== today) continue;
+							console.log(`Parsed: dayName=${dayName}, start=${startH}:${startM}, end=${endH}:${endM}`);
+
+							if (dayMap[dayName] !== today) {
+								console.log(`Not today's schedule (today=${today}, lineDay=${dayMap[dayName]}), skipping.`);
+								continue;
+							}
 
 							foundToday = true;
 							const startTime = parseInt(startH) + parseInt(startM) / 60;
 							const endTime = parseInt(endH) + parseInt(endM) / 60;
 
-							const closingWarningHours = 1.5;
+							const closingWarningHours = 0.50;
 
 							if (currentTime >= startTime && currentTime <= endTime - closingWarningHours) {
+								console.log("Status: OPEN");
 								openBox.classList.remove('invisible');
 							} else if (currentTime > endTime - closingWarningHours && currentTime <= endTime) {
+								console.log("Status: CLOSING SOON");
 								closingSoonBox.classList.remove('invisible');
 							} else {
+								console.log("Status: CLOSED");
 								coverBox.classList.remove('invisible');
 							}
 
 							break;
 						}
+
 
 						if (!foundToday) {
 							coverBox.classList.remove('invisible');
