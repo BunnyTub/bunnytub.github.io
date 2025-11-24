@@ -32,14 +32,14 @@
 					object-fit: cover;
 					display: block;
 					transition: all 0.8s ease-out;
-					filter: blur(0px) opacity(1);
+					filter: opacity(1);
 					transform: scale(1) rotate(0deg);
     				transform-origin: center center;
 					will-change: filter, transform, opacity;
 				}
 
 				img.blurred {
-					filter: blur(8px) opacity(0.50);
+					filter: opacity(0.25);
 					transform: scale(0.75) rotate(-8deg);
 					will-change: filter, transform, opacity;
 				}
@@ -52,11 +52,15 @@
 				const defaultImage = "media/err.png";
 				const totalSlides = 2;
 				const slideDuration = 10000;
+				var lastIndex = 0;
 
 				function updateSlide() {
 					const now = Date.now();
 
 					const slideIndex = Math.floor((now / slideDuration) % totalSlides) + 1;
+					if (lastIndex === slideIndex) return;
+					lastIndex = slideIndex;
+
 
 					const img = new Image();
 					img.src = `slideshow/slide${slideIndex}.png?querydate=${now}`;
@@ -74,7 +78,7 @@
 					};
 				}
 
-				setInterval(updateSlideBasedOnTime, 1000);
+				setInterval(updateSlide, 1000);
 				updateSlide();
 			</script>
 			<!-- <script>
