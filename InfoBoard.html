@@ -86,17 +86,14 @@
 
 				#coverBox {
 					position: fixed;
-					top: 16;
-					left: 16;
-					bottom: 16;
-					right: 16;
+					top: 0px;
 					width: 100vw;
 					height: 100vh;
-					background-color: rgba(20, 0, 0, 0.9);
+					background-color: rgb(20, 0, 0);
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					border-radius: 12px;
+					border-radius: 0;
 					z-index: 9000;
 				}
 
@@ -116,7 +113,7 @@
 
 				@keyframes closedBoxPulse {
 					from { color: rgba(255, 0, 0, 1); background-color: rgba(80, 0, 0, 0.9) }
-					to { color: rgba(128, 0, 0, 0); background-color: rgba(50, 0, 0, 0.7) }
+					to { color: rgba(128, 0, 0, 0.25); background-color: rgba(50, 0, 0, 0.7) }
 				}
 			</style>
 		</head>
