@@ -281,6 +281,13 @@
 
 				checkStatus();
 				setInterval(checkStatus, 20000);
+
+				setInterval(() => {
+					setTimeout(() => {
+						window.location.reload();
+					}, 1000);
+					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+				}, 1800000);
 			</script>
 
 			<!-- <script>
