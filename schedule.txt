@@ -1,7 +1,7 @@
 Monday10:00-21:00
 Tuesday10:00-21:00
 Wednesday10:00-21:00
-Thursday00:00-2:00
+Thursday00:00-3:00
 Friday10:00-21:00
 Saturday10:00-21:00
 Sunday10:00-20:00
