@@ -153,7 +153,33 @@
 					};
 				}
 
-				setInterval(updateSlide, 500);
+				setTimeout(() => {
+					updateSlide();
+					setInterval(updateSlide, 500);
+					const audio = new Audio('media/button-generic-select.wav');
+					audio.play();
+				}, 20000); // I like my intro lol, intentional delay because bite me
+
+				setInterval(() => {
+					setTimeout(() => {
+						window.location.reload();
+					}, 500);
+					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+				}, 1800000);
+
+				let last = null;
+
+				async function watch() {
+					const res = await fetch("file.txt?querydate=" + Date.now());
+					const text = await res.text();
+
+					if (last !== null && last !== text) window.location.reload();
+					last = text;
+
+					setTimeout(watch, 1000);
+				}
+
+				watch();
 			</script>
 
 			<script>
@@ -210,7 +236,7 @@
 
 				async function checkStatus() {
 					try {
-						const response = await fetch('schedule.txt'); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
+						const response = await fetch("schedule.txt?querydate=" + Date.now()); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
 						const text = await response.text();
 						// const text = `
 						// Monday10:00-19:30
@@ -281,13 +307,6 @@
 
 				checkStatus();
 				setInterval(checkStatus, 20000);
-
-				setInterval(() => {
-					setTimeout(() => {
-						window.location.reload();
-					}, 1000);
-					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
-				}, 1800000);
 			</script>
 
 			<!-- <script>
