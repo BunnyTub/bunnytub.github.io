@@ -157,16 +157,16 @@
 				setTimeout(() => {
 					updateSlide();
 					setInterval(updateSlide, 500);
-					const audio = new Audio('media/button-generic-select.wav');
+					const audio = new Audio('media/started.wav');
 					audio.play();
-				}, 45000); // I like my intro lol, intentional delay because bite me
+				}, 30000); // I like my intro lol, intentional delay because bite me
 
 				setInterval(() => {
 					setTimeout(() => {
 						window.location.reload();
 					}, 500);
 					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
-				}, 1800000);
+				}, 7200000); // 30min = 1800000 | 120min = 7200000
 
 				let last = null;
 
