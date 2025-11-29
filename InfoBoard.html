@@ -23,7 +23,8 @@
 					padding: 0;
 					height: 100%;
 					color: white;
-					background-color: #14192C;
+					background-color: black;
+					/* background-color: #14192C; */
 					font-family: "Montserrat", monospace;
 					font-weight: bolder;
 					overflow: hidden;
@@ -170,10 +171,15 @@
 				let last = null;
 
 				async function watch() {
-					const res = await fetch("file.txt?querydate=" + Date.now());
+					const res = await fetch("refresh.txt?querydate=" + Date.now()); // do anything in this file to refresh everything
 					const text = await res.text();
 
-					if (last !== null && last !== text) window.location.reload();
+					if (last !== null && last !== text) {
+						setTimeout(() => {
+							window.location.reload();
+						}, 500);
+						window.location.reload(true);
+					}
 					last = text;
 
 					setTimeout(watch, 1000);
