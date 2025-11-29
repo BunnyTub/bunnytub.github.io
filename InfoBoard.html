@@ -177,12 +177,12 @@
 					if (last !== null && last !== text) {
 						setTimeout(() => {
 							window.location.reload();
-						}, 50000);
+						}, 500);
 						window.location.reload(true);
 					}
 					last = text;
 
-					setTimeout(watch, 1000);
+					setTimeout(watch, 5000);
 				}
 
 				watch();
