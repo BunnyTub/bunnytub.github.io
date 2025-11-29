@@ -51,18 +51,18 @@
 
 				#openBox {
 					position: fixed;
-					background-color: rgba(0, 255, 0, 0.5);
+					background-color: rgba(255, 255, 255, 0.5);
 					color: rgba(255, 26, 26);
 					padding: 5px 15px;
 					border-radius: 16px;
 					font-size: 48pt;
 					z-index: 8000;
-					animation: openBoxPulse 1s infinite alternate;
+					animation: openBoxPulse 5s linear infinite;
 				}
 
 				@keyframes openBoxPulse {
-					from { color: rgb(0, 255, 0); }
-					to { color: rgb(255, 0, 0); }
+					0% { color: hsl(0, 100%, 50%);   background-color: hsla(0, 100%, 50%, 0.5); }
+    				100% { color: hsl(360, 100%, 50%); background-color: hsla(360, 100%, 50%, 0.5); }
 				}
 
 				#closingSoonBox {
@@ -311,7 +311,7 @@
 					setInterval(checkStatus, 20000);
 					const audio = new Audio('media/started.wav');
 					audio.play();
-				}, 30000); // I like my intro lol, intentional delay because bite me
+				}, 15000); // I like my intro lol, intentional delay because bite me
 			</script>
 
 			<!-- <script>
