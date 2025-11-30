@@ -52,7 +52,7 @@
 				#openBox {
 					position: fixed;
 					background-color: rgba(0, 0, 0, 0.25);
-					color: rgba(255, 26, 26);
+					color: rgba(255, 0, 0);
 					padding: 2px 12px;
 					border-radius: 16px;
 					font-size: 54pt;
@@ -165,7 +165,7 @@
 
 				let last = null;
 
-				async function watch() {
+				async function watchForRefreshFile() {
 					const res = await fetch("refresh.txt?querydate=" + Date.now()); // do anything in this file to refresh everything
 					const text = await res.text();
 
@@ -177,10 +177,10 @@
 					}
 					last = text;
 
-					setTimeout(watch, 10000);
+					setTimeout(watchForRefreshFile, 15000);
 				}
 
-				watch();
+				watchForRefreshFile();
 
 				const openBox = document.getElementById("openBox");
 				const closingSoonBox = document.getElementById("closingSoonBox");
@@ -311,7 +311,7 @@
 					setInterval(checkStatus, 20000);
 					const audio = new Audio('media/started.wav');
 					audio.play();
-				}, 15000); // I like my intro lol, intentional delay because bite me
+				}, 10000); // I like my intro lol, intentional delay because bite me
 			</script>
 
 			<!-- <script>
