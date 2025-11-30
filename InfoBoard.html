@@ -156,12 +156,16 @@
 					};
 				}
 
+				/*
 				setInterval(() => {
 					setTimeout(() => {
 						window.location.reload();
 					}, 500);
 					window.location.reload(true); // we love firefox https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
 				}, 7200000); // 30min = 1800000 | 120min = 7200000
+				*/
+
+				// use the refresh file to refresh
 
 				let last = null;
 
@@ -233,10 +237,21 @@
 					Saturday: 6
 				};
 
-				async function checkStatus() {
+				var scheduleText = "";
+
+				async function updateStatus() {
 					try {
 						const response = await fetch("schedule.txt?querydate=" + Date.now()); // in the future, I want to use the URL to get the filename to pull the schedule from, something like ?schedule=schedule1.txt
-						const text = await response.text();
+						scheduleText = await response.text();
+					} catch (err) {
+						console.error('Schedule error: ', err);
+					}
+				}
+
+				var scheduleLastEvent = "";
+
+				async function checkStatus() {
+					try {
 						// const text = `
 						// Monday10:00-19:30
 						// Tuesday10:00-21:00
@@ -247,16 +262,17 @@
 						// Sunday10:00-17:00
 						// `;
 						const lines = text.split('\n');
-
+						
+						const now = new Date();
+						const today = now.getDay();
+						const currentTime = now.getHours() + now.getMinutes() / 60;
+						
 						openBox.classList.add('invisible');
 						closingSoonBox.classList.add('invisible');
 						coverBox.classList.add('invisible');
 
-						const now = new Date();
-						const today = now.getDay();
-						const currentTime = now.getHours() + now.getMinutes() / 60;
-
 						let foundToday = false;
+						let playChangeSound = true;
 
 						for (const line of lines) {
 							console.log("Processing line:", line);
@@ -281,16 +297,25 @@
 
 							const closingWarningHours = 1;
 
+							var scheduleBeforeLastEvent = scheduleLastEvent;
+
 							if (currentTime >= startTime && currentTime <= endTime - closingWarningHours) {
 								console.log("Status: OPEN");
 								openBox.classList.remove('invisible');
+								scheduleLastEvent = "open";
 							} else if (currentTime > endTime - closingWarningHours && currentTime <= endTime) {
 								console.log("Status: CLOSING SOON");
 								openBox.classList.remove('invisible');
 								closingSoonBox.classList.remove('invisible');
+								scheduleLastEvent = "closingsoon";
 							} else {
 								console.log("Status: CLOSED");
 								coverBox.classList.remove('invisible');
+								scheduleLastEvent = "closed";
+							}
+
+							if (scheduleBeforeLastEvent === scheduleLastEvent) {
+								playChangeSound = false;
 							}
 
 							break;
@@ -298,6 +323,12 @@
 
 						if (!foundToday) {
 							coverBox.classList.remove('invisible');
+							playChangeSound = false;
+						}
+
+						if (playChangeSound) {
+							const audio = new Audio(`media/info-${scheduleLastEvent}.wav`);
+							audio.play();
 						}
 					} catch (err) {
 						console.error('Schedule error: ', err);
@@ -307,8 +338,10 @@
 				setTimeout(() => {
 					updateSlide();
 					setInterval(updateSlide, 500);
+					updateStatus();
+					setInterval(updateStatus, 5000);
 					checkStatus();
-					setInterval(checkStatus, 20000);
+					setInterval(checkStatus, 5000);
 					const audio = new Audio('media/started.wav');
 					audio.play();
 				}, 10000); // I like my intro lol, intentional delay because bite me
