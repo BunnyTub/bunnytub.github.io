@@ -119,7 +119,7 @@ img#logo {
 	max-width: 128px;
 	max-height: 128px;
 	padding: 5px 0;
-	filter: drop-shadow(0 0 6px rgb(100, 100, 100));
+	filter: drop-shadow(0 0 6px rgb(0, 0, 0));
 }
 
 img#big-logo {

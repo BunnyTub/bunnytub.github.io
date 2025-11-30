@@ -3,7 +3,7 @@
 	<head>
 		<script>
 			alert("Still unreleased, check back later... -w-");
-			window.location.href = "/";
+			//window.location.href = "/";
 		</script>
 
 		<title>PatcherPlus</title>
@@ -36,7 +36,7 @@
 		</script>
 	</head>
 	<body>
-		<img id="logo" src="media/PatchLogo.png" alt="The PatcherPlus logo."></img>
+		<img id="logo" src="media/PatcherPlusLogo.png" alt="The PatcherPlus logo." style="max-width: 128px; max-height: 128px;"></img>
 		<h1 id="page-header">PatcherPlus</h1>
 		<div id="menu">
 			<ul>
@@ -49,10 +49,14 @@
 
 		<!-- <b>PatcherPlus</b> is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches). This patcher does not currently give any additional in-game benefit. -->
 
-		<h2 style="padding-left: 15%; padding-right: 15%;">PatcherPlus is a simple alternative to get a better experience on Akatsuki with Relax! But it also provides a simple way to connect without fiddling with shortcuts and command line options. Just run the executable, pin it to your taskbar, or whatever, and you'll be able to play osu! with a better experience!</h2>
+		<h2 style="padding-left: 15%; padding-right: 15%; font-weight: bolder;">PatcherPlus is a simple alternative to get a better experience on Akatsuki with Relax! But it also provides a simple way to connect without fiddling with shortcuts and command line options. Just run the executable, pin it to your taskbar, or whatever, and you'll be able to play osu! with a better experience!</h2>
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
+				<div class="images" style="margin-top: 2px; margin-bottom: 12px; display: flex; flex-direction: column">
+					<img src="media/PatcherPlus_Example_1.png" title="An example of the PatcherPlus GUI." style="max-width: 100%; height: auto; display: inline-block; border-radius: 0;" />
+					<img src="media/PatcherPlus_Example_2.png" title="An example of the PatcherPlus GUI with auto patch enabled." style="max-width: 100%; height: auto; display: inline-block; border-radius: 0;" />
+				</div>
 				<a class="button standalone-button" href="#" download>Download v? Standalone</a>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
@@ -60,10 +64,13 @@
 					Having problems? Try installing .NET Framework 4.8.1!
 				</h3>
 				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer">Download .NET Framework 4.8.1</a>
-				<div class="images" style="margin-bottom: 12px;">
-					<img src="media/PatcherPlus_Example_3.png" title="An example of the PatcherPlus GUI." style="max-width: 100%; height: auto; display: inline-block;" />
-					<img src="media/PatcherPlus_Example_3.png" title="An example of Relax leaderboards with the mod enabled." style="max-width: 100%; height: auto; display: inline-block;" />
-					<img src="media/PatcherPlus_Example_4.png" title="An example of Relax online scoring with the mod enabled." style="max-width: 100%; height: auto; display: inline-block;" />
+				<h2>
+					Finally! Relax leaderboards and misses at last.
+				</h2>
+				<div class="images" style="margin: 12px;">
+					<img src="media/PatcherPlus_Example_3.png" title="An example of Relax leaderboards with the mod enabled." style="max-width: 40%; height: auto; display: inline-block;" />
+					<img src="media/PatcherPlus_Example_4.png" title="An example of Relax online scoring with the mod enabled." style="max-width: 40%; height: auto; display: inline-block;" />
+					<img src="media/PatcherPlus_Example_5.png" title="An example of misses being visible with the Relax mod enabled." style="max-width: 40%; height: auto; display: inline-block;" />
 				</div>
 				<!-- <a class="disabled-button" href="#">No Installer Available</a> -->
 			</div>
@@ -71,25 +78,14 @@
 				<h3></h3>
 				
 				<h3>
-					PatcherPlus is a personal project, and is based off the existing Akatsuki Patcher codebase, but adapted and modified.
+					PatcherPlus is a personal project, and is based off a decompilation of Akatsuki Patcher. I am not affiliated with Akatsuki in any way, so use this tool at your own discretion.
 				</h3>
 
-				<div id="supported-systems">
-					<h2 onclick="localStorage.lastVisit = 0;">Supported Windows versions</h2>
-					<p>Windows 10 (Build 10240+)</p>
-					<p>Windows 11 (Build 22621.1+)</p>
-					<p><a class="button-small" onclick="alert('Windows 8.1 and under aren\'t supported by .NET 8, a newer .NET environment used by PatcherPlus.')" href="#supported-systems">Support for Windows 8.1 and below dropped in v13.0</a></p>
-				</div>
 				<h3 style="color: yellow;">
-					This tool connects you to osu!Akatsuki servers only. Trying to modify any patching tools to try connecting to other servers like osu!Bancho (the main one) may result in your account getting restricted or <b style="color: #ffabab;">permanently banned</b> from online play on that server.
+					This tool connects you to Akatsuki's servers only. Trying to modify any patching tools to try connecting to other servers like osu!Bancho (the official osu! server) may result in your account getting restricted or <b style="color: #ffabab;">permanently banned</b> from online play on that server.
 				</h3>
-				<!-- <div>
-					<h2>Alert Closing</h2>
-					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
-				</div> -->
 
-				<!-- <div style="margin-top: 20px;">Looking for <a href="/PatcherPlus-Docs.html"><b>command line documentation</b></a>?</div> -->
-
+				<!--
 				<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 0 auto; position: relative;">
 					<iframe src="https://www.youtube.com/embed/EjawYIRxl0c?rel=0"
 							style="width: 100%; height: 100%; border: 0; border-radius: 5px; outline: solid red; position: absolute; top: 0; left: 0;"
@@ -99,7 +95,7 @@
 					</iframe>
 				</div>
 				
-				<!-- weird things are happening with iframes in Firefox, so I assigned these the notDiscord class -->
+				weird things are happening with iframes in Firefox, so I assigned these the notDiscord class
 
 				<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 0 auto; position: relative; margin-top: 15px;">
 					<iframe src="https://www.youtube.com/embed/M9wyev8kZvo?rel=0"
@@ -109,7 +105,8 @@
 							allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
 					</iframe>
 				</div>
-				
+				-->
+
 				<!-- <div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg">...? Discord server</a>!</div>-->
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
 		</div>
