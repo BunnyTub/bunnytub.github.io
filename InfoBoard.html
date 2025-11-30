@@ -300,16 +300,16 @@
 							var scheduleBeforeLastEvent = scheduleLastEvent;
 
 							if (currentTime >= startTime && currentTime <= endTime - closingWarningHours) {
-								console.log("Status: OPEN");
+								console.log("We're OPEN for business.");
 								openBox.classList.remove('invisible');
 								scheduleLastEvent = "open";
 							} else if (currentTime > endTime - closingWarningHours && currentTime <= endTime) {
-								console.log("Status: CLOSING SOON");
+								console.log("We're OPEN for business but CLOSING SOON.");
 								openBox.classList.remove('invisible');
 								closingSoonBox.classList.remove('invisible');
 								scheduleLastEvent = "closingsoon";
 							} else {
-								console.log("Status: CLOSED");
+								console.log("We're CLOSED and not open for business.");
 								coverBox.classList.remove('invisible');
 								scheduleLastEvent = "closed";
 							}
