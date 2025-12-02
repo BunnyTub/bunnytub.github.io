@@ -49,6 +49,24 @@
 					will-change: filter, transform, opacity;
 				}
 
+				#countdownBox {
+					bottom: 32px;
+					left: 36px;
+					position: fixed;
+					color: rgb(255, 255, 255);
+					/* padding: 2px 12px; */
+					border-radius: 16px;
+					font-size: 24pt;
+					z-index: 8000;
+					animation: countdownBoxPulse 30s linear infinite alternate;
+					opacity: 25%;
+				}
+
+				@keyframes countdownBoxPulse {
+					from { color: rgba(0, 0, 0, 0.5); }
+					to { color: rgba(255, 255, 0, 0.5); }
+				}
+
 				#openBox {
 					position: fixed;
 					background-color: rgba(0, 0, 0, 0.25);
@@ -123,6 +141,7 @@
 			<div id="openBox" class="invisible">OPEN</div>
 			<div id="closingSoonBox" class="invisible">CLOSING SOON</div>
 			<div id="coverBox" class="invisible"><div id="closedBox">CLOSED</div></div>
+			<div id="countdownBox" class="invisible"></div>
 			
 			<script>
 				const slideshow = document.getElementById("slideshow");
@@ -336,13 +355,28 @@
 					}
 				}
 
+				function updateCountdown() {
+					const target = new Date("2026-01-25");
+					const now = new Date();
+					const diff = target - now;
+					const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+					document.getElementById("countdownBox").textContent =
+						days + " day(s) remain";
+				}
+
 				setTimeout(() => {
 					updateSlide();
 					setInterval(updateSlide, 500);
+
 					updateStatus();
 					setInterval(updateStatus, 5000);
+
 					checkStatus();
 					setInterval(checkStatus, 5000);
+
+					updateCountdown();
+					setInterval(updateCountdown, 60 * 60 * 1000);
+
 					const audio = new Audio('media/started.wav');
 					audio.play();
 				}, 3000); // I like my intro lol, intentional delay because bite me
