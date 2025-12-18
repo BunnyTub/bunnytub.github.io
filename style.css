@@ -440,19 +440,19 @@ code {
   border-radius: 6px;
 }
 
-.image-grid {
+.images {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
 }
 
-.image-grid img {
+.images img {
     width: 100%;
     height: auto;
 }
 
-.image-grid .overlay {
+.images .overlay {
     position: absolute;
     top: 50%;
     left: 50%;
