@@ -440,6 +440,40 @@ code {
   border-radius: 6px;
 }
 
+.image-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+}
+
+.image-grid .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.flashA {
+	box-shadow: 0px 0px 25px 5px black;
+}
+
+.flashB {
+    animation: flashB 2s infinite;
+}
+
+@keyframes flashB {
+    0%   { opacity: 1; }
+    50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
 @keyframes pulse {
   0%, 100% { background-color: var(--orig-color, blueviolet); }
   50% { background-color: rgb(167, 72, 255); }
