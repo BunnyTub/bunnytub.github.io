@@ -3,6 +3,7 @@ html {
     padding: 0;
     background-size: 64px 64px;
     background-color: rgb(58, 4, 4);
+	accent-color: orangered;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
 	/* overflow-wrap: break-word;

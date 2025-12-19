@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: rgb(46, 0, 0);">
+	<head>
+		<title>SharpAlert</title>
+		<meta charset="UTF-8">
+		<meta property="og:site_name" content="SharpAlert" />
+		<meta name="description" content="SharpAlert is a desktop application that can alert you of events nearby, or anywhere. (Only some regions are supported)" />
+		<meta name="keywords" content="SharpAlert,Sharp Alert,Free,Free Alerting,Alert,Alerting,US Alert Software,Canada Alert Software,Alerting Software,Safety Software,BunnyTub,CSharp Alert,C#" />
+		<meta name="og:keywords" content="SharpAlert,Sharp Alert,Free,Free Alerting,Alert,Alerting,US Alert Software,Canada Alert Software,Alerting Software,Safety Software,BunnyTub,CSharp Alert,C#" />
+		<meta name="author" content="BunnyTub" />
+		<meta property="og:image" content="https://bunnytub.com/media/SharpAlert.png" />
+		<meta property="og:type" content="website" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	</head>
+	<body style="background-color: rgb(100, 0, 0);">
+		<img id="logo" src="icons/SevereMessage.png" />
+		<h1 id="header">Copyright Notice<br><p>Please read the notice in its entirety before you take action.</p></h1>
+		<div style="padding-bottom: 10px;">
+			<h2 class="notice">This is a notice from $~email.</h2>
+			<h2>
+				Content you've uploaded and/or used may go against copyright law. Since this content is not used <a href="https://www.copyright.gov/help/faq/faq-fairuse.html">transformatively (see Fair Use)</a>, <b>we may decide to take action against your content up to the fullest extent.</b></h2>
+			<h3>
+				This is a test page.
+			</h3>
+		</div>
+	</body>
+	<script>
+		const email = document.querySelectorAll('.notice');
+
+		email.forEach(area => {
+			area.textContent = `${area.textContent.replace("$~email", "bunnytub@bunnytub.com")}`;
+		});
+	</script>
+</html>
