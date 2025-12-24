@@ -2,7 +2,8 @@ html {
     margin: 0;
     padding: 0;
     background-size: 64px 64px;
-    background-color: rgb(58, 4, 4);
+    /* background-color: rgb(58, 4, 4); */
+	background-color: #0c0c0c;
 	accent-color: orangered;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
@@ -25,9 +26,13 @@ html {
 }
 
 body {
-	padding: 25px;
+	padding-top: 0;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
 	/* background-color: #14192c; */
 	background-color: rgb(68, 24, 24);
+	background-color: #1a1a1a;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
@@ -90,6 +95,8 @@ p {
 
 h2 {
 	margin: 0px;
+	margin-left: 80px;
+	margin-right: 80px;
 	padding: 0px;
 	font-weight: normal;
 	color: #fff;
@@ -107,6 +114,7 @@ h1#page-header {
 	text-align: center;
 	font-weight: normal;
 	padding-bottom: 0%;
+	margin: 5px;	
 	/* background: url(/hopcast_small.png) no-repeat center;
 	background-position: top;
 	background-size: cover; */
@@ -214,41 +222,64 @@ code {
 }
 
 #menu {
-	border-top: 3px dotted #c68e7b;
-	border-bottom: 3px dotted #c68e7b;
+	/* border-top: 3px dotted #757575; */
+	display: flex;
+	border-bottom: 3px dotted #757575;
 	text-align: center;
-	margin-top: -10px;
-	margin-bottom: 10px;
+	margin: 0 auto 15px auto;
+	justify-content: center;
+	max-width: 95%;
+}
+
+#icon {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 32px;
+	height: 32px;
 }
 
 #menu ul {
-	margin: 4px;
-	padding: 0;
+	margin: 0;
 	list-style: none;
-	display: inline-block;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	padding: 0;
 }
 
 #menu ul li {
-	float: left;
 	padding-left: 25px;
 	padding-right: 25px;
 }
 
 #menu ul li a {
 	text-decoration: none;
-	color: #fff;
+	color: #cccccc;
 	font-size: 22pt;
 	border: none;
-	transition-property: font;
+	transition-property: color;
 	transition-duration: 150ms;
 }
 
 #menu ul li a:hover {
 	color: #f8ef64;
-	transition-property: font;
-	transition-duration: 150ms;
-	font-size: 28pt;
+}
+
+@media (max-width: 900px) {
+	#menu ul {
+		flex-direction: column;
+	}
+
+	#menu ul li {
+		padding: 2px 0;
+	}
+
+	#menu ul li a {
+		font-size: 20pt;
+	}
+
+	#icon {
+		justify-content: right;
+	}
 }
 
 .container {
@@ -265,7 +296,7 @@ code {
 }
 
 .picturebox {
-    background-color: rgb(88, 44, 44);
+    background-color: rgb(46, 46, 46);
 	align-items: center;
 	justify-content: center;
     display: inline-flex;
@@ -275,7 +306,7 @@ code {
     border-radius: 10px;
     padding: 10px;
     max-width: fit-content;
-	box-shadow: 0 0 4px 4px rgba(78, 34, 34, 0.8);
+	box-shadow: 0 0 4px 4px rgba(10, 10, 10, 0.8);
 }
 
 .picturebox > p {
@@ -291,7 +322,7 @@ code {
 	/* transform: rotate(2deg); */
 	/* image-rendering: optimizeQuality; */
 	max-width: 512px;
-	box-shadow: 0 0 2px 2px rgba(78, 34, 34, 0.8);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .picturemap {
