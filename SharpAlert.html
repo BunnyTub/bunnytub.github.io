@@ -58,7 +58,7 @@
 				<a class="button installer-button" href="#" download>Download v? Installer</a>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
-				<h3 class="runtime-text" style="color: yellow; font-size: 12pt; margin-top: 2px; margin-bottom: 18px;">
+				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
 					Please install the .NET 8 Desktop Runtime before opening SharpAlert! This is a requirement, and the program can't run without it.
 				</h3>
 				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer">Download .NET 8 Desktop Runtime</a>
@@ -93,7 +93,7 @@
 					<h2>Moderate Emergency Alert (Played when the alert severity is <b>Moderate or lower</b>)</h2>
 					<div class="audioarea"><audio src="https://bunnytub.com/media/minor_alert.wav" controls></audio></div>
 				</div>
-				
+
 				<div id="supported-regions">
 					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Regions</b></h1>
 					<p>United States (<a href="https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system">IPAWS</a>, <a href="https://www.weather.gov/documentation/services-web-api">NWS</a>)</p>
@@ -102,15 +102,19 @@
 					<p>Brazil (<a href="https://www.gov.br">IDAP</a> - heavy data usage)</p>
 				</div>
 				<br>
+				<h3 class="notice" style="color: yellow;">
+					SharpAlert is currently using a SASMEX API that is suspected to be deprecated. SASMEX in the program is likely non-functional.
+					<br><br>
+					Please note that this app uses a moderate portion of bandwidth to function, and using it on metered connections is <b style="color: #ffabab;">not recommended</b>.
+				</h3>
+
 				<div id="supported-systems">
-					<h1 style="text-align: center; margin-bottom: 0px;" onclick="localStorage.lastVisit = 0;"><b>Supported Platforms</b></h1>
+					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Platforms</b></h1>
 					<p>Windows 10 (Build 10240+)</p>
 					<p>Windows 11 (Build 22621.1+)</p>
 					<p><a class="button-small" onclick="alert('Windows 8.1 and under aren\'t supported by .NET 8, a newer .NET environment used by SharpAlert.')" href="#supported-systems">Support for Windows 8.1 and below dropped in v13.0</a></p>
+					<br>
 				</div>
-				<h3 style="color: yellow;">
-					Please note that this app uses a moderate portion of bandwidth to function, and using it on metered connections is <b style="color: #ffabab;">not recommended</b>.
-				</h3>
 				<!-- <div>
 					<h2>Alert Closing</h2>
 					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
