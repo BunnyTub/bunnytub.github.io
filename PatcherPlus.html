@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<script>
-			alert("Still unreleased, check back later... -w-");
+			//alert("Still unreleased, check back later... -w-");
 			//window.location.href = "/";
 		</script>
 
@@ -19,10 +19,11 @@
 		<meta property="og:type" content="website">
 		<meta name="twitter:site" content="BunnyTub's Home Dome">
 		<meta name="twitter:title" content="PatcherPlus - Akatsuki Patcher Alternative">
-		<meta property="og:description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches). This patcher does not currently give any additional in-game benefit.">
-		<meta name="description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches). This patcher does not currently give any additional in-game benefit.">
-		<meta name="twitter:description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches). This patcher does not currently give any additional in-game benefit.">
+		<meta property="og:description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches).">
+		<meta name="description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches).">
+		<meta name="twitter:description" content="PatcherPlus is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches).">
 		<meta name="twitter:card" content="summary_large_image">
+		<!-- OLD: This patcher does not currently give any additional in-game benefit. -->
 		<!-- <meta name="twitter:image:src" content="https://bunnytub.com/media/PatcherPlus_Promotional.png"> -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -44,7 +45,7 @@
 				<img id="icon" src="favicon.ico"></img>
 				<li><a href="/">Home</a></li>
 				<li><a href="/SharpAlert">SharpAlert</a></li>
-				<li><a href="https://johnweather.com/">JohnWeather</a></li>
+				<li><a href="/PatcherPlus">PatcherPlus</a></li>
 				<li><a href="/HopCast">HopCast</a></li>
 			</ul>
 		</div>
@@ -54,40 +55,63 @@
 
 		<!-- <b>PatcherPlus</b> is an alternative to the commonly used Akatsuki Patcher, a tool used for patching osu! to get additional features in-game. It has new features, including autorun (automatically start patching when opened), caching (faster patch times after the first patch), and additional tweaks (such as automatically retrying failed patches). This patcher does not currently give any additional in-game benefit. -->
 
-		<h2 style="padding-left: 15%; padding-right: 15%; font-weight: bolder;">PatcherPlus is a simple alternative to get a better experience on Akatsuki with Relax! But it also provides a simple way to connect without fiddling with shortcuts and command line options. Just run the executable, pin it to your taskbar, or whatever, and you'll be able to play osu! with a better experience!</h2>
+		<h2 style="padding-left: 2%; padding-right: 2%; font-weight: bolder;">PatcherPlus is a simple alternative tool to better your Akatsuki experience!<br>
+			Connect to Akatsuki, restore misses and ranking panels, all by just clicking "Play"!<br>
+			No need to re-open if patching fails, PatcherPlus will automatically retry!
+		</h2>
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
+
+				<a class="button" style="margin-top: 16px;" href="/AkatPatcherPlus/Releases/v1/PatcherPlus.exe" download>Download PatcherPlus v0</a>
+
+				<h2 style="margin-bottom: 12px;">
+					Finally! Relax/Autopilot leaderboards and misses at last.<br>
+					Scroll down to read more, or <a href="#more">click here</a>.
+				</h2>
+				<div class="images" style="margin: 12px; display: flex;">
+					<img src="media/PatcherPlus_Example_3.png" title="An example of Relax leaderboards with the mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
+					<img src="media/PatcherPlus_Example_4.png" title="An example of Relax online scoring with the mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
+					<img src="media/PatcherPlus_Example_5.png" title="An example of misses being visible with the Relax mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
+				</div>
+				
 				<div class="images" style="margin-top: 2px; margin-bottom: 12px; display: flex; flex-direction: column">
 					<img src="media/PatcherPlus_Example_1.png" title="An example of the PatcherPlus GUI." style="max-width: 100%; height: auto; display: inline-block; border-radius: 0;" />
 					<img src="media/PatcherPlus_Example_2.png" title="An example of the PatcherPlus GUI with auto patch enabled." style="max-width: 100%; height: auto; display: inline-block; border-radius: 0;" />
 				</div>
-				<a class="button disabled-button" href="#" download>Download PatcherPlus v0</a>
+
+				<div id="more"></div>
+
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<h3 class="runtime-text" style="color: yellow; font-size: 12pt; margin-top: 2px; margin-bottom: 18px;">
 					Having problems? Try installing .NET Framework 4.8.1!
 				</h3>
 				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer">Download .NET Framework 4.8.1</a>
-				<h2>
-					Finally! Relax/Autopilot leaderboards and misses at last.
-				</h2>
-				<div class="images" style="margin: 12px;">
-					<img src="media/PatcherPlus_Example_3.png" title="An example of Relax leaderboards with the mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
-					<img src="media/PatcherPlus_Example_4.png" title="An example of Relax online scoring with the mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
-					<img src="media/PatcherPlus_Example_5.png" title="An example of misses being visible with the Relax mod enabled." style="max-width: 45%; height: auto; display: inline-block;" />
-				</div>
-				<!-- <a class="disabled-button" href="#">No Installer Available</a> -->
+				<h3 class="notice" style="color: yellow;">
+					PatcherPlus does not support osu!(lazer).
+				</h3>
 			</div>
-			<div>
-				<h3></h3>
-				
+			<div style="padding-left: 48px; padding-right: 48px;">
+				<h2 style="font-weight: bolder;">How is this different?<h2>
+				<h3 style="padding-left: 24px; padding-right: 24px;">
+					PatcherPlus includes an auto-patching feature, toggled by the "Automatically patch on open" checkmark box.<br>
+					If enabled, you do not need to click the "Play" button to start patching, it will start immediately after you open PatcherPlus.<br>
+					Hold SHIFT before you open the tool to bypass this behavior.<br><br>
+					PatcherPlus caches the latest available patch, so if you patch later on, the tool won't have to re-download the required data again.<br><br>
+					PatcherPlus will try patching again 2 additional times automatically if the first patch is detected to not be properly working.<br><br>
+					PatcherPlus does not close your game until you click "Play". Once you click "Play", it'll try to close osu! gracefully first.<br><br>
+					PatcherPlus can find your copy of osu!(stable/cuttingedge), even if you've installed osu!(lazer), or changed some file associations.
+				</h3>
+
+				<h2 style="font-weight: bolder;">Anything else to know?<h2></h2>
+
 				<h3>
-					PatcherPlus is a personal project, and is based off a decompilation of Akatsuki Patcher. I am not affiliated with Akatsuki in any way, so use this tool at your own discretion.
+					PatcherPlus is a personal project, and is based off a decompilation of Akatsuki Patcher. This tool isn't officially affiliated with Akatsuki.
 				</h3>
 
 				<h3 style="color: yellow;">
-					This tool connects you to Akatsuki's servers only. Trying to modify any patching tools to try connecting to other servers like osu!Bancho (the official osu! server) may result in your account getting restricted or <b style="color: #ffabab;">permanently banned</b> from online play on that server.
+					This tool connects you to Akatsuki's servers only. Attempting to try connecting to other servers like osu!Bancho (the official osu! server) may result in your account getting restricted or <b style="color: #ffabab;">permanently banned</b> from online play on that server.
 				</h3>
 
 				<!--
@@ -119,99 +143,5 @@
 		<div id="footer">
 			Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!
 		</div>
-
-		<script>
-			return;
-			fetch('https://bunnytub.com/PatcherPlus/PatcherPlus.txt')
-			.then(response => response.text())
-			.then(version => {
-				version = version.trim();
-
-				const installerButtons = document.querySelectorAll('.installer-button');
-    			const standaloneButtons = document.querySelectorAll('.standalone-button');
-
-				standaloneButtons.forEach(button => {
-					button.href = `/PatcherPlus/Releases/v${version}/PatcherPlus.exe`;
-					button.textContent = `Download v${version} Standalone`;
-				});
-			})
-			.catch(error => {
-				console.error("Couldn't get the latest version of PatcherPlus.", error);
-				if (confirm("Couldn't get the latest version of PatcherPlus.\nRefresh and try again?")) {
-					window.location.reload();
-				}
-				// query string so user can click retry
-				//window.location.replace(`GeneralError?url=${window.location.href}`);
-			});
-
-			const now = Date.now(), last = +localStorage.lastVisit || 0;
-
-			if (now - last > 1*24*60*60*1000) {
-				document.querySelectorAll('.runtime-button').forEach(b => {
-					b.style.setProperty('--orig-color', getComputedStyle(b).backgroundColor);
-					b.classList.add('pulse');
-				});
-
-				document.querySelectorAll('.runtime-text').forEach(b => {
-					b.classList.add('pulse-text');
-				});
-
-				console.log("User did not see page recently.");
-			} else console.log("User has seen the page recently.");
-
-			localStorage.lastVisit = now;
-
-			// https://github.com/ppy/osu-resources/tree/a1fb917e1589fbdfac1aa7a3acc9ebb5a5933c89/osu.Game.Resources/Samples/Menu
-
-			function getQueryParam(param) {
-				const urlParams = new URLSearchParams(window.location.search);
-				return urlParams.get(param);
-			}
-			
-			//window.addEventListener("DOMContentLoaded", () => {
-			//	if (getQueryParam("update") === "1") {
-			//		document.getElementById("updateOverlay").style.display = "block";
-			//	}
-			//});
-
-			//const hoverSoundUrl = "media/button-hover.wav";
-			//const clickSoundUrl = "media/button-generic-select.wav";
-
-			//const preloadAudioHover = new Audio(hoverSoundUrl);
-			//preloadAudioHover.preload = "auto";
-
-			//const preloadAudioClick = new Audio(clickSoundUrl);
-			//preloadAudioClick.preload = "auto";
-
-			//document.querySelectorAll("a").forEach(link => {
-			//	link.addEventListener("mouseenter", () => {
-			//		const sound = preloadAudioHover.cloneNode(true);
-			//		sound.play();
-			//		hideCoolSoundsButton();
-			//	});
-			//
-			//	link.addEventListener("click", e => {
-			//		e.preventDefault();
-			//		const sound = preloadAudioClick.cloneNode(true);
-			//		sound.play();
-
-			//		if (link.href === window.location.href) {
-			//		}
-			//		else {
-			//			const width  = screen.availWidth;
-			//			const height = screen.availHeight;
-
-			//			const left = (screen.width  - width) / 2;
-			//			const top = (screen.height - height) / 2;
-
-			//			window.open(
-			//			link.href,
-			//			"External Window",
-			//			`width=${width},height=${height},left=${left},top=${top}`
-			//			);
-			//		}
-			//	});
-			//});
-		</script>
 	</body>
 </html>
