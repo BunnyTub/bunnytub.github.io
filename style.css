@@ -309,6 +309,11 @@ code {
 	box-shadow: 0 0 4px 4px rgba(10, 10, 10, 0.8);
 }
 
+.picturemain {
+	min-width: 0;
+	flex: 1 1 0;
+}
+
 .picturebox > p {
 	color: #ffffff;
 }
