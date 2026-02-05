@@ -29,7 +29,7 @@ body {
 	padding-top: 0;
 	padding-left: 25px;
 	padding-right: 25px;
-	padding-bottom: 25px;
+	padding-bottom: 0;
 	/* background-color: #14192c; */
 	background-color: rgb(68, 24, 24);
 	background-color: #1a1a1a;
@@ -383,8 +383,6 @@ code {
 	font-size: 12pt;
 }
 
-/* Footer */
-
 #footer {
 	border-top: 1px groove #ACACAC;
 	margin-top: 20px;
@@ -392,33 +390,7 @@ code {
 	font-size: 80%;
 }
 
-@media (max-width: 800px) {
-
-	body {
-		padding: 0;
-	}
-
-	.roundbox {
-		width: auto;
-		border-radius: 0;
-	}
-
-	.roundbox table.yellowkeys tr td {
-		display: block;
-		padding: 5px 5px 0 0;
-	}
-
-	.roundbox table.yellowkeys tr td:last-child {
-		margin-bottom: 5px;
-		margin-left: 5px;
-	}
-
-	.scrolltable {
-		overflow: auto;
-	}
-
-}
-
+/*
 @media (max-width: 320px) {
 	ul.nav, #menu ul {
 		display: block;
@@ -440,6 +412,7 @@ code {
 		margin-left: 15px;
 	}
 }
+*/
 
 #updateOverlay {
 	position: fixed;
