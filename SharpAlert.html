@@ -50,6 +50,10 @@
 		</a>
 		<h1 id="page-header">SharpAlert</h1>
 
+		<h2 id="region-unsupported" class="notice" style="display: none; color: yellow;">
+			SharpAlert might not support alerts for your country.<br>You can find supported countries in <a href="#supported-regions">supported regions</a>.
+		</h2>
+
 		<h2><b>SharpAlert</b> is an emergency alerting software that notifies you of events around you, entirely from your computer!</h2>
 
 		<div class="container">
@@ -220,11 +224,15 @@
 				document.getElementById("updateOverlay").style.display = "none";
 			}
 			
-			//window.addEventListener("DOMContentLoaded", () => {
-			//	if (getQueryParam("update") === "1") {
-			//		document.getElementById("updateOverlay").style.display = "block";
-			//	}
-			//});
+			window.addEventListener("DOMContentLoaded", () => {
+				regionText = document.getElementById("region-unsupported");
+
+				if (getQueryParam("oops") === "1") {
+					regionText.style.display = "flex";
+				} else {
+					regionText.style.display = "none";
+				}
+			});
 
 			//const hoverSoundUrl = "media/button-hover.wav";
 			//const clickSoundUrl = "media/button-generic-select.wav";
