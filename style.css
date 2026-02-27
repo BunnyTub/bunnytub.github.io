@@ -31,8 +31,9 @@ body {
 	padding-right: 25px;
 	padding-bottom: 0;
 	/* background-color: #14192c; */
-	background-color: rgb(68, 24, 24);
+	/* background-color: rgb(68, 24, 24); */
 	background-color: #1a1a1a;
+	/* background: linear-gradient(125deg, #1a1a1a, #1f1f1f); */
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
@@ -380,7 +381,7 @@ code {
 	background-color: rgba(40, 40, 40, 0.25);
 	border-style: solid;
 	border-width: 2px;
-	font-size: 12pt;
+	font-size: 14pt;
 }
 
 #footer {

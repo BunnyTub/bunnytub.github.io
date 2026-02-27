@@ -51,7 +51,7 @@
 		<h1 id="page-header">SharpAlert</h1>
 
 		<h2 id="region-unsupported" class="notice" style="display: none; color: yellow;">
-			SharpAlert might not support alerts for your country.<br>You can find supported countries in <a href="#supported-regions">supported regions</a>.
+			SharpAlert might not support your country.<br>Find supported countries in <a href="#supported-regions">supported regions</a>.
 		</h2>
 
 		<h2><b>SharpAlert</b> is an emergency alerting software that notifies you of events around you, entirely from your computer!</h2>
@@ -63,7 +63,7 @@
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
-					Please install the .NET 8 Desktop Runtime before opening SharpAlert! This is a requirement, and the program can't run without it.
+					If you're having trouble opening SharpAlert, try installing the .NET 8 Desktop Runtime!
 				</h3>
 				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer">Download .NET 8 Desktop Runtime</a>
 				<div class="images" style="margin-bottom: 12px;">
@@ -77,6 +77,36 @@
 				<!-- <a class="disabled-button" href="#">No Installer Available</a> -->
 			</div>
 			<div>
+				<div id="feature-set">
+					<h1 style="text-align: center; margin-bottom: 0px;"><b>SharpAlert's interesting features!</b></h1>
+					<h3 style="max-width: 75%; margin: 8px auto;">Right-click the tray icon for more options. All windows can be found in Settings.</h3>
+					<img src="media/SharpAlert_Example_TaskBarTrayIcon.gif" style="display: block; margin: 8px auto;"></img>
+					
+					<p>Stylization Choices</p>
+					<img src="media/SharpAlert_Example_StyleWindow.gif" style="display: block; margin: 8px auto;"></img>
+					<h3 style="max-width: 75%; margin: auto;">You can choose from five styles to have alerts appear as, and configure additional settings for them, such as where you want the window to appear on the screen you choose, font sizing, and more. Some display styles appear in full screen!</h3>
+					<br>
+					<p>Customizable Sounds</p>
+					<img src="media/SharpAlert_Example_AudioWindow1.png" style="display: block; margin: 8px auto;"></img>
+					<h3 style="max-width: 75%; margin: auto;">You can change where sounds are played via audio output, and alert sounds can be changed to anything you want.</h3>
+					<br>
+					<p>Togglable Regions</p>
+					<img src="media/SharpAlert_Example_RegionWindow1.png" style="display: block; margin: 8px auto;"></img>
+					<h3 style="max-width: 75%; margin: auto;">There are 4 different regions with 5 alert feeds to choose from. You can always change these.</h3>
+					<br>
+					<p>Specific Locations Only</p>
+					<img src="media/SharpAlert_Example_LocationWindow1.png" style="display: block; margin: 8px auto;"></img>
+					<h3 style="max-width: 75%; margin: auto;">You can make a list of locations you want alerts for (<b>Alert Settings</b> > <b>Manage Locations</b>). This means that if an alert doesn't have at least one of the locations in your list, you will not see the alert. (Clear all lists to disable location filtering!)</h3>
+					<br>
+					<p>Discord Webhooks</p>
+					<img src="media/SharpAlert_Example_WebhookWindow1.png" style="display: block; margin: 8px auto;"></img>
+					<img src="media/SharpAlert_Example_WebhookExample1.png" style="display: block; margin: 8px auto;"></img>
+					<h3 style="max-width: 75%; margin: auto;">Using Discord Webhooks, you can forward alerts directly to Discord.</h3>
+					<br>
+				</div>
+
+				<h1 style="text-align: center; margin-bottom: 0px;"><b>What is SharpAlert?</b></h1>
+
 				<h3 style="max-width: 75%; margin: auto;"><b>SharpAlert works similarly to how you get emergency alerts on your TV, radio station, or mobile phone!</b><br><br>
 					Saying a bit more, <b>SharpAlert</b> works closely to how <a href="https://wikipedia.org/wiki/Wireless_Emergency_Alerts"><b>Wireless Emergency Alerts</b></a> would work on a device like your phone, or more closely to the <a href="https://wikipedia.org/wiki/Emergency_Alert_System"><b>Emergency Alert System</b></a> on a TV or radio station broadcast.
 					In the background, <b>SharpAlert</b> constantly polls for new alerts. When an alert is received, the program checks it against your preferences. Your preferences could be to allow alerts only, or to only allow alerts from certain locations. If the alert is allowed to relay,
@@ -102,14 +132,12 @@
 					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Regions</b></h1>
 					<p>United States (<a href="https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system">IPAWS</a>, <a href="https://www.weather.gov/documentation/services-web-api">NWS</a>)</p>
 					<p>Canada (<a href="https://www.pelmorex.com/en/products-and-solutions/alerting/alert-ready">NPAS/NAADS</a>)</p>
-					<p>Mexico (<a href="https://sasmex.net">SASMEX</a> - unreliable/untested)</p>
-					<p>Brazil (<a href="https://www.gov.br">IDAP</a> - heavy data usage)</p>
+					<p>Mexico (<a href="https://sasmex.net">SASMEX</a>)</p>
+					<p>Brazil (<a href="https://www.gov.br">IDAP</a>)</p>
 				</div>
 				<br>
-				<h3 class="notice" style="color: yellow;">
-					SharpAlert is currently using a SASMEX API that is suspected to be deprecated. SASMEX in the program is likely non-functional.
-					<br><br>
-					Please note that this app uses a moderate portion of bandwidth to function, and using it on metered connections is <b style="color: #ffabab;">not recommended</b>.
+				<h3 class="notice" style="color: greenyellow;">
+					SharpAlert recently switched to the newer SASMEX feed provided at <a href="https://rss.sasmex.net/">https://rss.sasmex.net/</a>. Please update to the latest version of SharpAlert to receive SASMEX alerts.
 				</h3>
 
 				<div id="supported-systems">
@@ -145,11 +173,20 @@
 							allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
 					</iframe>
 				</div>
+
+				<h3 class="notice" style="color: orange;">
+					SharpAlert checks for alerts very frequently.<br>This could result in higher data usage.
+				</h3>
 				
-				<div style="margin-top: 20px;">Have questions, or want to try cool new <b>beta versions</b>? Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</div>
+				<h3 class="notice" style="color: white;">
+					SharpAlert does not collect any analytic data, or send unique data about your system anywhere.
+				</h3>
+				
+				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
-				<h2 id="old-versions" title="Please do not ask for support on previous versions." style="margin-top: 20px; text-align: left;">Previous Versions (out of support)</h2>
-				<a class="button-small" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7/8.x)</a> <a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">(Notes)</a><br>
+		        
+				<a class="button" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7+)</a><br><br>
+				<a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">Why is SharpAlert v12.1 still linked on this page?</a><br>
 		</div>
 
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
