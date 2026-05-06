@@ -14,9 +14,9 @@
 		<meta property="og:type" content="website">
 		<meta name="twitter:site" content="BunnyTub's Home Dome">
 		<meta name="twitter:title" content="SharpWX | Monitor Weather Alerts Easily - BunnyTub">
-		<meta property="og:description" content="SharpWX is a weather alerting software that provides customizable weather alerts in real-time straight to your computer.">
-		<meta name="description" content="SharpWX is a weather alerting software that provides customizable  weather alerts in real-time straight to your computer.">
-		<meta name="twitter:description" content="SharpWX is a weather alerting software that provides customizable weather alerts in real-time straight to your computer.">
+		<meta property="og:description" content="SharpWX is a weather alerting app for Windows and Android that provides customizable weather alerts in real-time.">
+		<meta name="description" content="SharpWX is a weather alerting app for Windows and Android that provides customizable weather alerts in real-time.">
+		<meta name="twitter:description" content="SharpWX is a weather alerting app for Windows and Android that provides customizable weather alerts in real-time.">
 		<!-- <meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:image:src" content="https://bunnytub.com/media/SharpAlert_Promotional.png"> -->
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -51,44 +51,55 @@
 			SharpWX only supports IEMBot, a service based in the U.S. that retrieves National Weather Service messages.
 		</h2>
 
-		<h2><b>SharpWX</b> is a weather alerting software that provides customizable weather alerts in real-time straight to your computer.</h2>
+		<!-- <script src="https://keepandroidopen.org/banner.js?size=minimal&hidebutton=off"></script> https://sites.google.com/view/sharpwx -->
+
+		<h2><b>SharpWX</b> is a weather alerting app for Windows and Android that provides customizable weather alerts in real-time.</h2>
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
+				<a class="button pulse-warning" style="background-color: green; color: white; --pulser-color: 0, 200, 0;" href="https://sites.google.com/view/sharpwx">Open new SharpWX website!</a>
 				<a class="button" href="https://github.com/BunnyTub/SharpWX-releases/releases/latest/download/BunnyTubby.SharpWX-win-Setup.exe" download>Download SharpWX (Windows)</a>
-				<a class="button disabled-button">Download SharpWX (Android)</a>
-				<a class="button" href="https://github.com/BunnyTub/SharpWX-releases">SharpWX GitHub (Windows)</a>
-				<a class="button" href="/SharpWX-PrivacyPolicy">SharpWX Privacy Policy (Google Play Store)</a>
+				<a class="button" href="https://github.com/BunnyTub/SharpWX-releases">GitHub for SharpWX (Windows)</a>
+
+				<h3 class="notice runtime-text" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisitWX = 0;">
+					If you're having trouble opening SharpWX, try installing the .NET 9 Desktop Runtime!
+				</h3>
+
+				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-9.0.14-windows-x64-installer">Download .NET 9 Desktop Runtime</a>
+
+				<a class="button" href="#" onclick="alert('You must join the EAS Culture Discord server to download SharpWX for Android, because it is currently available to certain users only. You can try contact @bunnytub for access.')">Download SharpWX (Android)</a>
+				<a class="button" href="/SharpWX-PrivacyPolicy">Privacy Policy for SharpWX (Android)</a>
+
 				<!--
 				<a class="button standalone-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Standalone</a>
 				<a class="button installer-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Installer</a>
 				-->
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
-				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
-					If you're having trouble opening SharpWX, try installing the .NET 9 Desktop Runtime!
-				</h3>
-				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-9.0.14-windows-x64-installer">Download .NET 9 Desktop Runtime</a>
 				
 			</div>
 
-			
 			<div>
-				<p>SharpWX is under beta testing. You can get beta builds in the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p><br>
+				<p>SharpWX is now available! Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a> for Android builds.</p><br>
 				<div id="supported-systems">
 					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Platforms</b></h1>
 					<p>Windows 10 (Build 10240+)</p>
 					<p>Windows 11 (Build 22621.1+)</p>
+					<p>Android (8.0+)</p>
 					<br>
 				</div>
 
-				<h3 class="notice" style="color: orange;">
-					SharpWX checks for messages very frequently.<br>This could result in higher data usage.
+				<h3 class="notice" style="color: rgb(255, 194, 82);">
+					SharpWX checks for messages very frequently.<br>This could result in higher data usage.<br><br>Find out how to <a href="media/RequiredVsOptional.png">decrease your data usage</a> on the desktop version of SharpWX.
 				</h3>
 				
 				<h3 class="notice" style="color: white;">
-					SharpWX does not collect any analytic data, or send unique data about your system anywhere.
+					SharpWX is split into two apps. SharpWX for Windows, and SharpWX for Android. There may be differing functionality and discrepancies.
 				</h3>
+
+				<!-- <h3 class="notice pulse-warning" style="color: white; --pulser-color: 255, 255, 255; margin-top: 2px; margin-bottom: 18px;">
+					Starting in September of 2026, SharpWX beta builds for Android may become inaccessible for some.<br><br>Find more info on the <a href="https://keepandroidopen.org">Keep Android Open</a> website.<br><br><b>You do not need to worry about this warning if you download SharpWX from the Google Play Store.</b>
+				</h3> -->
 				
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
@@ -101,34 +112,7 @@
 		</div>
 
 		<script>
-			return;
-
-			fetch('https://bunnytub.com/SharpAlert/SharpAlert.txt')
-			.then(response => response.text())
-			.then(version => {
-				version = version.trim();
-
-				const installerButtons = document.querySelectorAll('.installer-button');
-    			const standaloneButtons = document.querySelectorAll('.standalone-button');
-
-				installerButtons.forEach(button => {
-					button.href = `/SharpAlert/Releases/v${version}/install.exe`;
-					button.textContent = `Download v${version} Installer`;
-				});
-
-				standaloneButtons.forEach(button => {
-					button.href = `/SharpAlert/Releases/v${version}/SharpAlert.exe`;
-					button.textContent = `Download v${version} Standalone`;
-				});
-			})
-			.catch(error => {
-				console.error("Couldn't get the latest version of SharpAlert.", error);
-				if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
-					window.location.reload();
-				}
-			});
-
-			const now = Date.now(), last = +localStorage.lastVisit || 0;
+			const now = Date.now(), last = +localStorage.lastVisitWX || 0;
 
 			if (now - last > 1*24*60*60*1000) {
 				document.querySelectorAll('.runtime-button').forEach(b => {
@@ -137,13 +121,17 @@
 				});
 
 				document.querySelectorAll('.runtime-text').forEach(b => {
-					b.classList.add('pulse-text');
+					//b.classList.add('pulse-text');
+					b.classList.add('pulse-warning');
+					b.style.color = 'white';
+					b.style.borderColor = 'orange';
+					b.style.setProperty('--pulser-color', '255, 191, 0');
 				});
 
 				console.log("User did not see page recently.");
 			} else console.log("User has seen the page recently.");
 
-			localStorage.lastVisit = now;
+			localStorage.lastVisitWX = now;
 
 			// https://github.com/ppy/osu-resources/tree/a1fb917e1589fbdfac1aa7a3acc9ebb5a5933c89/osu.Game.Resources/Samples/Menu
 

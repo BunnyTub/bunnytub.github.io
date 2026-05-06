@@ -397,6 +397,23 @@ code {
 	font-size: 14pt;
 }
 
+.pulse-warning {
+	animation: pulser 2s infinite;
+	--pulser-color: 211, 48, 48;
+}
+
+@keyframes pulser {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(var(--pulser-color), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0);
+  }
+}
+
 #footer {
 	border-top: 1px groove #ACACAC;
 	margin-top: 20px;

@@ -242,7 +242,11 @@
 				});
 
 				document.querySelectorAll('.runtime-text').forEach(b => {
-					b.classList.add('pulse-text');
+					//b.classList.add('pulse-text');
+					b.classList.add('pulse-warning');
+					b.style.color = 'white';
+					b.style.borderColor = 'orange';
+					b.style.setProperty('--pulser-color', '255, 191, 0');
 				});
 
 				console.log("User did not see page recently.");
