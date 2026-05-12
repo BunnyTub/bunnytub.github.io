@@ -1,45 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="I code and create unusual things. Be aware! This website may contain content that non-coders might find terrifying.">
-  <meta name="keywords" content="CSharp, C#, Code, SharpENDEC, SharpAlert, Alert, Software">
-  <meta name="author" content="BunnyTub">
-  <meta property="og:image" content="/media/rainbow.gif">
+	<head>
+		<title>BunnyTub</title>
+		<meta charset="UTF-8">
+		<meta property="og:title" content="BunnyTub">
 
-  <title>BunnyTub's Home Dome</title>
-  <style type="text/css">
-    body {
-      color-scheme: dark;
-      background-color: #2B2A33;
-      color: #FFFFFF;
-    }
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:site_name" content="BunnyTub's Home Dome">
+		<meta property="og:description" content="I'm BunnyTub (or Tubby). I code and create unusual things.">
+		<meta name="description" content="I'm BunnyTub (or Tubby). I code and create unusual things.">
+		<meta name="keywords" content="CSharp, C#, Code, SharpAlert, Alert, Alerting, Software, Safety, BunnyTub">
+		<meta name="author" content="BunnyTub">
+		<meta property="og:image" content="/favicon.png">
+		<meta property="og:url" content="https://bunnytub.com/">
+		<script type="application/ld+json">
+			{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "BunnyTub's Website",
+			"alternateName": ["BunnyTubby's Website", "Tubby Bunny's Website"],
+			"url": "https://bunnytub.com"
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="canonical" href="https://bunnytub.com/">
+		<link rel="icon" href="/media/ErstwilIconLowRes.png">
+		<script src="WarnOfHTML.js"></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-XRBM5V7X9T');
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<ul>
+				<img id="icon" src="favicon.ico"></img>
+				<li><a href="/">Home</a></li>
+				<li><a href="/SharpAlert">SharpAlert</a></li>
+				<li><a href="/SharpWX">SharpWX</a></li>
+				<li><a href="/Extras">Extras</a></li>
+			</ul>
+		</div>
 
-    #wallpaper {
-      background-image: url('/media/google.gif');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.5;
-      z-index: -1;
-      pointer-events: none;
-    }
-  </style>
-  <!-- <script src="/js/osu-cursor.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var cursor = new osuCursor();
-    });
-  </script> -->
-</head>
-<body>
-  <div id="wallpaper"></div>
-  <h1>Got too busy playing osu!... x3</h1>
-</body>
+		<!-- <img id="logo" src="ErstwilIcon.png" style="display: none;" alt="Fursona, BunnyTub. Drawn by ApatheticDELL." /> -->
+		<img id="logo" src="favicon.ico" alt="The website logo, inspired by BunnyTub's &quot;spots&quot; design. Drawn by Kwaziiz (https://kwaziiz.carrd.co/)." title="The website logo, inspired by BunnyTub's &quot;spots&quot; design. Drawn by Kwaziiz (https://kwaziiz.carrd.co/)." />
+		<h1 id="page-header">BunnyTub's Home Dome</h1>
+
+		<div class="container" style="display: flex;">
+			<div class="picturebox picturemain">
+				<p style="font-size: 24pt; margin-top: -10px;">We love bunnies and dragons!</p>
+				<!-- <img src="media/uranium.png" title="Secondary fursona, Oso Cinnamon. Drawn by ApatheticDELL." style="height: auto; max-width: 256px; transform: none; filter: blur(0.4px)"></img> -->
+				<div class="picturemap" style="display: flex;">
+					<img src="media/Oso-BearHug-Crop.png" title="Secondary fursona, Oso Cinnamon, hugging Dell Apathetic. Drawn by ApatheticDELL." style="height: auto; max-width: 318px; transform: none;"></img>
+					<a href="#" title="Character: Oso Cinnamon | Click this box for more!" onclick="alert('Oso Cinnamon is my name, I\'m BunnyTub\'s alternate fursona, a big striped bear. This dragon likes my hugs, hehe~')" class="hotspot"
+						style="top: 58px; left: 75px; width: 110px; height: 112px;"></a>
+					<a href="https://apatheticdell.net/" title="Character: Dell Apathetic | Click this box for more!" onclick="alert('Hewooo, I\'m Dell! And I\'m a dragon... rawr! >:3\n... I need hugs. -w-')" class="hotspot"
+						style="top: 172px; left: 45px; width: 120px; height: 190px;"></a>
+
+					<div class="picturemap">
+						<img src="media/Dell-Tubby-Hug.png" title="Primary fursona, Tubby, hugging Dell Apathetic. Drawn by ApatheticDELL." style="height: auto; max-width: 318px; transform: none;"></img>
+						<a href="https://apatheticdell.net/" title="Character: Dell Apathetic | Click this box for more!" onclick="alert('Hewooo, I\'m Dell! And I\'m a dragon... rawr! >:3\n... I need hugs. -w-')" class="hotspot"
+							style="top: 110px; left: 10px; width: 180px; height: 205px;"></a>
+						<a href="#" title="Character: Tubby | Click this box for more!" onclick="alert('I\'m Tubby, I\'m BunnyTub\'s main fursona, a smol bunny. I think the dragon likes to hug! >w<')" class="hotspot"
+							style="top: 50px; left: 130px; width: 110px; height: 112px;"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p>My name is BunnyTub.<br>Feel free to look around my website, there isn't much here. I'm a coder though :P</p>
+			<a href="https://discord.com/users/603429346736341013" target="_blank">BunnyTub's Discord Profile</a>
+		</div>
+
+		<div id="footer">
+			Consider joining the <a href="https://discord.gg/qQQqF52jhT" target="_blank">EAS Culture Discord server</a>, or checking out my <a href="https://youtube.com/@ItsBunnyTub" target="_blank">YouTube channel</a>! Looking for how to <a href="/ContactMe">contact me</a>?
+		</div>
+	</body>
 </html>
