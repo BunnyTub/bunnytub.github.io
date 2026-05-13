@@ -60,12 +60,24 @@
 
 					if (restriction.length === 4) {
 						status = "restricted";
+						statusMeaning = "Some features are restricted.";
 
-						if (restriction[2] == "1") status = "Rich Presence restricted";
-						if (restriction[2] == "2") status = "Rich Presence and Webhook restricted";
-						if (restriction[2] == "100") status = "client restricted";
+						if (restriction[2] == "1") {
+							status = "Rich Presence restricted";
+							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature. SharpAlert will not display information on their profile";
+						}
 
-						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 100, 100);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 50, 50)">${status}<span>!</p><p>${restriction[3]}</p></div>`
+						if (restriction[2] == "2") {
+							status = "Rich Presence and Webhook restricted";
+							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's Discord Webhook feature. SharpAlert will not display information on their profile, or allow them to send alert information to Discord channels.";
+						}
+
+						if (restriction[2] == "100") {
+							status = "client restricted";
+							statusMeaning = "This user is prevented from using SharpAlert. They cannot use or open SharpAlert until their restriction is lowered or removed.";
+						}
+
+						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 50, 50)" title="${statusMeaning}">${status}</span>!</p><p>${restriction[3]}</p></div>`
 					}
 				}
 
