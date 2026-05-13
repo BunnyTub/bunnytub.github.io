@@ -59,7 +59,13 @@
 					restriction = restrict[i].split("|");
 
 					if (restriction.length === 4) {
-						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255,100,100);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently restricted!</p><p>${restriction[3]}</p></div>`
+						status = "restricted";
+
+						if (restriction[2] == "1") status = "Rich Presence restricted";
+						if (restriction[2] == "2") status = "Rich Presence and Webhook restricted";
+						if (restriction[2] == "100") status = "client restricted";
+
+						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255,100,100);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <>${status}<>!</p><p>${restriction[3]}</p></div>`
 					}
 				}
 
