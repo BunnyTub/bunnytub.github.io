@@ -7,6 +7,7 @@ html {
 	accent-color: orangered;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
+	word-break: break-word;
 	/* overflow-wrap: break-word;
 	cursor: url("media/cursor.png"), none; */
 }
@@ -29,20 +30,16 @@ body {
 	padding-top: 0;
 	padding-left: 25px;
 	padding-right: 25px;
-	padding-bottom: 0;
+	padding-bottom: 0; 
+	border-radius: 10px;
 	/* background-color: #14192c; */
 	/* background-color: rgb(68, 24, 24); */
 	background-color: #1a1a1a;
 	/* background: linear-gradient(125deg, #1a1a1a, #1f1f1f); */
 	color: #fff;
 	text-decoration: none;
-	border-radius: 10px;
-	/* animation-name: fade-in-body;
-	animation-duration: 300ms;
-	transition-property: opacity;
-	transition-duration: 300ms; */
-	justify-content: center;  /* horizontal centering */
-	align-items: center;      /* vertical centering */
+	justify-content: center;
+	align-items: center;
 }
 
 body#subframe {
@@ -51,6 +48,13 @@ body#subframe {
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
+}
+
+img,
+iframe,
+video,
+audio {
+	max-width: 100%;
 }
 
 .audioarea {
@@ -147,6 +151,11 @@ code {
 	background-color: #262626;
 	padding: 2px;
 	/* font-size: 100%; */
+}
+
+.UserRestrictions {
+	background-color: rgb(75, 50, 0);
+	border-radius: 10px;
 }
 
 .button {

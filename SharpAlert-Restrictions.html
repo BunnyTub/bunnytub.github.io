@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: rgb(50, 38, 0);">
+	<head>
+		<title>SharpAlert - Terms of Use / Privacy Policy</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	</head>
+	<body style="background-color: rgb(100, 75, 0); padding-bottom: 10px;">
+		<!-- <h1 id="header" style="font-size: 64px; transform: rotate(-2deg);">Whoops...404!</h1> -->
+		<img style="max-width: 128px; max-height: 128px;" id="logo" src="media/SharpAlert.png" />
+		<h2 style="font-size: 40pt;">Why am I restricted?</h2>
+		<p>
+			You can be restricted for a variety of reasons (see <a href="/SharpAlert-PrivacyPolicy.html"><b>Restriction System</b></a>), but here are common reasons on why you might've been restricted.
+			<ul>
+				<li>You are currently banned from EAS Culture on Discord.</li>
+				<li>You are currently muted or banned in r/EmergencyAlertSystem on Reddit.</li>
+			</ul>
+			<br><br>
+		</p>
+		<h2 style="font-size: 40pt;">Who is restricted?</h2>
+		<h2 style="font-size: 20pt; padding-bottom: 10px;">This list shows the most recent restrictions at the top.</h2>
+		<div class="UserRestrictions">
+			<div id="RestrictionsList">
+				Oops! In order to view this list, you need to enable JavaScript, or view the <a href="/SharpAlert/SharpAlertRestrictionsByDID_v2.txt">text only restrictions list</a> instead.
+				<br><br>
+			</div>
+		</div>
+		<script>
+			var list = document.getElementById("RestrictionsList");
+			list.innerHTML = "Loading list... If this is taking too long, view the <a href='/SharpAlert/SharpAlertRestrictionsByDID_v2.txt'>text only restrictions list</a> instead.";
+
+			fetch('https://bunnytub.com/SharpAlert/SharpAlertRestrictionsByDID_v2.txt')
+			.then(response => response.text())
+			.then(restrictions => {
+				restrict = restrictions.trim().split(/\r?\n/);
+				restrict.reverse();
+
+				compiledHTML = "";
+
+				for (let i = 0; i < restrict.length; i++) {
+					//alert(restrict[i]);
+					restriction = restrict[i].split("|");
+
+					if (restriction.length === 4) {
+						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255,100,100);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently restricted!</p><p>${restriction[3]}</p></div>`
+					}
+				}
+
+				list.innerHTML = compiledHTML + "<br><br>";
+			})
+			.catch(error => {
+				console.error("Couldn't get the restrictions list.", error);
+				if (confirm("Couldn't get the restrictions list.\nRefresh and try again?")) {
+					window.location.reload();
+				}
+			});
+		</script>
+	</body>
+</html>
