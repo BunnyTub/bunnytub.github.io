@@ -7,9 +7,9 @@ html {
 	accent-color: orangered;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
+	overflow-wrap: break-word;
 	word-break: break-word;
-	/* overflow-wrap: break-word;
-	cursor: url("media/cursor.png"), none; */
+	/* cursor: url("media/cursor.png"), none; */
 }
 
 /* a:hover {
