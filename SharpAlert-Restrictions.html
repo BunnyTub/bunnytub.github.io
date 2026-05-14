@@ -23,8 +23,8 @@
 	<body style="background-color: rgb(100, 75, 0); padding-bottom: 10px;">
 		<!-- <h1 id="header" style="font-size: 64px; transform: rotate(-2deg);">Whoops...404!</h1> -->
 		<img style="max-width: 128px; max-height: 128px;" id="logo" src="media/SharpAlert.png" />
-		<h2 style="font-size: 40pt;">Who is restricted?</h2>
-		<h2 style="font-size: 20pt; padding-bottom: 10px;">This list shows the most recent restrictions at the top.<br>Please don't become a statistic here.</h2>
+		<h1>Who is restricted?</h2>
+		<h2>This list shows the most recent restrictions at the top.<br>Please don't become a statistic here.</h2>
 		<div class="UserRestrictions">
 			<div id="RestrictionsList">
 				Oops! In order to view this list, you need to enable JavaScript, or view the <a href="/SharpAlert/SharpAlertRestrictionsByDID_v2.txt">text only restrictions list</a> instead.
@@ -32,12 +32,23 @@
 			</div>
 		</div>
 
-		<h2 style="font-size: 40pt;">Why am I restricted?</h2>
+		<h1>Why am I restricted?</h1>
 		<p>
-			You can be restricted for a variety of reasons (see <a href="/SharpAlert-PrivacyPolicy.html"><b>Restriction System</b></a>), but here are common reasons on why you might've been restricted.
+			You can be restricted for a variety of reasons (see <a href="/SharpAlert-PrivacyPolicy"><b>Restriction System</b></a>), but here are common reasons on why you might've been restricted.
 			<ul>
 				<li>You are currently banned from EAS Culture on Discord.</li>
 				<li>You are currently muted or banned in r/EmergencyAlertSystem on Reddit.</li>
+			</ul>
+			<br><br>
+		</p>
+
+		<h1>What restriction types are there?</h1>
+		<p>
+			Depending on why you might have been restricted, there are different levels that can be assigned to one.
+			<ul>
+				<li>A severity of "1" or "Rich Presence restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile.</li>
+				<li>A severity of "2" or "Rich Presence and Webhook restricted" means that you cannot use the Discord Rich Presence feature or send messages to Discord Webhooks.</li>
+				<li>A severity of "100" or "client restricted" means that you cannot use SharpAlert in any capacity until your restriction is lowered or lifted.</li>
 			</ul>
 			<br><br>
 		</p>
@@ -61,6 +72,12 @@
 					if (restriction.length === 4) {
 						status = "restricted";
 						statusMeaning = "Some features are restricted.";
+						reason = restriction[3];
+						
+						var urlRegex = /(https?:\/\/[^\s]+)/g;
+						reason = reason.replace(urlRegex, function(url) {
+							return '<a href="' + url + '">' + url + '</a>';
+						});
 
 						if (restriction[2] == "1") {
 							status = "Rich Presence restricted";
@@ -77,7 +94,7 @@
 							statusMeaning = "This user is prevented from using SharpAlert. They cannot use or open SharpAlert until their restriction is lowered or removed.";
 						}
 
-						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 50, 50)" title="${statusMeaning}">${status}</span>!</p><p>${restriction[3]}</p></div>`
+						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 200, 0)" title="${statusMeaning}">${status}</span>!</p><p>${reason}</p></div>`
 					}
 				}
 

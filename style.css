@@ -78,23 +78,13 @@ a:hover {
 }
 
 h1 {
-	text-decoration: none;
-	font-size: 3em;
+	margin: 0px;
+	margin-left: 80px;
+	margin-right: 80px;
+	padding: 0px;
+	font-size: 34pt;
 	font-weight: normal;
 	color: #fff;
-	margin-top: 3px;
-}
-
-p {
-	text-decoration: none;
-	font-size: 24pt;
-	color: #fff;
-	/*
-	position: absolute;
-	white-space: nowrap;
-	line-height: 30px;
-	*/
-	margin: 0;
 	text-align: center;
 }
 
@@ -103,14 +93,27 @@ h2 {
 	margin-left: 80px;
 	margin-right: 80px;
 	padding: 0px;
+	font-size: 18pt;
 	font-weight: normal;
 	color: #fff;
-	/* color: #f8ef64; */
 	text-align: center;
 }
 
 h3 {
 	font-weight: normal;
+	text-align: center;
+}
+
+p {
+	text-decoration: none;
+	font-size: 16pt;
+	color: #fff;
+	/*
+	position: absolute;
+	white-space: nowrap;
+	line-height: 30px;
+	*/
+	margin: 0;
 	text-align: center;
 }
 
@@ -156,6 +159,8 @@ code {
 .UserRestrictions {
 	background-color: rgb(75, 50, 0);
 	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .button {
