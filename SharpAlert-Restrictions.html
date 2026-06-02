@@ -71,7 +71,7 @@
 
 					if (restriction.length === 4) {
 						status = "restricted";
-						statusMeaning = "Some features are restricted.";
+						statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
 						reason = restriction[3];
 						
 						var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -86,12 +86,12 @@
 
 						if (restriction[2] == "2") {
 							status = "Rich Presence and Webhook restricted";
-							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's Discord Webhook feature. SharpAlert will not display information on their profile, or allow them to send alert information to Discord channels.";
+							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's webhook feature. SharpAlert will not display information on their profile, or allow them to send messages to webhooks.";
 						}
 
 						if (restriction[2] == "100") {
-							status = "client restricted";
-							statusMeaning = "This user is prevented from using SharpAlert. They cannot use or open SharpAlert until their restriction is lowered or removed.";
+							status = "multi-feature restricted";
+							statusMeaning = "This user is prevented from using multiple SharpAlert features. See the description of this restriction for more information.";
 						}
 
 						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 200, 0)" title="${statusMeaning}">${status}</span>!</p><p>${reason}</p></div>`
