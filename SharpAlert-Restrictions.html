@@ -47,9 +47,15 @@
 			Depending on why you might have been restricted, there are different levels that can be assigned to one.
 			<ul>
 				<li>A severity of "1" or "Rich Presence restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile.</li>
-				<li>A severity of "2" or "Rich Presence and Webhook restricted" means that you cannot use the Discord Rich Presence feature or send messages to Discord Webhooks.</li>
-				<li>A severity of "100" or "client restricted" means that you cannot use SharpAlert in any capacity until your restriction is lowered or lifted.</li>
+				<li><s>A severity of "2" or "Rich Presence and Webhook restricted" means that you cannot use the Discord Rich Presence feature or send messages to Discord Webhooks.</s> <b>This severity has been deprecated, and is no longer in use.</b></li>
+				<li>A severity of "100" or "client restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile, and SharpAlert will have an added delay on startup.</li>
 			</ul>
+			<br><br>
+		</p>
+		
+		<h1>How does SharpAlert know if I'm restricted?</h1>
+		<p>
+			When SharpAlert connects to your Discord app for Rich Presence support, it will download a list of restricted users, then compare user IDs in the list, with the user ID retrieved from the Rich Presence data provided by Discord.
 			<br><br>
 		</p>
 
