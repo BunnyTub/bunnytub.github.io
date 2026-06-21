@@ -9,10 +9,15 @@ function RunSteps() {
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-        const response = await fetch("/NavigationBar");
-        menuBar = document.getElementById("menu")
-        menuBar.innerHTML = await response.text();
-        menuBar.style.display = "flex";
+        try {
+            const response = await fetch("/NavigationBar");
+            menuBar = document.getElementById("menu")
+            menuBar.innerHTML = await response.text();
+            menuBar.style.display = "flex";
+        }
+        catch (error) {
+            alert("Whoops, the page didn't load correctly. Please refresh this page!");
+        }
     });
 }
 
