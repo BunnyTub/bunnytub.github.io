@@ -37,15 +37,7 @@
 		</script>
 	</head>
 	<body>
-		<div id="menu">
-			<ul>
-				<img id="icon" src="favicon.ico"></img>
-				<li><a href="/">Home</a></li>
-				<li><a href="/SharpAlert">SharpAlert</a></li>
-				<li><a href="/SharpWX">SharpWX</a></li>
-				<li><a href="/Extras">Extras</a></li>
-			</ul>
-		</div>
+		<div id="menu"></div>
 
 		<!-- <img id="logo" src="ErstwilIcon.png" style="display: none;" alt="Fursona, BunnyTub. Drawn by ApatheticDELL." /> -->
 		<img id="logo" src="favicon.ico" alt="The website logo, inspired by BunnyTub's &quot;spots&quot; design. Drawn by Kwaziiz (https://kwaziiz.carrd.co/)." title="The website logo, inspired by BunnyTub's &quot;spots&quot; design. Drawn by Kwaziiz (https://kwaziiz.carrd.co/)." />

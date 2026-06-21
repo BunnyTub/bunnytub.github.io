@@ -251,7 +251,8 @@ code {
 
 #menu {
 	/* border-top: 3px dotted #757575; */
-	display: flex;
+	/* display: flex; */
+	display: none;
 	border-bottom: 3px dotted #757575;
 	text-align: center;
 	margin: 0 auto 15px auto;

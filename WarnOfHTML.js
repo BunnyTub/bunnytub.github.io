@@ -10,7 +10,9 @@ function RunSteps() {
 
     document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch("/NavigationBar");
-        document.getElementById("menu").innerHTML = await response.text();
+        menuBar = document.getElementById("menu")
+        menuBar.innerHTML = await response.text();
+        menuBar.style.display = "flex";
     });
 }
 
