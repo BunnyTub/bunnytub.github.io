@@ -16,7 +16,7 @@ function RunSteps() {
             menuBar.style.display = "flex";
         }
         catch (error) {
-            alert("Whoops, the page didn't load correctly. Please refresh this page!");
+            alert("Whoops, something is having trouble. Please reload the page!");
         }
     });
 }
