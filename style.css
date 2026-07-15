@@ -148,6 +148,22 @@ img#big-logo {
 	padding: 5px 0;
 }
 
+.multipleimages {
+	margin-top: 20px;
+	display: flex;
+	gap: 0px;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: fit-content;
+}
+
+img.centeredimage {
+    height: 132px;
+    width: auto;
+}
+
 code {
 	font-family: Consolas, "courier new";
 	color: crimson;
@@ -418,15 +434,30 @@ code {
 }
 
 @keyframes pulser {
-  0% {
-    box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(var(--pulser-color), 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0);
-  }
+	0% {
+		box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 15px rgba(var(--pulser-color), 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(var(--pulser-color), 0);
+	}
+}
+
+.pulse-scale {
+	animation: pulse-scale 1.5s infinite ease-out;
+}
+
+@keyframes pulse-scale {
+	0%, 100%
+	{
+		transform: scale(1.2) rotate(3deg);
+	}
+	5%
+	{
+		transform: scale(1.6) rotate(-3deg);
+	}
 }
 
 #footer {
