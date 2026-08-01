@@ -26,4 +26,3 @@
 1503847489177128970|Joey Jordison|1|Association with SPCNiagaraWX.
 1272179956985761863|Djdeath67778|1|Association with SPCNiagaraWX.
 1512199861758333131|LorainAreaWX|1|Association with SPCNiagaraWX.
-999999999999999|-     Tubby's eyes have awoken...     -|1|This is a test restriction used for example purposes.
