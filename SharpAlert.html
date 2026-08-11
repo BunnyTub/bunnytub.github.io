@@ -46,15 +46,11 @@
 			SharpAlert might not support your country.<br>Find supported countries in <a href="#supported-regions">supported regions</a>.
 		</h2>
 
-		<h2><b>SharpAlert</b> is an emergency alerting software that notifies you of events around you, entirely from your computer!</h2>
+		<h2><b>SharpAlert</b> notifies you of emergency alerts in your area, entirely from your computer!</h2>
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
 				<a class="button standalone-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Standalone</a>
-				<a class="button installer-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Installer</a>
-				<a class="button" href="https://github.com/BunnyTub/SharpAlert">GitHub for SharpAlert</a>
-				<a class="button" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
-				<a class="button" href="/SharpAlert-Restrictions">Show SharpAlert's Current Restrictions</a>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
@@ -72,8 +68,17 @@
 				<!-- <a class="disabled-button" href="#">No Installer Available</a> -->
 			</div>
 			<div>
+				<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 16px auto 32px auto; position: relative;">
+					<iframe src="https://www.youtube.com/embed/sTbDDYET5Ps?rel=0"
+							style="width: 100%; height: 100%; border: 0; border-radius: 5px; outline: solid red; position: absolute; top: 0; left: 0;"
+							allowfullscreen
+							scrolling="no"
+							allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
+					</iframe>
+				</div>
+
 				<div id="feature-set">
-					<h1 style="text-align: center; margin-bottom: 0px;"><b>SharpAlert's interesting features!</b></h1>
+					<h1 style="text-align: center; margin-bottom: 0px;"><b>What can I do after I get SharpAlert?</b></h1>
 					<h3 style="max-width: 75%; margin: 8px auto;">Right-click the tray icon for more options. All windows can be found in Settings.</h3>
 					<img src="media/SharpAlert_Example_TaskBarTrayIcon.gif" style="display: block; margin: 8px auto;"></img>
 					
@@ -91,8 +96,15 @@
 					<br>
 					<p>Specific Locations Only</p>
 					<img src="media/SharpAlert_Example_LocationWindow1.png" title="This window shows location settings." style="display: block; margin: 8px auto;"></img>
-					<h3 style="max-width: 75%; margin: auto;">You can make a list of locations you want alerts for (<b>Alert Settings</b> > <b>Manage Locations</b>). This means that if an alert doesn't have at least one of the locations in your list, you will not see the alert. (Clear all lists to disable location filtering!)</h3>
-					<br>
+					<h3 style="max-width: 75%; margin: auto;">You can make a list of locations you want alerts for (<b>Alert Settings</b> > <b>Manage Locations</b>). This means that if an alert doesn't have at least one of the locations in your list, you will not see the alert. (Clear all lists to disable location filtering!) If you are filtering locations in the United States, click the <b>Select</b> button to see a list of states and counties to choose from.</h3>
+					<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 16px auto 16px auto; position: relative;">
+						<iframe src="https://www.youtube.com/embed/M9wyev8kZvo?rel=0"
+								style="width: 100%; height: 100%; border: 0; border-radius: 5px; outline: solid red; position: absolute; top: 0; left: 0;"
+								allowfullscreen
+								scrolling="no"
+								allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
+						</iframe>
+					</div>
 					<p>Discord Webhooks</p>
 					<img src="media/SharpAlert_Example_WebhookWindow1.png" title="This window shows URLs all prefilled in each source under the Discord Webhooks category." style="display: block; margin: 8px auto;"></img>
 					<img src="media/SharpAlert_Example_WebhookExample1.png" title="This is an example of a relayed alert. This is a Discord message." style="display: block; margin: 8px auto;"></img>
@@ -131,9 +143,6 @@
 					<p>Brazil (<a href="https://www.gov.br">IDAP</a>)</p>
 				</div>
 				<br>
-				<h3 class="notice" style="color: greenyellow;">
-					SharpAlert recently switched to the newer SASMEX feed provided at <a href="https://rss.sasmex.net/">https://rss.sasmex.net/</a>. Please update to the latest version of SharpAlert to receive SASMEX alerts.
-				</h3>
 
 				<div id="supported-systems">
 					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Platforms</b></h1>
@@ -146,28 +155,6 @@
 					<h2>Alert Closing</h2>
 					<audio src="https://bunnytub.com/media/ui_end.wav" controls></audio>
 				</div> -->
-
-				<!-- <div style="margin-top: 20px;">Looking for <a href="/SharpAlert-Docs.html"><b>command line documentation</b></a>?</div> -->
-
-				<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 0 auto; position: relative;">
-					<iframe src="https://www.youtube.com/embed/sTbDDYET5Ps?rel=0"
-							style="width: 100%; height: 100%; border: 0; border-radius: 5px; outline: solid red; position: absolute; top: 0; left: 0;"
-							allowfullscreen
-							scrolling="no"
-							allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
-					</iframe>
-				</div>
-				
-				<!-- weird things are happening with iframes in Firefox, so I assigned these the notDiscord class -->
-
-				<div class="notDiscord" style="width: 80%; max-width: 960px; aspect-ratio: 16/9; margin: 0 auto; position: relative; margin-top: 15px;">
-					<iframe src="https://www.youtube.com/embed/M9wyev8kZvo?rel=0"
-							style="width: 100%; height: 100%; border: 0; border-radius: 5px; outline: solid red; position: absolute; top: 0; left: 0;"
-							allowfullscreen
-							scrolling="no"
-							allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
-					</iframe>
-				</div>
 
 				<h3 class="notice" style="color: orange;">
 					SharpAlert checks for alerts very frequently.<br>This could result in higher data usage.
@@ -184,6 +171,14 @@
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
 		        
+				<a class="button installer-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Installer</a>
+				<br><br>
+				<a class="button" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>
+				<br><br>
+				<a class="button" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
+				<br><br>
+				<a class="button" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
+
 				<!-- <a class="button" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7+)</a><br><br>
 				<a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">Why is SharpAlert v12.1 still linked on this page?</a><br> -->
 		</div>
