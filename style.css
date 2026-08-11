@@ -194,6 +194,7 @@ code {
 	transition-property: font;
 	transition-duration: 100ms;
 	font-size: 18pt;
+	text-align: center;
 }
 
 .button:hover {
