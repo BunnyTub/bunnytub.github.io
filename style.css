@@ -9,12 +9,12 @@ html {
 	font-weight: normal;
 	overflow-wrap: break-word;
 	word-break: break-word;
-	/* cursor: url("media/cursor.png"), none; */
+	cursor: url("/cursors/arrow.cur"), auto;
 }
 
-/* a:hover {
-	cursor: url("media/cursor-hover.png"), none;
-} */
+a:active {
+	cursor: url("/cursors/arrowtint.cur"), auto;
+}
 
 @keyframes fade-in-body {
 	from

@@ -1,0 +1,53 @@
+; To use right-click install.inf and select "install". Then go to Mouse Properties>Pointers and select the Cursor Sans scheme.
+; 
+[Version]
+signature="$Windows NT$"
+
+[DefaultInstall]
+CopyFiles = Scheme.cur, Scheme.txt
+AddReg    = Scheme.reg
+
+[DestinationDirs]
+Scheme.cur = 10,"%CUR_DIR%"
+Scheme.txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%pointer%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%cross%,%10%\%CUR_DIR%\%Text%,%10%\%CUR_DIR%\%Hand%,%10%\%CUR_DIR%\%unavailable%,%10%\%CUR_DIR%\%Vert%,%10%\%CUR_DIR%\%Horz%,%10%\%CUR_DIR%\%dgn1%,%10%\%CUR_DIR%\%dgn2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alternate%,%10%\%CUR_DIR%\%link%"
+
+; -- Common Information
+
+[Scheme.Cur]
+install.inf
+arrow.cur
+arrowtint.cur
+busy.ani
+working.ani
+unavailable.cur
+beam.cur
+move.cur
+ns.cur
+ew.cur
+nesw.cur
+nwse.cur
+cross.cur
+up.cur
+
+[Strings]
+CUR_DIR        = "\Cursors\osu!lazer"
+SCHEME_NAME    = "osu!lazer"
+pointer        = "arrow.cur"
+help           = "arrowtint.cur"
+work           = "working.ani"
+busy           = "busy.ani"
+text           = "beam.cur"
+unavailable    = "unavailable.cur"
+vert           = "ns.cur"
+horz           = "ew.cur"
+dgn1           = "nesw.cur"
+dgn2           = "nwse.cur"
+move           = "move.cur"
+link           = "arrowtint.cur"
+cross          = "cross.cur"
+hand           = "arrow.cur"
+alternate      = "up.cur"
+
