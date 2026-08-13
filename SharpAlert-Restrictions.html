@@ -106,7 +106,7 @@
 
 						if (restriction[2] == "100") {
 							status = "multi-feature restricted";
-							statusMeaning = "This user is prevented from using multiple SharpAlert features. See the description of this restriction for more information.";
+							statusMeaning = "This user is prevented from using multiple SharpAlert features. This is the most severe type of restriction.";
 						}
 
 						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 200, 0)" title="${statusMeaning}">${status}</span>!</p><p>${reason}</p></div>`
