@@ -19,19 +19,13 @@
   </url>
 
   <url>
-    <loc>https://bunnytub.com/PatcherPlus</loc>
+    <loc>https://bunnytub.com/HopCast</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://hopcast.bunnytub.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://fmdx.bunnytub.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
