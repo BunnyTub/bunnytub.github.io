@@ -49,30 +49,23 @@
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<a class="button pulse-warning" style="background-color: green; color: white; --pulser-color: 0, 200, 0;" href="https://sharpwx.bunnytub.com">Open alternative SharpWX website</a>
 				<a class="button" onclick="setTimeout(() => alert('Thanks for downloading SharpWX! Make sure you have the .NET 9 Desktop runtime installed...'), 500);" href="https://github.com/BunnyTub/SharpWX-releases/releases/latest/download/BunnyTubby.SharpWX-win-Setup.exe" download>Download SharpWX (Windows)</a>
-				<a class="button" href="https://github.com/BunnyTub/SharpWX-releases">GitHub for SharpWX (Windows)</a>
+				<a class="button" href="https://play.google.com/store/apps/details?id=com.BunnyTubby.SharpWX">Download SharpWX (Android)</a>
 
 				<h3 class="notice runtime-text" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisitWX = 0;">
 					If you're having trouble opening SharpWX, try installing the .NET 9 Desktop Runtime!
 				</h3>
-
-				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-9.0.14-windows-x64-installer">Download .NET 9 Desktop Runtime</a>
-
-				<a class="button" href="https://play.google.com/store/apps/details?id=com.BunnyTubby.SharpWX">Download SharpWX (Google Play Store)</a>
-				<a class="button" href="/SharpWX-PrivacyPolicy">Privacy Policy for SharpWX (Google Play Store)</a>
-
-				<!--
-				<a class="button standalone-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Standalone</a>
-				<a class="button installer-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Installer</a>
-				-->
-				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
-				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				
+				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-9.0.14-windows-x64-installer">Download .NET 9 Desktop Runtime</a>
+				
+				
+				<a class="button" href="/SharpWX-PrivacyPolicy">Privacy Policy for SharpWX (Google Play Store)</a>
+				<a class="button" href="https://github.com/BunnyTub/SharpWX-releases">Releases for SharpWX (Windows)</a>
+				<a class="button pulse-warning" style="background-color: green; color: white; --pulser-color: 0, 200, 0;" href="https://sharpwx.bunnytub.com">Open alternative SharpWX website</a>
 			</div>
-
+				
 			<div>
-				<p>SharpWX is now available! Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a> for Android builds.</p><br>
+				<p>SharpWX is now available on the Google Play Store!</p><br>
 				<div id="supported-systems">
 					<h1 style="text-align: center; margin-bottom: 0px;"><b>Supported Platforms</b></h1>
 					<p>Windows 10 (Build 10240+)</p>
@@ -81,23 +74,22 @@
 					<br>
 				</div>
 
-				<h3 class="notice" style="color: rgb(255, 194, 82);">
-					SharpWX checks for messages very frequently.<br>This could result in higher data usage.<br><br>Find out how to <a href="media/RequiredVsOptional.png">decrease your data usage</a> on the desktop version of SharpWX.
+				<h3 class="notice pulse-warning" style="color: rgb(255, 40, 40);">
+					The availability and uptime of <a href="https://weather.im/iembot">IEMBot</a> is not guaranteed to be always 100%. Do not rely on one source alone for messages and alerts. Always have at least <b>one</b> backup.
 				</h3>
 				
-				<h3 class="notice" style="color: white;">
-					SharpWX is split into two apps. SharpWX for Windows, and SharpWX for Android. There may be differing functionality and discrepancies.
+				<h3 class="notice" style="color: rgb(255, 194, 82);">
+					SharpAlert checks for alerts frequently in the background.<br>This could result in increased data usage.<br><br>Find out how to <a href="media/RequiredVsOptional.png">decrease your data usage</a> on the desktop version of SharpWX.
 				</h3>
-
-				<!-- <h3 class="notice pulse-warning" style="color: white; --pulser-color: 255, 255, 255; margin-top: 2px; margin-bottom: 18px;">
-					Starting in September of 2026, SharpWX beta builds for Android may become inaccessible for some.<br><br>Find more info on the <a href="https://keepandroidopen.org">Keep Android Open</a> website.<br><br><b>You do not need to worry about this warning if you download SharpWX from the Google Play Store.</b>
-				</h3> -->
 				
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
+			</div>
+			
 		</div>
-
+		
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+		
 	
 		<footer id="footer">
 			Consider joining the <a href="https://discord.gg/qQQqF52jhT" target="_blank">EAS Culture Discord server</a>, or checking out my <a href="https://youtube.com/@ItsBunnyTub" target="_blank">YouTube channel</a>! Looking for how to <a href="/ContactMe">contact me</a>?
