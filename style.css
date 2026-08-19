@@ -587,3 +587,22 @@ code {
 .runtime-text.pulse-text {
   animation: pulse-text 2s infinite ease-in-out;
 }
+
+cover
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.covered
+{
+    position: relative;
+}
+
+.covered img
+{
+    display: none;
+}
