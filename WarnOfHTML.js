@@ -21,28 +21,12 @@ function RunSteps() {
             //alert("Whoops, something is having trouble. Please reload the page!");
         }
 
-        document.querySelectorAll('.covered').forEach(function (el) {
-            el.insertAdjacentHTML('beforeend', '<cover></cover>');
-            el.addEventListener('mousedown', function (e) {
-                if (e.button === 2) {
-                    e.preventDefault();
-                    return false;
-                }
-                return true;
-            });
-
-            el.querySelectorAll('img').forEach(function (img) {
-                img.style.display = 'block';
-            });
-
-            el.addEventListener('mouseenter', function () {
-                var cover = el.querySelector('cover');
-                if (!cover) {
-                    el.innerHTML = '';
-                }
-            });
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', e => e.preventDefault());
+            img.addEventListener('dragstart', e => e.preventDefault());
+            img.style.userSelect = 'none';
+            img.style['-webkit-user-drag'] = 'none';
         });
-
     });
 }
 
