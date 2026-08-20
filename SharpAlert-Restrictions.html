@@ -91,10 +91,10 @@
 						statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
 						reason = restriction[3];
 						
-						var urlRegex = /(https?:\/\/[^\s]+)/g;
-						reason = reason.replace(urlRegex, function(url) {
-							return '<a href="' + url + '" target="_blank">' + url + '</a>';
-						});
+						// var urlRegex = /(https?:\/\/[^\s]+)/g;
+						// reason = reason.replace(urlRegex, function(url) {
+						// 	return '<a href="' + url + '" target="_blank">' + url + '</a>';
+						// });
 
 						if (restriction[2] == "1") {
 							status = "Rich Presence restricted";
@@ -111,7 +111,7 @@
 							statusMeaning = "This user is prevented from using multiple SharpAlert features. This is the most severe type of restriction.";
 						}
 
-						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><a onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!">${restriction[1]}</b></a> is currently <span style="color: rgb(255, 200, 0)" title="${statusMeaning}">${status}</span>!</p><p>${reason}</p></div>`
+						compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!">${restriction[1]}</b></a> is currently <a style="color: rgb(255, 200, 0)" onclick="CopyTextToClipboard(reason); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!">${status}</a>!</p></div>`
 					}
 				}
 
