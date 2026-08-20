@@ -30,4 +30,9 @@ function RunSteps() {
     });
 }
 
+function CopyTextToClipboard(text) {
+  navigator.clipboard.writeText(text);
+  alert("The following text was copied:\n" + text);
+} 
+
 RunSteps();
