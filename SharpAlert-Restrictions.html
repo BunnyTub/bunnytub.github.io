@@ -12,9 +12,9 @@
 		<meta property="og:type" content="website">
 		<meta name="twitter:site" content="BunnyTub's Home Dome">
 		<meta name="twitter:title" content="SharpAlert Restrictions - BunnyTub">
-		<meta property="og:description" content="See a list of restricted SharpAlert users.">
+		<meta property="og:description" content="See a list of restricted Discord users.">
 		<meta name="description" content="See a list of restricted SharpAlert users.">
-		<meta name="twitter:description" content="See a list of restricted SharpAlert users.">
+		<meta name="twitter:description" content="See a list of restricted Discord users.">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="nofollow, noindex" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
@@ -91,27 +91,28 @@
 						statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
 						reason = restriction[3];
 						
-						var urlRegex = /(https?:\/\/[^\s]+)/g;
-						reason = reason.replace(urlRegex, function(url) {
-							return '<a href="' + url + '" target="_blank">' + url + '</a>';
-						});
+						// var urlRegex = /(https?:\/\/[^\s]+)/g;
+						// reason = reason.replace(urlRegex, function(url) {
+						// 	return '<a href="' + url + '" target="_blank">' + url + '</a>';
+						// });
 
 						if (restriction[2] == "1") {
 							status = "Rich Presence restricted";
 							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature. SharpAlert will not display information on their profile";
 						}
 
-						if (restriction[2] == "2") {
-							status = "Rich Presence and Webhook restricted";
-							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's webhook feature. SharpAlert will not display information on their profile, or allow them to send messages to webhooks.";
-						}
+						// unused
+						// if (restriction[2] == "2") {
+						// 	status = "Rich Presence and Webhook restricted";
+						// 	statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's webhook feature. SharpAlert will not display information on their profile, or allow them to send messages to webhooks.";
+						// }
 
 						if (restriction[2] == "100") {
 							status = "multi-feature restricted";
-							statusMeaning = "This user is prevented from using multiple SharpAlert features. This is the most severe type of restriction.";
+							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. This is the most severe type of restriction.";
 						}
 
-						compiledHTML = compiledHTML + `<br><br><div><p style="color: rgb(255, 110, 110);"><b title="Discord user ID: ${restriction[0]}">${restriction[1]}</b> is currently <span style="color: rgb(255, 200, 0)" title="${statusMeaning}">${status}</span>!</p><p>${reason}</p></div>`
+						compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!">${restriction[1]}</b></a> is currently <a style="color: rgb(255, 200, 0)" onclick="CopyTextToClipboard(reason); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!">${status}</a>!</p></div>`
 					}
 				}
 
