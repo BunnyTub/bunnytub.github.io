@@ -89,7 +89,7 @@
 					if (restriction.length === 4) {
 						status = "restricted";
 						statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
-						reason = restriction[3];
+						//reason = restriction[3];
 						
 						// var urlRegex = /(https?:\/\/[^\s]+)/g;
 						// reason = reason.replace(urlRegex, function(url) {
@@ -112,7 +112,7 @@
 							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. This is the most severe type of restriction.";
 						}
 
-						compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!">${restriction[1]}</b></a> is currently <a style="color: rgb(255, 200, 0)" onclick="CopyTextToClipboard(reason); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!">${status}</a>!</p></div>`
+						compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!">${restriction[1]}</b></a> is currently <a style="color: rgb(255, 200, 0)" onclick="CopyTextToClipboard('${restriction[3]}'); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!">${status}</a>!</p></div>`
 					}
 				}
 
