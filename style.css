@@ -176,87 +176,68 @@ code {
 
 .button {
 	background-color: #fff;
+	background: linear-gradient(#f3f3f3, #c4c4c4);
 	color: #000;
-	border-color: #000;
-	border-radius: 4px;
+	border-color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 6px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin: 2px;
 	text-decoration: none;
-	border-style: none;
-	transition-property: font;
+	transition-property: all;
 	transition-duration: 100ms;
+	font-family: Montserrat, sans-serif;
+	font-weight: normal;
 	font-size: 18pt;
 	text-align: center;
+	cursor: pointer;
 }
 
 .button:hover {
+	background-color: #fff;
+	background: linear-gradient(#f3f3f3, #cece8b);
 	color: #000;
 	text-decoration: none;
-	border-style: none;
-	transition-property: font;
+	transition-property: all;
 	transition-duration: 100ms;
-	font-size: 20pt;
+	font-size: 19pt;
 }
 
 .button:active {
 	color: #000;
 	background-color: #c0ffc0;
+	background: linear-gradient(#f3f3f3, #c0ffc0);
 	text-decoration: none;
-	border-style: none;
-	transition-property: font;
+	transition-property: all;
 	transition-duration: 50ms;
-	font-size: 22pt;
+	font-size: 18pt;
 }
 
-.disabled-button {
+.button:disabled {
 	background-color: #b3b3b3;
 	color: #000000a2;
-	border-color: #000;
-	border-radius: 4px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin: 2px;
-	text-decoration: none;
-	border-style: none;
-	transition-property: font;
-	transition-duration: 100ms;
-	font-size: 18pt;
 	cursor: not-allowed;
 }
 
-.disabled-button:hover {
-	color: #000000a2;
+.button:disabled:hover {
+	background-color: #fff;
+	background: linear-gradient(#f3f3f3, #ebafaf);
+	color: #000;
 	text-decoration: none;
-	border-style: none;
-	transition-property: font;
-	transition-duration: 150ms;
-	font-size: 20pt;
+	transition-property: all;
+	transition-duration: 100ms;
+	font-size: 19pt;
 }
 
-.disabled-button:active {
-	color: #000;
+.button:disabled:active {
 	background-color: #ffc0c0;
 	text-decoration: none;
 	border-style: none;
-	transition-property: font;
-	transition-duration: 50ms;
-	font-size: 22pt;
-}
-
-.button-small {
-	transition-property: font;
-	transition-duration: 150ms;
-	font-size: 16pt;
-	text-align: center;
-}
-
-.button-small:hover {
-	transition-property: font;
+	transition-property: font, background-color;
 	transition-duration: 150ms;
 	font-size: 18pt;
 }
@@ -323,16 +304,26 @@ code {
 	}
 }
 
+dialog {
+	transform: scale(0.8);
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.80);
+}
+
+dialog:open {
+	transform: scale(1);
+}
+
 .container {
     display: grid;
-    /* grid-template-columns: 0.4fr 1fr;
-    gap: 20px; */
     justify-content: center;
 }
 
 .uncontained {
     display: grid;
-    gap: 20px; /* Space between elements */
+    gap: 20px;
     justify-content: center;
 }
 

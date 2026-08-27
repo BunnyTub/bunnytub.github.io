@@ -22,7 +22,11 @@ function RunSteps() {
         }
 
         document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('contextmenu', e => e.preventDefault());
+            img.addEventListener("contextmenu", (e) => {
+                e.preventDefault();
+                img.style.filter = "invert()";
+            });
+
             img.addEventListener('dragstart', e => e.preventDefault());
             img.style.userSelect = 'none';
             img.style['-webkit-user-drag'] = 'none';

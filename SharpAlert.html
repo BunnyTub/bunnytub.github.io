@@ -51,13 +51,14 @@
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<a class="button standalone-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Standalone</a>
+				<button class="button standalone-button">Download v? Standalone</button>
+				<button class="button installer-button">Download v? Standalone</button>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
 					If you're having trouble opening SharpAlert, try installing the .NET 8 Desktop Runtime!
 				</h3>
-				<a class="button runtime-button" style="background-color: blueviolet; color: white;" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer">Download .NET 8 Desktop Runtime</a>
+				<button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
 				<div class="images" style="margin-bottom: 12px;">
 					<img src="media/SharpAlert_Example_1.png" title="An example of a severe alert in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
 					<img src="media/SharpAlert_Example_2.png" title="An example of a moderate alert that has been updated in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
@@ -165,7 +166,6 @@
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
 		        
-				<a class="button installer-button" onclick="setTimeout(() => alert('Thanks for downloading SharpAlert! Make sure you have .NET installed...'), 500);" href="#" download>Download v? Installer</a>
 				<br><br>
 				<a class="button" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>
 				<br><br>
@@ -178,19 +178,16 @@
 		</div>
 
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-
-		<div id="updateOverlay" style="display: none;">
-			<div class="overlay-backdrop"></div>
-			<div class="overlay-dialog">
-				<img id="big-logo" src="media/SharpAlert.png" alt="The SharpAlert logo, a red exclamation point on a very light pink speech bubble." />
-				<h1 style="margin-bottom: 5px">Ready to update?</h1>
-				<p style="font-size: 26pt; margin-bottom: 10px;">If you have SharpAlert installed, you can simply install over a previous version.</p>
-				<a class="button installer-button" href="#" style="display: block;">Download v? Installer</a>
-				<a class="button standalone-button" href="#" style="display: block;">Download v? Standalone</a>
-				<a class="button" href="#" onclick="hideOverlay()" style="display: block;">Close</a>
-			</div>
-		</div>
 	
+		<button class="button" command="show-modal" commandfor="downloading-app-dialog	">Open dialog</button>
+
+		<dialog id="downloading-app-dialog">
+			<div class="container">
+				<h1>SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.</h1>
+				<button class="button" commandfor="downloading-app-dialog" command="close">Close</button>
+			</div>
+		</dialog>
+
 		<footer id="footer">
 			Consider joining the <a href="https://discord.gg/qQQqF52jhT" target="_blank">EAS Culture Discord server</a>, or checking out my <a href="https://youtube.com/@ItsBunnyTub" target="_blank">YouTube channel</a>! Looking for how to <a href="/ContactMe">contact me</a>?
 		</footer>
@@ -201,16 +198,32 @@
 			.then(version => {
 				version = version.trim();
 
+				function download(url, filename) {
+					const dialog = document.getElementById('downloading-app-dialog');
+					const bub = document.createElement('a');
+					bub.href = url;
+					bub.download = filename;
+					document.body.appendChild(bub);
+					dialog.showModal();
+					bub.click();
+					document.body.removeChild(bub);
+					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
+				}
+
 				const installerButtons = document.querySelectorAll('.installer-button');
     			const standaloneButtons = document.querySelectorAll('.standalone-button');
 
 				installerButtons.forEach(button => {
-					button.href = `/SharpAlert/Releases/v${version}/install.exe`;
+					button.addEventListener('click', function (e) {
+						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/install.exe`, "install.exe");
+					})
 					button.innerHTML = `Download v${version} Installer<br>Windows 10/11 (x64)`;
 				});
 
 				standaloneButtons.forEach(button => {
-					button.href = `/SharpAlert/Releases/v${version}/SharpAlert.exe`;
+					button.addEventListener('click', function (e) {
+						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/SharpAlert.exe`, "SharpAlert.exe");
+					})
 					button.innerHTML = `Download v${version} Standalone<br>Windows 10/11 (x64)`;
 				});
 			})
@@ -247,10 +260,6 @@
 			function getQueryParam(param) {
 				const urlParams = new URLSearchParams(window.location.search);
 				return urlParams.get(param);
-			}
-			
-			function hideOverlay() {
-				document.getElementById("updateOverlay").style.display = "none";
 			}
 			
 			window.addEventListener("DOMContentLoaded", () => {
