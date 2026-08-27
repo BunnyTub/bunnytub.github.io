@@ -186,7 +186,6 @@ code {
 	padding-bottom: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	margin: 2px;
 	text-decoration: none;
 	transition-property: all;
 	transition-duration: 100ms;
@@ -195,6 +194,7 @@ code {
 	font-size: 18pt;
 	text-align: center;
 	cursor: pointer;
+	transform: scale(1);
 }
 
 .button:hover {
@@ -202,9 +202,9 @@ code {
 	background: linear-gradient(#f3f3f3, #cece8b);
 	color: #000;
 	text-decoration: none;
+	transform: scale(1.02);
 	transition-property: all;
 	transition-duration: 100ms;
-	font-size: 19pt;
 }
 
 .button:active {
@@ -214,32 +214,31 @@ code {
 	text-decoration: none;
 	transition-property: all;
 	transition-duration: 50ms;
-	font-size: 18pt;
+	transform: scale(0.98);
 }
 
 .button:disabled {
 	background-color: #b3b3b3;
 	color: #000000a2;
 	cursor: not-allowed;
+	filter: blur(1px);
 }
 
 .button:disabled:hover {
 	background-color: #fff;
 	background: linear-gradient(#f3f3f3, #ebafaf);
-	color: #000;
 	text-decoration: none;
 	transition-property: all;
 	transition-duration: 100ms;
-	font-size: 19pt;
+	filter: blur(0);
 }
 
 .button:disabled:active {
 	background-color: #ffc0c0;
 	text-decoration: none;
 	border-style: none;
-	transition-property: font, background-color;
-	transition-duration: 150ms;
-	font-size: 18pt;
+	transition-property: all;
+	transition-duration: 50ms;
 }
 
 #menu {
@@ -305,6 +304,12 @@ code {
 }
 
 dialog {
+	background-color: #0c0c0c;
+	background: linear-gradient(#0c0c0c, #1c1c1c);
+	border-color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 6px;
 	transform: scale(0.8);
 }
 

@@ -166,26 +166,23 @@
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
 		        
-				<br><br>
-				<a class="button" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>
-				<br><br>
-				<a class="button" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
-				<br><br>
-				<a class="button" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
+				<br>
+				<a class="" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>
+				<br>
+				<a class="" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
+				<br>
+				<a class="" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
 
 				<!-- <a class="button" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7+)</a><br><br>
 				<a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">Why is SharpAlert v12.1 still linked on this page?</a><br> -->
 		</div>
 
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-	
-		<button class="button" command="show-modal" commandfor="downloading-app-dialog	">Open dialog</button>
 
 		<dialog id="downloading-app-dialog">
-			<div class="container">
-				<h1>SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.</h1>
-				<button class="button" commandfor="downloading-app-dialog" command="close">Close</button>
-			</div>
+			<p style="margin: 2px 2px 8px 2px;"><span style="font-size: 32px;"><b>SharpAlert</b> is now downloading.</span><br>If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.</p>
+			<button class="button" style="float: right;" commandfor="downloading-app-dialog" command="close">Close</button>
+			<button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white; float: right; margin: 0px 4px;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')" commandfor="downloading-app-dialog" command="close">Download .NET 8 Desktop Runtime</button>
 		</dialog>
 
 		<footer id="footer">
