@@ -52,7 +52,7 @@
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
 				<button class="button standalone-button">Download v? Standalone</button>
-				<button class="button installer-button">Download v? Standalone</button>
+				<!-- <button class="button installer-button">Download v? Installer</button> -->
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
@@ -172,6 +172,8 @@
 				<a class="" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
 				<br>
 				<a class="" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
+				<br>
+				<p>The download for the installer release of SharpAlert is currently hidden until the next release. Please download and use the standalone release instead.</p>
 
 				<!-- <a class="button" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7+)</a><br><br>
 				<a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">Why is SharpAlert v12.1 still linked on this page?</a><br> -->
@@ -180,10 +182,12 @@
 		<iframe id="discordInvite" style="margin-top: 25px;" src="https://discord.com/widget?id=1231013137898278953&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
 		<dialog id="downloading-app-dialog">
-			<p style="margin: 2px 2px 8px 2px;"><span style="font-size: 32px;"><b>SharpAlert</b> is now downloading.</span><br>If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.</p>
+			<p style="margin: 2px 2px 8px 2px;"><span style="font-size: 32px;">Thank you for downloading <b>SharpAlert</b>!</span><br>I have made SharpAlert as a side-project mostly by myself,<br>got help from friends, and more from the community around me.<br><br>I really appreciate that you have chosen to use SharpAlert!</p> <!-- If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed. -->
 			<button class="button" style="float: right;" commandfor="downloading-app-dialog" command="close">Close</button>
-			<button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white; float: right; margin: 0px 4px;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')" commandfor="downloading-app-dialog" command="close">Download .NET 8 Desktop Runtime</button>
+			<!-- <button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white; float: right; margin: 0px 4px;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')" commandfor="downloading-app-dialog" command="close">Download .NET 8 Desktop Runtime</button> -->
 		</dialog>
+
+		<!-- navigator.userAgentData.mobile to prevent mobile devices from downloading, but like, it's only supported on Chrome auuuuuuuuuugh --->
 
 		<footer id="footer">
 			Consider joining the <a href="https://discord.gg/qQQqF52jhT" target="_blank">EAS Culture Discord server</a>, or checking out my <a href="https://youtube.com/@ItsBunnyTub" target="_blank">YouTube channel</a>! Looking for how to <a href="/ContactMe">contact me</a>?
