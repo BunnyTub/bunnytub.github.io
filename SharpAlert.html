@@ -57,10 +57,10 @@
 				<!-- <button class="button installer-button">Download v? Installer</button> -->
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
-				<h3 class="runtime-text notice" style="color: lightgray; margin-top: 2px; margin-bottom: 18px;" onclick="localStorage.lastVisit = 0;">
-					If you're having trouble opening SharpAlert, try installing the .NET 8 Desktop Runtime!
-				</h3>
-				<button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
+				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
+				<button class="button runtime-button" style="background: linear-gradient(#ac6ce8, #751cc9); color: white;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
+				
+				
 				<div class="images" style="margin-bottom: 12px;">
 					<img src="/media/SharpAlert_Example_1.png" title="An example of a severe alert in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
 					<img src="/media/SharpAlert_Example_2.png" title="An example of a moderate alert that has been updated in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
@@ -164,6 +164,8 @@
 				<h3 class="notice" style="color: orange;">
 					SharpAlert checks for alerts frequently in the background.<br>This could result in increased data usage.
 				</h3>
+
+				<h3 class="runtime-text notice" style="color: lightgray;" onclick="localStorage.lastVisit = 0;">If you're having trouble opening SharpAlert, try installing the .NET 8 Desktop Runtime!</h3>
 				
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
