@@ -40,7 +40,7 @@
 		<div id="menu">{% include NavigationBar.html %}</div>
 
 		<a href="/media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
-			<img id="logo" src="/media/SharpAlert_Small.png" alt="The SharpAlert logo, a red exclamation point on a very light pink speech bubble.">
+			<img id="logo" style="scale: 1.25;" src="/media/SharpAlert_Small.png" alt="The SharpAlert logo, a red exclamation point on a very light pink speech bubble.">
 			</img>
 		</a>
 		<h1 id="page-header">SharpAlert</h1>
@@ -58,7 +58,7 @@
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
-				<button class="button runtime-button" style="background: linear-gradient(#ac6ce8, #751cc9); color: white;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
+				<button class="button runtime-button pulse-warning" style="background: linear-gradient(#ac6ce8, #751cc9); color: white; --pulser-color: 172, 108, 232;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
 				
 				
 				<div class="images" style="margin-bottom: 12px;">
@@ -198,7 +198,7 @@
 		</footer>
 
 		<script>
-			fetch('https://bunnytub.com/SharpAlert/SharpAlert.txt')
+			fetch('https://bunnytub.com/SharpAlert/LatestVersion.txt')
 			.then(response => response.text())
 			.then(version => {
 				version = version.trim();
