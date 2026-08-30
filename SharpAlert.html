@@ -222,6 +222,7 @@
 
 				installerButtons.forEach(button => {
 					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/install.exe`, "install.exe");
 					})
 					button.innerHTML = `Download v${version} Installer<br>Windows 10/11 (x64)`;
@@ -229,6 +230,7 @@
 
 				standaloneButtons.forEach(button => {
 					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/SharpAlert.exe`, "SharpAlert.exe");
 					})
 					button.innerHTML = `Download v${version} Standalone<br>Windows 10/11 (x64)`;
