@@ -214,11 +214,11 @@
 					dialog.showModal();
 					bub.click();
 					document.body.removeChild(bub);
-					fetch('https://hopcast.bunnytub.com/SharpAlertDownloadStarted', {
-						method: 'POST',
-						headers: { 'Content-Type': 'text/plain' },
-						body: new Date().toISOString()
-					});
+					// fetch('https://hopcast.bunnytub.com/SharpAlertDownloadStarted', {
+					// 	method: 'POST',
+					// 	headers: { 'Content-Type': 'text/plain' },
+					// 	body: new Date().toISOString()
+					// }); not worth it
 
 					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
 				}
