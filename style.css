@@ -312,10 +312,12 @@ dialog {
 	border-width: 2px;
 	border-radius: 6px;
 	transform: scale(0.8);
+	filter: drop-shadow(0 0 16px rgba(128, 128, 128, 0.5));
 }
 
 dialog::backdrop {
 	background-color: rgba(0, 0, 0, 0.80);
+	backdrop-filter: blur(12px);
 }
 
 dialog:open {
