@@ -74,10 +74,10 @@ a:hover {
 
 h1 {
 	margin: 0px;
-	margin-left: 80px;
-	margin-right: 80px;
+	/* margin-left: 80px;
+	margin-right: 80px; */
 	padding: 0px;
-	font-size: 34pt;
+	font-size: 26pt;
 	font-weight: normal;
 	color: #fff;
 	text-align: center;
@@ -85,8 +85,8 @@ h1 {
 
 h2 {
 	margin: 0px;
-	margin-left: 80px;
-	margin-right: 80px;
+	/* margin-left: 80px;
+	margin-right: 80px; */
 	padding: 0px;
 	font-size: 18pt;
 	font-weight: normal;
@@ -101,7 +101,7 @@ h3 {
 
 p {
 	text-decoration: none;
-	font-size: 16pt;
+	font-size: 14pt;
 	color: #fff;
 	/*
 	position: absolute;
@@ -128,8 +128,8 @@ img#logo {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 128px;
-	max-height: 128px;
+	max-width: 96px;
+	max-height: 96px;
 	padding: 5px 0;
 	filter: drop-shadow(0 0 6px rgb(0, 0, 0));
 }
@@ -138,8 +138,8 @@ img#big-logo {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 196px;
-	max-height: 196px;
+	max-width: 164px;
+	max-height: 164px;
 	padding: 5px 0;
 }
 
@@ -168,7 +168,7 @@ code {
 }
 
 .UserRestrictions {
-	background-color: rgb(75, 50, 0);
+	background-color: rgb(40, 40, 40);
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -191,10 +191,11 @@ code {
 	transition-duration: 100ms;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
-	font-size: 18pt;
+	font-size: 16pt;
 	text-align: center;
 	cursor: pointer;
 	transform: scale(1);
+	text-decoration: none;
 }
 
 .button:hover {
@@ -244,7 +245,7 @@ code {
 #menu {
 	/* border-top: 3px dotted #757575; */
 	/* display: flex; */
-	display: none;
+	display: flex;
 	border-bottom: 3px dotted #757575;
 	text-align: center;
 	margin: 0 auto 15px auto;
@@ -255,8 +256,8 @@ code {
 #icon {
 	margin-top: 4px;
 	margin-bottom: 4px;
-	width: 32px;
-	height: 32px;
+	width: 24px;
+	height: 24px;
 }
 
 #menu ul {
@@ -275,7 +276,7 @@ code {
 #menu ul li a {
 	text-decoration: none;
 	color: #cccccc;
-	font-size: 22pt;
+	font-size: 18pt;
 	border: none;
 	transition-property: color;
 	transition-duration: 150ms;
@@ -295,7 +296,7 @@ code {
 	}
 
 	#menu ul li a {
-		font-size: 20pt;
+		font-size: 18pt;
 	}
 
 	#icon {
@@ -311,10 +312,12 @@ dialog {
 	border-width: 2px;
 	border-radius: 6px;
 	transform: scale(0.8);
+	filter: drop-shadow(0 0 16px rgba(128, 128, 128, 0.5));
 }
 
 dialog::backdrop {
 	background-color: rgba(0, 0, 0, 0.80);
+	backdrop-filter: blur(12px);
 }
 
 dialog:open {
@@ -417,7 +420,7 @@ dialog:open {
 	background-color: rgba(40, 40, 40, 0.25);
 	border-style: solid;
 	border-width: 2px;
-	font-size: 14pt;
+	font-size: 12pt;
 }
 
 .pulse-warning {
@@ -482,38 +485,6 @@ dialog:open {
 	}
 }
 */
-
-#updateOverlay {
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0);
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-}
-  
-.overlay-backdrop {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	backdrop-filter: blur(6px);
-	background-color: rgba(0, 0, 0, 0.8);
-}
-  
-.overlay-dialog {
-	position: absolute;
-	top: 50%; left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #404065;
-	padding: 2em;
-	border-radius: 16px;
-	box-shadow: 0px 0px 25px 15px #14192C;
-	max-width: 90%;
-	text-align: center;
-}
 
 .images {
   display: flex;

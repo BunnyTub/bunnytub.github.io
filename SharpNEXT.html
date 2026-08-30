@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -19,11 +21,11 @@
 		<meta name="twitter:description" content="SharpNEXT is coming soon!">
 		<!-- <meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:image:src" content="https://bunnytub.com/media/SharpAlert_Promotional.png"> -->
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="/style.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 		<link rel="canonical" href="https://bunnytub.com/SharpAlert">
 		<link rel="icon" href="/media/SharpNEXT.png">
-		<script src="WarnOfHTML.js"></script>
+		<script src="/WarnOfHTML.js"></script>
 		<script src="https://kit.fontawesome.com/c215fc58ec.js" crossorigin="anonymous"></script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
@@ -54,15 +56,15 @@
 		</style>
 	</head>
 	<body>
-		<div id="menu"></div>
+		<div id="menu">{% include NavigationBar.html %}</div>
 
-		<img id="logo" src="media/SharpNEXT.png"></img>
+		<img id="logo" src="/media/SharpNEXT.png"></img>
 		<h1 id="page-header">SharpNEXT</h1>
 
 		<h1>SharpNEXT is now availabel!! <a class="button" onclick="Apple();" href="#download">Click here to download!</a></h1>
 
 		<video id="alpha" controls disableremoteplayback disablepictureinpicture preload="auto" loading="eager" loop>
-			<source src="media/feeler.webm" type="video/webm" />
+			<source src="/media/feeler.webm" type="video/webm" />
 		</video>
 
 		<footer id="footer">

@@ -9,17 +9,17 @@ function RunSteps() {
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-        menuBar = document.getElementById("menu")
-        try {
-            const response = await fetch("/NavigationBar");
-            menuBar.innerHTML = await response.text();
-            menuBar.style.display = "flex";
-        }
-        catch (error) {
-            menuBar.innerHTML = "There was an issue loading the navigation bar. Please check your internet connection, then refresh to try again.";
-            menuBar.style.display = "flex";
-            //alert("Whoops, something is having trouble. Please reload the page!");
-        }
+        // menuBar = document.getElementById("menu")
+        // try {
+        //     const response = await fetch("/NavigationBar");
+        //     menuBar.innerHTML = await response.text();
+        //     menuBar.style.display = "flex";
+        // }
+        // catch (error) {
+        //     menuBar.innerHTML = "There was an issue loading the navigation bar. Please check your internet connection, then refresh to try again.";
+        //     menuBar.style.display = "flex";
+        //     //alert("Whoops, something is having trouble. Please reload the page!");
+        // }
 
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener("contextmenu", (e) => {
