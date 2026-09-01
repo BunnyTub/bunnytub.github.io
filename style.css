@@ -221,7 +221,7 @@ code {
 .button:disabled {
 	background-color: #b3b3b3;
 	background: linear-gradient(#0c0c0c, #3b3b3b);
-	color: #000000a2;
+	color: #ffffffa2;
 	cursor: not-allowed;
 	transition-property: all;
 	transition-duration: 100ms;
@@ -229,7 +229,8 @@ code {
 
 .button:disabled:hover {
 	background-color: #fff;
-	background: linear-gradient(#f3f3f3, #ebafaf);
+	background: linear-gradient(#0c0c0c, #663030);
+	/* background: linear-gradient(#f3f3f3, #ebafaf); */
 	text-decoration: none;
 	transition-property: all;
 	transition-duration: 100ms;
