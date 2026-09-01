@@ -55,8 +55,8 @@
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<button class="button standalone-button">Download v? Standalone</button>
-				<!-- <button class="button installer-button">Download v? Installer</button> -->
+				<button class="button standalone-button" disabled>Finding latest standalone version...</button>
+				<!-- <button class="button installer-button" disabled>Finding latest installer version...</button> -->
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
@@ -200,6 +200,9 @@
 		</footer>
 
 		<script>
+			const installerButtons = document.querySelectorAll('.installer-button');
+			const standaloneButtons = document.querySelectorAll('.standalone-button');
+
 			fetch('https://bunnytub.com/SharpAlert/LatestVersion.txt')
 			.then(response => response.text())
 			.then(version => {
@@ -214,17 +217,8 @@
 					dialog.showModal();
 					bub.click();
 					document.body.removeChild(bub);
-					// fetch('https://hopcast.bunnytub.com/SharpAlertDownloadStarted', {
-					// 	method: 'POST',
-					// 	headers: { 'Content-Type': 'text/plain' },
-					// 	body: new Date().toISOString()
-					// }); not worth it
-
 					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
 				}
-
-				const installerButtons = document.querySelectorAll('.installer-button');
-    			const standaloneButtons = document.querySelectorAll('.standalone-button');
 
 				installerButtons.forEach(button => {
 					button.addEventListener('click', function (e) {
@@ -232,6 +226,7 @@
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/install.exe`, "install.exe");
 					})
 					button.innerHTML = `Download v${version} Installer<br>Windows 10/11 (x64)`;
+					button.disabled = false;
 				});
 
 				standaloneButtons.forEach(button => {
@@ -240,13 +235,23 @@
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/SharpAlert.exe`, "SharpAlert.exe");
 					})
 					button.innerHTML = `Download v${version} Standalone<br>Windows 10/11 (x64)`;
+					button.disabled = false;
 				});
 			})
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
-				if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
-					window.location.reload();
-				}
+				
+				// if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
+				// 	window.location.reload();
+				// }
+
+				installerButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
+
+				standaloneButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
 			});
 
 			const now = Date.now(), last = +localStorage.lastVisit || 0;
