@@ -51,12 +51,11 @@
 			SharpAlert might not support your country.<br>Find supported countries in <a href="#supported-regions">supported regions</a>.
 		</h2>
 
-		<h2><b>SharpAlert</b> notifies you of emergency alerts in your area, entirely from your computer!</h2>
+		<h2><b>SharpAlert</b> notifies you of emergency alerts in your area, entirely from your computer!<span id="download-count"></span></h2>
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<button class="button standalone-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest standalone version...</button>
-				<!-- <button class="button installer-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest installer version...</button> -->
+				<button class="button installer-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest installer version...</button>
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
@@ -158,6 +157,15 @@
 					<br>
 				</div>
 
+				<div id="install-warning" style="border-style: solid; border-width: 2px; border-color: red; border-radius: 4px; padding-top: 12px; background-color: rgb(35, 0, 0);">
+					<h1 style="text-align: center; margin-bottom: 0px;"><b>Urgent Installer Warning</b></h1>
+					<p>SharpAlert recently added a new and improved update system (Velopack).<br><br>If you are running v19.0 or older, <b style="color: rgb(255, 118, 118);">you will be losing automatic updates, which may involve losing bug fixes, and security updates</b>. In order to get automatic updates again, you will need to completely <b style="color: rgb(255, 118, 118);">uninstall your old version of SharpAlert</b>, then download the latest installer for SharpAlert at the top of this page. Uninstalling SharpAlert won't remove your settings, and it is not destructive to your alert archive either.
+						<br><br>
+						If you are using the standalone version of SharpAlert, <b style="color: rgb(255, 118, 118);">you are affected by this too</b>. Please use the installer provided above instead of running standalone for automatic updates.
+					</p>
+					<br>
+				</div>
+
 				<h3 class="notice pulse-warning" style="background-color: rgba(211, 48, 48, 0.5); color: rgb(255, 255, 255); border-color: red;">
 					<i class="fa-solid fa-server"></i>
 					The availability and uptime of the providers (regions) supported by SharpAlert are <b>not 100% guaranteed</b>. Do not always rely on one source alone for messages and alerts. Always have at least <b>one</b> additional backup.
@@ -168,19 +176,17 @@
 				</h3>
 
 				<h3 class="runtime-text notice" style="color: lightgray;" onclick="localStorage.lastVisit = 0;">If you're having trouble opening SharpAlert, try installing the .NET 8 Desktop Runtime!</h3>
-				
+
 				<p style="margin-top: 20px; margin-bottom: 20px;"><b>Have questions?</b> Join the <a href="https://discord.gg/qQQqF52jhT">EAS Culture Discord server</a>!</p>
 				<!-- <a href="https://www.buymeacoffee.com/bunnytub"><img style="margin-top: 20px;" src="https://img.buymeacoffee.com/button-api/?text=Support me on my project&emoji=&slug=bunnytub&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00" /></a> -->
-		        
-				<br>
-				<a class="" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>
-				<br>
-				<a class="" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>
-				<br>
-				<a class="" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
-				<br><br>
-				<p>The download for the installer release of SharpAlert is currently hidden until the next release. Please download and use the standalone release instead.</p>
+				 
+					<br>
+					<a class="" href="https://github.com/BunnyTub/SharpAlert-Archive">GitHub for SharpAlert (Archive)</a>, <a class="" href="/SharpAlert-PrivacyPolicy">Terms of Use and Privacy Policy for SharpAlert</a>, <a class="" href="/SharpAlert-Restrictions">SharpAlert's Current Restrictions</a>
+					<br>
+					<p style="align-self: flex-start;">If you <i>really</i> need a standalone version, here you go!</p>
+					<button class="button standalone-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest standalone version...</button>
 
+				<br>
 				<!-- <a class="button" href="/SharpAlert/Releases/v12.1/SharpAlert.exe">Download v12.1 (For Windows 7+)</a><br><br>
 				<a class="button-small" onclick="alert('This version is kept for compatibility sake for people unable to upgrade from older versions of Windows. This is the last version of SharpAlert to use .NET Framework 4.8 entirely. It lacks any new features, but is the most compatible.')" href="#old-versions">Why is SharpAlert v12.1 still linked on this page?</a><br> -->
 		</div>
@@ -203,10 +209,25 @@
 			const installerButtons = document.querySelectorAll('.installer-button');
 			const standaloneButtons = document.querySelectorAll('.standalone-button');
 
-			fetch('https://bunnytub.com/SharpAlert/LatestVersion.txt')
+			fetch('https://api.github.com/repos/BunnyTub/SharpAlert-releases/releases/latest')
 			.then(response => response.text())
 			.then(version => {
-				version = version.trim();
+				let release = JSON.parse(version);
+
+				let assetSetup = release.assets.find(asset => asset.name.endsWith("Setup.exe"));
+				let assetStandalone = release.assets.find(asset => asset.name.endsWith("Portable.zip"));
+
+				let downloadCounter = document.getElementById("download-count");
+
+				downloadCounter.innerHTML = `<br>${assetSetup.download_count + assetStandalone.download_count} downloads (since 9/1/26)`;
+
+				// let releaseInfo = "Version: " + release.tag_name.substring(1) +
+				// 	"\nFile size: " + (asset.size / 1024 / 1024).toFixed(2) + " MB" +
+				// 	"\nRelease date: " + new Date(asset.updated_at).toLocaleDateString("en-CA") +
+				// 	"\nDownload count: " + asset.download_count.toLocaleString();
+
+				// element.attr("href", asset.browser_download_url);
+				// element.attr("title", releaseInfo);
 
 				function download(url, filename) {
 					const dialog = document.getElementById('downloading-app-dialog');
@@ -224,9 +245,9 @@
 					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
 						dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
-						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/install.exe`, "install.exe");
+						download(assetSetup.browser_download_url, "install.exe");
 					})
-					button.innerHTML = `Download v${version} Installer<br>Windows 10/11 (x64)`;
+					button.innerHTML = `Download v${release.tag_name} Installer<br>Windows 10/11 (x64)`;
 					button.disabled = false;
 				});
 
@@ -234,9 +255,9 @@
 					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
 						dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
-						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/SharpAlert.exe`, "SharpAlert.exe");
+						download(assetStandalone.browser_download_url, "SharpAlert.zip");
 					})
-					button.innerHTML = `Download v${version} Standalone<br>Windows 10/11 (x64)`;
+					button.innerHTML = `Download v${release.tag_name} Standalone<br>Windows 10/11 (x64)`;
 					button.disabled = false;
 				});
 			})
