@@ -187,8 +187,6 @@ code {
 	padding-left: 10px;
 	padding-right: 10px;
 	text-decoration: none;
-	transition-property: all;
-	transition-duration: 100ms;
 	font-family: Montserrat, sans-serif;
 	font-weight: normal;
 	font-size: 16pt;
@@ -196,6 +194,8 @@ code {
 	cursor: pointer;
 	transform: scale(1);
 	text-decoration: none;
+	transition-property: all;
+	transition-duration: 100ms;
 }
 
 .button:hover {
@@ -220,18 +220,20 @@ code {
 
 .button:disabled {
 	background-color: #b3b3b3;
-	color: #000000a2;
+	background: linear-gradient(#0c0c0c, #3b3b3b);
+	color: #ffffffa2;
 	cursor: not-allowed;
-	filter: blur(1px);
+	transition-property: all;
+	transition-duration: 100ms;
 }
 
 .button:disabled:hover {
 	background-color: #fff;
-	background: linear-gradient(#f3f3f3, #ebafaf);
+	background: linear-gradient(#0c0c0c, #663030);
+	/* background: linear-gradient(#f3f3f3, #ebafaf); */
 	text-decoration: none;
 	transition-property: all;
 	transition-duration: 100ms;
-	filter: blur(0);
 }
 
 .button:disabled:active {

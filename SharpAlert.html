@@ -4,9 +4,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MSC4W5ZL');
+		</script>
+		<!-- End Google Tag Manager -->
 		<title>SharpAlert | Simple Emergency Alerts</title>
 		<meta property="og:title" content="SharpAlert | Simple Emergency Alerts - BunnyTub">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:site_name" content="SharpAlert">
 		<meta name="keywords" content="SharpAlert,Sharp Alert,Download,Free Alerting,Alert,Alerting,US Alert Software,Canada Alert Software,Alerting Software,Safety Software,BunnyTub">
@@ -27,16 +34,11 @@
 		<link rel="icon" href="/media/SharpAlert_Squared.png">
 		<script src="/WarnOfHTML.js"></script>
 		<script src="https://kit.fontawesome.com/c215fc58ec.js" crossorigin="anonymous"></script>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRBM5V7X9T"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-XRBM5V7X9T');
-		</script>
 	</head>
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSC4W5ZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<div id="menu">{% include NavigationBar.html %}</div>
 
 		<a href="/media/SharpAlert.png" title="Click here for a higher quality image to use for branding/etc purposes.">
@@ -53,8 +55,8 @@
 
 		<div class="container">
 			<div class="picturebox" style="background-color: rgba(0, 0, 0, 0); box-shadow: none;">
-				<button class="button standalone-button">Download v? Standalone</button>
-				<!-- <button class="button installer-button">Download v? Installer</button> -->
+				<button class="button standalone-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest standalone version...</button>
+				<!-- <button class="button installer-button" onclick="alert('I\'m not done yet! Please wait a few more moments while I check for updates.');" disabled>Finding latest installer version...</button> -->
 				<!-- <div style="font-size: 12pt; margin-bottom: 8px;">Last update: 11/11/2025</div>
 				<a class="small-button" style="font-size: 24px;" href="#old-versions">Download older versions</a> -->
 				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
@@ -127,7 +129,7 @@
 					Each option is pick and choose, as they can be enabled and disabled separately at any time within Region Settings. You'll need to restart the program if you change them!
 				</h3>
 				
-				<h3>
+				<h3 id="AlertSounds">
 					<b>Alert sounds and more can be customized within SharpAlert.</b><br>
 				</h3>
 				<div>
@@ -198,6 +200,9 @@
 		</footer>
 
 		<script>
+			const installerButtons = document.querySelectorAll('.installer-button');
+			const standaloneButtons = document.querySelectorAll('.standalone-button');
+
 			fetch('https://bunnytub.com/SharpAlert/LatestVersion.txt')
 			.then(response => response.text())
 			.then(version => {
@@ -215,28 +220,40 @@
 					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
 				}
 
-				const installerButtons = document.querySelectorAll('.installer-button');
-    			const standaloneButtons = document.querySelectorAll('.standalone-button');
-
 				installerButtons.forEach(button => {
+					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/install.exe`, "install.exe");
 					})
 					button.innerHTML = `Download v${version} Installer<br>Windows 10/11 (x64)`;
+					button.disabled = false;
 				});
 
 				standaloneButtons.forEach(button => {
+					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
 						download(`https://bunnytub.com/SharpAlert/Releases/v${version}/SharpAlert.exe`, "SharpAlert.exe");
 					})
 					button.innerHTML = `Download v${version} Standalone<br>Windows 10/11 (x64)`;
+					button.disabled = false;
 				});
 			})
 			.catch(error => {
 				console.error("Couldn't get the latest version of SharpAlert.", error);
-				if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
-					window.location.reload();
-				}
+				
+				// if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
+				// 	window.location.reload();
+				// }
+
+				installerButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
+
+				standaloneButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
 			});
 
 			const now = Date.now(), last = +localStorage.lastVisit || 0;
