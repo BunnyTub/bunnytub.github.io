@@ -313,7 +313,6 @@ dialog {
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 6px;
-	transform: scale(0.8);
 	filter: drop-shadow(0 0 16px rgba(128, 128, 128, 0.5));
 }
 
@@ -323,8 +322,19 @@ dialog::backdrop {
 }
 
 dialog:open {
-	transform: scale(1);
+	animation: fadein 2s ease-in forwards;
 }
+
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .container {
     display: grid;
