@@ -61,94 +61,6 @@
 				<p style="color: gray; margin: -6px 0px 4px 0px;"><i>.NET is required to run SharpAlert.</i></p>
 				<button class="button runtime-button pulse-warning" style="background: linear-gradient(#ac6ce8, #751cc9); color: white; --pulser-color: 172, 108, 232;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')">Download .NET 8 Desktop Runtime</button>
 				
-				<script>
-					const installerButtons = document.querySelectorAll('.installer-button');
-					const standaloneButtons = document.querySelectorAll('.standalone-button');
-
-					fetch('https://api.github.com/repos/BunnyTub/SharpAlert-releases/releases/latest')
-					.then(response => response.text())
-					.then(version => {
-						let release = JSON.parse(version);
-
-						let assetSetup = release.assets.find(asset => asset.name.endsWith("Setup.exe"));
-						let assetStandalone = release.assets.find(asset => asset.name.endsWith("Portable.zip"));
-
-						let downloadCounter = document.getElementById("download-count");
-
-						downloadCounter.innerHTML = `<br>${assetSetup.download_count + assetStandalone.download_count} downloads (since 9/2/26)`;
-
-						// let releaseInfo = "Version: " + release.tag_name.substring(1) +
-						// 	"\nFile size: " + (asset.size / 1024 / 1024).toFixed(2) + " MB" +
-						// 	"\nRelease date: " + new Date(asset.updated_at).toLocaleDateString("en-CA") +
-						// 	"\nDownload count: " + asset.download_count.toLocaleString();
-
-						// element.attr("href", asset.browser_download_url);
-						// element.attr("title", releaseInfo);
-
-						function download(url, filename) {
-							const dialog = document.getElementById('downloading-app-dialog');
-							const bub = document.createElement('a');
-							bub.href = url;
-							bub.download = filename;
-							document.body.appendChild(bub);
-							dialog.showModal();
-							bub.click();
-							document.body.removeChild(bub);
-							//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
-						}
-
-						installerButtons.forEach(button => {
-							button.removeAttribute("onclick");
-							button.addEventListener('click', function (e) {
-								dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
-								download(assetSetup.browser_download_url, "install.exe");
-							})
-							button.innerHTML = `Download v${release.tag_name} Installer<br>Windows 10/11 (x64)`;
-							button.disabled = false;
-						});
-
-						standaloneButtons.forEach(button => {
-							button.removeAttribute("onclick");
-							button.addEventListener('click', function (e) {
-								dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
-								download(assetStandalone.browser_download_url, "SharpAlert.zip");
-							})
-							button.innerHTML = `Download v${release.tag_name} Standalone<br>Windows 10/11 (x64)`;
-							button.disabled = false;
-						});
-					})
-					.catch(error => {
-						console.error("Couldn't get the latest version of SharpAlert.", error);
-						
-						// if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
-						// 	window.location.reload();
-						// }
-
-						installerButtons.forEach(button => {
-							button.innerHTML = `Connection problem.<br>Please refresh the page.`;
-						});
-
-						standaloneButtons.forEach(button => {
-							button.innerHTML = `Connection problem.<br>Please refresh the page.`;
-						});
-					});
-
-					function getQueryParam(param) {
-						const urlParams = new URLSearchParams(window.location.search);
-						return urlParams.get(param);
-					}
-					
-					window.addEventListener("DOMContentLoaded", () => {
-						regionText = document.getElementById("region-unsupported");
-
-						if (getQueryParam("oops") === "1") {
-							regionText.style.display = "block";
-						} else {
-							regionText.style.display = "none";
-						}
-					});
-				</script>
-				
 				<div class="images" style="margin-bottom: 12px;">
 					<img src="/media/SharpAlert_Example_1.png" title="An example of a severe alert in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
 					<img src="/media/SharpAlert_Example_2.png" title="An example of a moderate alert that has been updated in SharpAlert." style="max-width: 100%; height: auto; display: inline-block;" />
@@ -303,6 +215,94 @@
 			<button class="button" style="float: right;" commandfor="downloading-app-dialog" command="close">Close</button>
 			<!-- <button class="button runtime-button" style="background: linear-gradient(#b87eee, #8a2be2); color: white; float: right; margin: 0px 4px;" onclick="window.open('https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer')" commandfor="downloading-app-dialog" command="close">Download .NET 8 Desktop Runtime</button> -->
 		</dialog>
+
+		<script>
+			const installerButtons = document.querySelectorAll('.installer-button');
+			const standaloneButtons = document.querySelectorAll('.standalone-button');
+
+			fetch('https://api.github.com/repos/BunnyTub/SharpAlert-releases/releases/latest')
+			.then(response => response.text())
+			.then(version => {
+				let release = JSON.parse(version);
+
+				let assetSetup = release.assets.find(asset => asset.name.endsWith("Setup.exe"));
+				let assetStandalone = release.assets.find(asset => asset.name.endsWith("Portable.zip"));
+
+				let downloadCounter = document.getElementById("download-count");
+
+				downloadCounter.innerHTML = `<br>${assetSetup.download_count + assetStandalone.download_count} downloads (since 9/2/26)`;
+
+				// let releaseInfo = "Version: " + release.tag_name.substring(1) +
+				// 	"\nFile size: " + (asset.size / 1024 / 1024).toFixed(2) + " MB" +
+				// 	"\nRelease date: " + new Date(asset.updated_at).toLocaleDateString("en-CA") +
+				// 	"\nDownload count: " + asset.download_count.toLocaleString();
+
+				// element.attr("href", asset.browser_download_url);
+				// element.attr("title", releaseInfo);
+
+				function download(url, filename) {
+					const dialog = document.getElementById('downloading-app-dialog');
+					const bub = document.createElement('a');
+					bub.href = url;
+					bub.download = filename;
+					document.body.appendChild(bub);
+					dialog.showModal();
+					bub.click();
+					document.body.removeChild(bub);
+					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
+				}
+
+				installerButtons.forEach(button => {
+					button.removeAttribute("onclick");
+					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
+						download(assetSetup.browser_download_url, "install.exe");
+					})
+					button.innerHTML = `Download v${release.tag_name} Installer<br>Windows 10/11 (x64)`;
+					button.disabled = false;
+				});
+
+				standaloneButtons.forEach(button => {
+					button.removeAttribute("onclick");
+					button.addEventListener('click', function (e) {
+						dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
+						download(assetStandalone.browser_download_url, "SharpAlert.zip");
+					})
+					button.innerHTML = `Download v${release.tag_name} Standalone<br>Windows 10/11 (x64)`;
+					button.disabled = false;
+				});
+			})
+			.catch(error => {
+				console.error("Couldn't get the latest version of SharpAlert.", error);
+				
+				// if (confirm("Couldn't get the latest version of SharpAlert.\nRefresh and try again?")) {
+				// 	window.location.reload();
+				// }
+
+				installerButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
+
+				standaloneButtons.forEach(button => {
+					button.innerHTML = `Connection problem.<br>Please refresh the page.`;
+				});
+			});
+
+			function getQueryParam(param) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(param);
+			}
+			
+			window.addEventListener("DOMContentLoaded", () => {
+				regionText = document.getElementById("region-unsupported");
+
+				if (getQueryParam("oops") === "1") {
+					regionText.style.display = "block";
+				} else {
+					regionText.style.display = "none";
+				}
+			});
+		</script>
 
 		<!-- navigator.userAgentData.mobile to prevent mobile devices from downloading, but like, it's only supported on Chrome auuuuuuuuuugh --->
 
