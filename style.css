@@ -309,29 +309,44 @@ code {
 dialog {
 	background-color: #0c0c0c;
 	background: linear-gradient(#0c0c0c, #1c1c1c);
+	opacity: 0;
+	transition: opacity 0.5s;
 	border-color: gray;
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 6px;
 	filter: drop-shadow(0 0 16px rgba(128, 128, 128, 0.5));
+	animation: dialog-backdrop-animation 0.5s ease-in backwards;
 }
 
 dialog::backdrop {
 	background-color: rgba(0, 0, 0, 0.80);
 	backdrop-filter: blur(12px);
+	animation: dialog-backdrop-animation 0.5s ease-in-out forwards;
 }
 
-dialog:open {
-	animation: fadein 2s ease-in forwards;
+dialog[open] {
+	animation: dialog-foreground-animation 0.3s ease-out forwards;
+	pointer-events: inherit;
 }
 
-
-@keyframes fadein {
+@keyframes dialog-backdrop-animation {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes dialog-foreground-animation {
+  0% {
+    opacity: 0;
+	scale: 0;
+  }
+  100% {
+    opacity: 1;
+	scale: 1;
   }
 }
 
