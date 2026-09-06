@@ -217,6 +217,31 @@
 		</dialog>
 
 		<script>
+			let setupDownloadUrl = "";
+			let standaloneDownloadUrl = "";
+			
+			function download(url, filename) {
+				const dialog = document.getElementById('downloading-app-dialog');
+				const bub = document.createElement('a');
+				bub.href = url;
+				bub.download = filename;
+				document.body.appendChild(bub);
+				dialog.showModal();
+				bub.click();
+				document.body.removeChild(bub);
+				//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
+			}
+			
+			function downloadInstaller() {
+				dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
+				download(setupDownloadUrl, "install.exe");
+			}
+
+			function downloadStandalone() {
+				dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
+				download(standaloneDownloadUrl, "SharpAlert.exe");
+			}
+
 			const installerButtons = document.querySelectorAll('.installer-button');
 			const standaloneButtons = document.querySelectorAll('.standalone-button');
 
@@ -228,9 +253,12 @@
 				let assetSetup = release.assets.find(asset => asset.name.endsWith("Setup.exe"));
 				let assetStandalone = release.assets.find(asset => asset.name.endsWith("Portable.zip"));
 
+				setupDownloadUrl = assetSetup.browser_download_url;
+				standaloneDownloadUrl = assetStandalone.browser_download_url;
+
 				let downloadCounter = document.getElementById("download-count");
 
-				downloadCounter.innerHTML = `<br>${assetSetup.download_count + assetStandalone.download_count} downloads (since 9/2/26)`;
+				downloadCounter.innerHTML = `<br><i class="fa-solid fa-download"></i> ${assetSetup.download_count + assetStandalone.download_count} downloads total (since ${new Date(release.updated_at).toLocaleDateString()})`;
 
 				// let releaseInfo = "Version: " + release.tag_name.substring(1) +
 				// 	"\nFile size: " + (asset.size / 1024 / 1024).toFixed(2) + " MB" +
@@ -240,23 +268,10 @@
 				// element.attr("href", asset.browser_download_url);
 				// element.attr("title", releaseInfo);
 
-				function download(url, filename) {
-					const dialog = document.getElementById('downloading-app-dialog');
-					const bub = document.createElement('a');
-					bub.href = url;
-					bub.download = filename;
-					document.body.appendChild(bub);
-					dialog.showModal();
-					bub.click();
-					document.body.removeChild(bub);
-					//alert(`SharpAlert is now downloading. If you have issues running SharpAlert, ensure that the .NET 8 Desktop Runtime is installed.`);
-				}
-
 				installerButtons.forEach(button => {
 					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
-						dataLayer.push({'event': 'SharpAlertInstallerDownloadButtonClicked'});
-						download(assetSetup.browser_download_url, "install.exe");
+						downloadInstaller();
 					})
 					button.innerHTML = `Download v${release.tag_name} Installer<br>Windows 10/11 (x64)`;
 					button.disabled = false;
@@ -265,8 +280,7 @@
 				standaloneButtons.forEach(button => {
 					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
-						dataLayer.push({'event': 'SharpAlertStandaloneDownloadButtonClicked'});
-						download(assetStandalone.browser_download_url, "SharpAlert.zip");
+						downloadStandalone();
 					})
 					button.innerHTML = `Download v${release.tag_name} Standalone<br>Windows 10/11 (x64)`;
 					button.disabled = false;
@@ -300,6 +314,17 @@
 					regionText.style.display = "block";
 				} else {
 					regionText.style.display = "none";
+				}
+
+				switch (getQueryParam("downloadnow")) {
+					case "installer":
+						downloadInstaller();
+						window.history.replaceState(null, "", "/SharpAlert"); // why does every browser support a second argument if it was only ever used in Safari?
+						break;
+					case "standalone":
+						downloadStandalone();
+						window.history.replaceState(null, "", "/SharpAlert");
+						break;
 				}
 			});
 		</script>
