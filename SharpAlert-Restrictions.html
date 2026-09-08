@@ -90,18 +90,19 @@
 			fetch('https://bunnytub.com/SharpAlert/SharpAlertRestrictionsByDID_v2.txt')
 			.then(response => response.text())
 			.then(restrictions => {
-				restrict = restrictions.trim().split(/\r?\n/);
+				let restrict = restrictions.trim().split(/\r?\n/);
 				restrict.reverse();
 
-				compiledHTML = "";
+				let compiledHTML = "";
 
 				for (let i = 0; i < restrict.length; i++) {
 					//alert(restrict[i]);
 					restriction = restrict[i].split("|");
 
 					if (restriction.length === 4) {
-						status = "restricted";
-						statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
+						let isRestriction = false;
+						let status = "restricted";
+						let statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
 						//reason = restriction[3];
 						
 						// var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -110,6 +111,7 @@
 						// });
 
 						if (restriction[2] == "1") {
+							isRestriction = true;
 							status = "Rich Presence restricted";
 							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature. SharpAlert will not display information on their profile";
 						}
@@ -121,11 +123,14 @@
 						// }
 
 						if (restriction[2] == "100") {
+							isRestriction = true;
 							status = "multi-feature restricted";
 							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. This is the most severe type of restriction.";
 						}
 
-						compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!"><i class="fa-solid fa-clone"></i> ${restriction[1]}</b></a> is currently <a onclick="CopyTextToClipboard('${restriction[3]}'); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!"><i class="fa-solid fa-clone"></i> ${status}</a>!</p></div>`
+						if (isRestriction) {
+							compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!"><i class="fa-solid fa-clone"></i> ${restriction[1]}</b></a> is currently <a onclick="CopyTextToClipboard('${restriction[3]}'); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!"><i class="fa-solid fa-clone"></i> ${status}</a>!</p></div>`
+						}
 					}
 				}
 
