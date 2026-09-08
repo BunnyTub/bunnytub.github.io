@@ -265,9 +265,6 @@
 				// 	"\nRelease date: " + new Date(asset.updated_at).toLocaleDateString("en-CA") +
 				// 	"\nDownload count: " + asset.download_count.toLocaleString();
 
-				// element.attr("href", asset.browser_download_url);
-				// element.attr("title", releaseInfo);
-
 				installerButtons.forEach(button => {
 					button.removeAttribute("onclick");
 					button.addEventListener('click', function (e) {
