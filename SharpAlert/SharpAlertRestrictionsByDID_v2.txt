@@ -72,4 +72,3 @@
 833865941863366726|RoaringSoda|perk-max|You are a perks member, but you are running an old version of SharpAlert. In order to get the latest perks, you'll need to update to SharpAlert v19.2.0 or higher.
 422906035779534859|Honey Crisp Apple|perk-max|You are a perks member, but you are running an old version of SharpAlert. In order to get the latest perks, you'll need to update to SharpAlert v19.2.0 or higher.
 602238459838595081|Interstate 404|perk-max|You are a perks member, but you are running an old version of SharpAlert. In order to get the latest perks, you'll need to update to SharpAlert v19.2.0 or higher.
-173569382314803200|Axvll|perk-max|You are a perks member, but you are running an old version of SharpAlert. In order to get the latest perks, you'll need to update to SharpAlert v19.2.0 or higher.
