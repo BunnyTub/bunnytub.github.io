@@ -45,21 +45,26 @@
 			<br><br>
 		</p>
 		<h2 style="font-size: 40pt;">Privacy Policy</h2>
+		<p style="font-size: 11pt;">This privacy policy last changed on November 11, 2026, at 7:30 PM UTC.</p>
 		<p>
-			<b>[Location]</b>
-			The user can select locations to store locally in multiple forms. Location data is not sent over the internet, and is only used for alert processing to determine if an alert should or should not be relayed.
+			<br>
+			<b id="LocationSection">[Location]</b>
+			The user can select locations to store locally in multiple forms. Location data is not sent over the internet (unless there is an error or crash, see <b>Storage</b>), and is only used for alert processing to determine if an alert should or should not be relayed.
 			<br><br>
-			<b>[Internet / Network]</b>
-			The app uses an internet connection to retrieve alert data from various alert authorities. No information containing personal data is sent as part of the requests.
+			<b id="InternetNetworkSection">[Internet / Network]</b>
+			The app uses an internet connection to retrieve alert data from various alert authorities, which can all be enabled or disabled individually by the user. No information containing identifying data is sent as part of the requests (unless there is an error or crash, see <b>Error Handling</b>).
 			<br><br>
-			<b>[Discord Rich Presence]</b>
+			<b id="DiscordRichPresenceSection">[Discord Rich Presence]</b>
 			The app connects to an open Discord client to provide activity data. This activity data includes alert information, such as, the alert type, alert beginning/end date and time, locations specified by the alert, and partial alert text. Activity data is sent using the most recent alert that has been relayed, and displays for up to 15 minutes, or until the alert expires, which ever one comes first. User data provided from Discord (Username, display name, user ID, etc) is not sent over the internet.
 			<br><br>
-			<b>[Discord Webhooks]</b>
-			The app can send messages to a Discord text channel using a Discord webhook. Each alert message includes alert information, such as, the alert type, the alert severity, alert beginning/end date and time, locations specified by the alert, and full alert text. Messages are also sent when the app changes in status, such as SharpAlert starting, or SharpAlert exiting. If the computer running the app has a battery installed, the app will send customizable battery status messages.
+			<b id="DiscordWebhooksSection">[Discord Webhooks]</b>
+			The app can automatically send messages to a Discord text channel using a Discord webhook. Each alert message includes alert information, such as, the alert type, the alert severity, alert beginning/end date and time, locations specified by the alert, and full alert text. Messages are also sent when the app changes in status, such as SharpAlert starting, or SharpAlert exiting. If the computer running the app has a battery installed, the app will send customizable battery status messages.
 			<br><br>
-			<b>[Storage]</b>
-			User preferences and settings are stored locally on the device only. No advertising identifiers, analytics IDs, or personal identifiers are collected or stored. The app stores user preferences and settings in the user's home directory, under "C:\Users\&lt;username&gt;\AppData\Local\SharpAlert". ("&lt;username&gt;" is a placeholder)
+			<b id="StorageSection">[Storage]</b>
+			The user's settings are stored locally on the device (and may be uploaded if there is an error or crash, see <b>Error Handling</b>). No advertising identifiers, or analytics IDs, are collected or stored. The app stores user preferences and settings in the user's home directory, under "C:\Users\&lt;username&gt;\AppData\Local\SharpAlert". ("&lt;username&gt;" is a placeholder for the actual username!)
+			<br><br>
+			<b id="ErrorHandlingSection">[Error Handling]</b>
+			In the event of an error or a crash, the app may automatically upload certain parts of the user's settings with exception information to the internet to help developers track a problem in the app. The information sent is only visible to developers.
 		</p>
 	</body>
 </html>

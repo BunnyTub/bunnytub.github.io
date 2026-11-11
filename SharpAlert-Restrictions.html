@@ -65,7 +65,6 @@
 			Please note that the restriction list serves multiple purposes, and is not used solely for restrictions. Only restrictions are shown on this page, other data is filtered and not included.
 			<ul>
 				<li>A severity of "1" or "Rich Presence restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile.</li>
-				<li><s>A severity of "2" or "Rich Presence and Webhook restricted" means that you cannot use the Discord Rich Presence feature or send messages to Discord Webhooks.</s> <b>This severity has been deprecated, and is no longer in use.</b></li>
 				<li>A severity of "100" or "client restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile, and SharpAlert will have an added delay on startup.</li>
 			</ul>
 			<br>
@@ -127,7 +126,7 @@
 						if (restriction[2] == "100") {
 							isRestriction = true;
 							status = "multi-feature restricted";
-							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. This is the most severe type of restriction.";
+							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. The app will also display a message on startup and waits for 15 seconds before allowing itself to fully open. This is the most severe type of restriction.";
 						}
 
 						if (isRestriction) {
