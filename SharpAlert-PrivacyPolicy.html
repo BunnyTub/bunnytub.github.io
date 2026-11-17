@@ -34,41 +34,39 @@
 	<body>
 		<div id="menu">{% include NavigationBar.html %}</div>
 		<img style="max-width: 128px; max-height: 128px;" id="logo" src="/media/SharpAlert_Small.png" />
-		<h2 style="font-size: 40pt;">Terms of Use</h2>
-		<p>
-			You can freely use SharpAlert for any purpose, except when restricted. See restrictions.
+		
+		<p class="notice" style="font-size: 11pt;">
+			The Privacy Policy was last changed on November 15, 2026, at 11:30 AM UTC. The Terms of Use and Privacy Policy were written specifically for SharpAlert version 19.5.0.
 			<br><br>
-			<b>[Restriction System]</b>
-			You can be restricted by breaking the Terms of Use, having moderator action taken against you in EAS Culture (Discord server), or being banned in r/EmergencyAlertSystem (Reddit subreddit).
-			Being restricted means that your Discord account's user ID and username or display name, is on a restriction list, and SharpAlert will prevent the use of Discord Rich Presence on affected accounts. The restriction list is public, and viewable by anyone.
-			
-			<br><br>
+			If you do not agree to the Privacy Policy, do not use SharpAlert. If you have SharpAlert already installed, uninstall the software, then request deletion of automatically uploaded data (if applicable).
 		</p>
+		
 		<h2 style="font-size: 40pt;">Privacy Policy</h2>
-		<p style="font-size: 11pt;">This privacy policy last changed on November 14, 2026, at 9:38 AM UTC, and applies to users running SharpAlert version 19.4.0 or higher.</p>
 		<p>
 			<br>
-			<b id="LocationSection">[Location]</b>
-			The user can select locations to store locally in multiple forms. Location data is not sent over the internet (unless there is an error or crash, see <b>Analytics & Error Handling</b>), and is only used for alert processing to determine if an alert should or should not be relayed.
+			<b id="InternetTelemetrySection">[Internet / Telemetry]</b><br>
+			The app can retrieve alert data from the user's currently selected regions. Regions can separately be enabled or disabled individually by the user in the app's <b>Region Settings</b>.
 			<br><br>
-			<b id="InternetNetworkSection">[Internet / Network]</b>
-			The app uses an internet connection to retrieve alert data from various alert authorities, which can all be enabled or disabled individually by the user. No information containing identifying data is sent as part of the requests (unless there is an error or crash, see <b>Analytics & Error Handling</b>).
+			The app may occasionally send statistics information to <i>ORION</i>, containing the current app state (data such as, but not limited to: alerts received, alerts forwarded to Discord, network error rates), and the current username (in Windows).
 			<br><br>
-			<b id="DiscordRichPresenceSection">[Discord Rich Presence]</b>
+			The app may also send errors and crashes, to <i>ORION</i>, containing the current app state (data such as, but not limited to: alerts received, alerts forwarded to Discord, network error rates), the current username (in Windows), and the error/crash data itself.
+			<br><br>
+			By default, the app will send statistics, errors, and crashes, to <i>ORION</i>. The information received is only visible to developers. You can opt out of all telemetry in the app's settings. To do this, open the app's settings. Click the "Advanced Mode" button (if you are in "Simple Mode"), then click the "Extra Options" button. Finally, uncheck the "Allow telemetry" check box. 
+			<img src="/media/SharpAlert_Logging.png"></img>
+			<br><br>
+			<b id="DiscordRichPresenceSection">[Discord Rich Presence]</b><br>
 			The app connects to an open Discord client to provide activity data to Discord. The activity data will appear on the user's profile if they have allowed it in the app's settings. This activity data includes alert information, such as, the alert type, alert beginning/end date and time, locations specified by the alert, and partial alert text. Activity data is sent using the most recent alert that has been relayed, and displays for up to 15 minutes, or until the alert expires, whichever one comes first.
 			<br><br>
-			<b id="DiscordWebhooksSection">[Discord Webhooks]</b>
+			<b id="DiscordWebhooksSection">[Discord Webhooks]</b><br>
 			The app can automatically send messages to a Discord text channel using a Discord webhook. Each alert message includes alert information, such as, the alert type, the alert severity, alert beginning/end date and time, locations specified by the alert, and full alert text. Messages are also sent when the app changes in status, such as SharpAlert starting, or SharpAlert exiting. If the computer running the app has a battery installed, the app will send customizable battery status messages.
 			<br><br>
-			<b id="StorageSection">[Storage]</b>
-			The user's settings are stored locally on the device (and parts may be uploaded to the developers, see <b>Analytics & Error Handling</b>). The app stores user preferences and settings in the user's home directory, under "C:\Users\&lt;username&gt;\AppData\Local\SharpAlert". ("&lt;username&gt;" is a placeholder for the actual username!)
+			<b id="StorageSection">[Storage]</b><br>
+			The user's settings are stored locally on the device. The app stores user preferences and settings in the user's home directory, under "C:\Users\&lt;username&gt;\AppData\Local\SharpAlert". ("&lt;username&gt;" is a placeholder for the actual username!)
 			<br><br>
-			<b id="AnalyticsAndErrorHandlingSection">[Analytics & Error Handling]</b>
-			In the event of an error or a crash, the app may automatically upload certain parts of the user's settings with exception information to the internet to help developers track a problem in the app. The user's settings may contain sensitive data, such as locations, Discord webhook URLs, etc. Statistic information may also occasionally be sent automatically by the app. The information sent is visible to developers. The information received will never be sold or shared for advertising. However, received information may be used to enforce the Terms of Use, which may result in third parties receiving parts of the information. Any information received is deleted automatically after 7 days, but may be saved if the information is being used to help solve an issue, or if the information is deemed to originate from a user suspected to be in violation of the Terms of Use. In both cases, the information is only saved for as long as is needed.
+			<b id="LocationSection">[Location]</b><br>
+			The user can select locations to store locally in multiple forms. The user's selected locations are used in the alert processing parts of the app to determine if an alert should or should not be relayed.
 			<br><br>
-			To opt out of automatic uploads, open the app's settings. Click the "Advanced Mode" button, then click the "Extra Options" button. Finally, uncheck the "Allow additional logging" check box. SharpAlert beta/rewrite users can set whether or not they want to allow additional logging when the question appears (no data is sent until the user agrees). 
-			<img src="/media/SharpAlert_Logging.png"></img>
-			<br>
+			<i>ORION</i> is a server operated and maintained by MaybeConnor, a contributing developer of SharpAlert.
 			For questions on the privacy policy, or to request deletions, contact BunnyTub. Find contact information in the footer of this page.
 		</p>
 
