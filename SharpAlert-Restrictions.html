@@ -43,40 +43,38 @@
 		<h2>This list shows the most recent restrictions at the top.<br>Please don't become a statistic here.<br><a href="#AppealSection" style="font-size: 24pt;"><i class="fa-solid fa-person-harassing"></i> I want to appeal!</a></h2>
 		<div class="UserRestrictions">
 			<div id="RestrictionsList">
-				Oops! In order to view this list, you need to enable JavaScript, or view the <a href="/SharpAlert/SharpAlertRestrictionsByDID_v2.txt">text only restrictions list</a> instead.
-				<br><br>
+				<p>
+					This list is no longer public as of November 18th, 2026.
+					<br>
+					This page is soon to be fully removed, and will redirect to the home page in the future.
+				</p>
+				<!-- Oops! In order to view this list, you need to enable JavaScript, or view the <a href="/SharpAlert/SharpAlertRestrictionsByDID_v2.txt">text only restrictions list</a> instead. -->
 			</div>
 		</div>
 
 		<h1>Why am I restricted?</h1>
 		<p>
-			You can be restricted for a variety of reasons (see <a href="/SharpAlert-PrivacyPolicy"><b>Restriction System</b></a>), but here are common reasons on why you might've been restricted.
+			You can be restricted for a variety of reasons, but here are common reasons on why you might've been restricted.
 			<ul>
 				<li>You are currently banned from EAS Culture on Discord.</li>
 				<li>You are currently muted or banned in r/EmergencyAlertSystem on Reddit.</li>
 			</ul>
-			<br>
 		</p>
 
 		<h1>What restriction types are there?</h1>
 		<p>
-			There are multiple types of restrictions. The type of restriction given will depend on the reasoning.
-			<br>
-			Please note that the restriction list serves multiple purposes, and is not used solely for restrictions. Only restrictions are shown on this page, other data is filtered and not included.
-			<ul>
-				<li>A severity of "1" or "Rich Presence restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile.</li>
-				<li>A severity of "100" or "client restricted" means that you cannot use the Discord Rich Presence feature to display alert information on your Discord profile, and SharpAlert will have an added delay on startup.</li>
-			</ul>
-			<br>
+			There is only 1 restriction type as of November 18th, 2026. The only used restriction type in question prevents the restriction's associated Discord account from using rich presence functionality.  
+			<br><br>
 		</p>
 		
 		<h1>How does SharpAlert know if I'm restricted?</h1>
 		<p>
-			When SharpAlert connects to your Discord app for Rich Presence support, it will download a list of restricted users, then compare user IDs in the list, with the user ID retrieved from the Rich Presence data provided by Discord.
+			The app will no longer check for restrictions as of November 18th, 2026. This may change in the future.
+			<!-- When SharpAlert connects to your Discord app for Rich Presence support, it will download a list of restricted users, then compare user IDs in the list, with the user ID retrieved from the Rich Presence data provided by Discord. -->
 			<br><br>
 		</p>
 
-		<h1 id="AppealSection">How do I appeal a restriction/ban?</h1>
+		<h1 id="AppealSection">How do I appeal a restriction (or ban)?</h1>
 		<p>
 			You can fill out the form below. If it is not loading, you can <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJYdIh-lxfXRVI9jzcHVYUBk-zdxWObuXHrmyQp9JTLGJdzg/viewform">click here</a> to open it directly. 
 			<br>
@@ -85,64 +83,64 @@
 		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJYdIh-lxfXRVI9jzcHVYUBk-zdxWObuXHrmyQp9JTLGJdzg/viewform?embedded=true" width="100%" height="1120" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 		
 		<script>
-			var list = document.getElementById("RestrictionsList");
-			list.innerHTML = "Loading list... If this is taking too long, view the <a href='/SharpAlert/SharpAlertRestrictionsByDID_v2.txt'>text only restrictions list</a> instead.";
+			// var list = document.getElementById("RestrictionsList");
+			// list.innerHTML = "Loading list... If this is taking too long, view the <a href='/SharpAlert/SharpAlertRestrictionsByDID_v2.txt'>text only restrictions list</a> instead.";
 
-			fetch('https://bunnytub.com/SharpAlert/SharpAlertRestrictionsByDID_v2.txt')
-			.then(response => response.text())
-			.then(restrictions => {
-				let restrict = restrictions.trim().split(/\r?\n/);
-				restrict.reverse();
+			// fetch('https://bunnytub.com/SharpAlert/SharpAlertRestrictionsByDID_v2.txt')
+			// .then(response => response.text())
+			// .then(restrictions => {
+			// 	let restrict = restrictions.trim().split(/\r?\n/);
+			// 	restrict.reverse();
 
-				let compiledHTML = "";
+			// 	let compiledHTML = "";
 
-				for (let i = 0; i < restrict.length; i++) {
-					//alert(restrict[i]);
-					restriction = restrict[i].split("|");
+			// 	for (let i = 0; i < restrict.length; i++) {
+			// 		//alert(restrict[i]);
+			// 		restriction = restrict[i].split("|");
 
-					if (restriction.length === 4) {
-						let isRestriction = false;
-						let status = "restricted";
-						let statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
-						//reason = restriction[3];
+			// 		if (restriction.length === 4) {
+			// 			let isRestriction = false;
+			// 			let status = "restricted";
+			// 			let statusMeaning = "Some features are restricted. See the description of this restriction for more information.";
+			// 			//reason = restriction[3];
 						
-						// var urlRegex = /(https?:\/\/[^\s]+)/g;
-						// reason = reason.replace(urlRegex, function(url) {
-						// 	return '<a href="' + url + '" target="_blank">' + url + '</a>';
-						// });
+			// 			// var urlRegex = /(https?:\/\/[^\s]+)/g;
+			// 			// reason = reason.replace(urlRegex, function(url) {
+			// 			// 	return '<a href="' + url + '" target="_blank">' + url + '</a>';
+			// 			// });
 
-						if (restriction[2] == "1") {
-							isRestriction = true;
-							status = "Rich Presence restricted";
-							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature. SharpAlert will not display information on their profile";
-						}
+			// 			if (restriction[2] == "1") {
+			// 				isRestriction = true;
+			// 				status = "Rich Presence restricted";
+			// 				statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature. SharpAlert will not display information on their profile";
+			// 			}
 
-						// unused
-						// if (restriction[2] == "2") {
-						// 	status = "Rich Presence and Webhook restricted";
-						// 	statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's webhook feature. SharpAlert will not display information on their profile, or allow them to send messages to webhooks.";
-						// }
+			// 			// unused
+			// 			// if (restriction[2] == "2") {
+			// 			// 	status = "Rich Presence and Webhook restricted";
+			// 			// 	statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and SharpAlert's webhook feature. SharpAlert will not display information on their profile, or allow them to send messages to webhooks.";
+			// 			// }
 
-						if (restriction[2] == "100") {
-							isRestriction = true;
-							status = "multi-feature restricted";
-							statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. The app will also display a message on startup and waits for 15 seconds before allowing itself to fully open. This is the most severe type of restriction.";
-						}
+			// 			if (restriction[2] == "100") {
+			// 				isRestriction = true;
+			// 				status = "multi-feature restricted";
+			// 				statusMeaning = "This user is prevented from using SharpAlert's Discord Rich Presence feature, and is also prevented from being able to change any font settings. The app will also display a message on startup and waits for 15 seconds before allowing itself to fully open. This is the most severe type of restriction.";
+			// 			}
 
-						if (isRestriction) {
-							compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!"><i class="fa-solid fa-clone"></i> ${restriction[1]}</b></a> is currently <a onclick="CopyTextToClipboard('${restriction[3]}'); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!"><i class="fa-solid fa-clone"></i> ${status}</a>!</p></div>`
-						}
-					}
-				}
+			// 			if (isRestriction) {
+			// 				compiledHTML = compiledHTML + `<br><div><p style="color: rgb(255, 110, 110);"><a style="color: white;" onclick="CopyTextToClipboard('${restriction[1]} - ${restriction[0]}'); event.preventDefault();" href="#"><b title="Discord user ID: ${restriction[0]} - Click to copy last known name and user ID!"><i class="fa-solid fa-clone"></i> ${restriction[1]}</b></a> is currently <a onclick="CopyTextToClipboard('${restriction[3]}'); event.preventDefault();" href="#" title="${statusMeaning} Click to view and copy restriction reason!"><i class="fa-solid fa-clone"></i> ${status}</a>!</p></div>`
+			// 			}
+			// 		}
+			// 	}
 
-				list.innerHTML = compiledHTML + "<br><br>";
-			})
-			.catch(error => {
-				console.error("Couldn't get the restrictions list.", error);
-				if (confirm("Couldn't get the restrictions list.\nRefresh and try again?")) {
-					window.location.reload();
-				}
-			});
+			// 	list.innerHTML = compiledHTML + "<br><br>";
+			// })
+			// .catch(error => {
+			// 	console.error("Couldn't get the restrictions list.", error);
+			// 	if (confirm("Couldn't get the restrictions list.\nRefresh and try again?")) {
+			// 		window.location.reload();
+			// 	}
+			// });
 		</script>
 	</body>
 </html>
